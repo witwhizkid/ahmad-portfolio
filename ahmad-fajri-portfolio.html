@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Ahmad Fajri's Portfolio</title>
+<meta name="description" content="Portfolio of Ahmad Fajri — Physics student at IPB University and program coordinator with experience leading community programs, festivals, and social initiatives." />
+<meta property="og:title" content="Ahmad Fajri — Project Officer & Program Coordinator" />
+<meta property="og:description" content="Physics student at IPB University and program coordinator with a track record leading community programs and social initiatives." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#fafafa; --fg:#0f0f0f; --muted:#6b6b6b; --border:#e5e5e5;
+    --card:#ffffff;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--bg); color:var(--fg);
+    font-family:"Inter",ui-sans-serif,system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased; font-feature-settings:"ss01","cv11";
+    line-height:1.5;
+  }
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .display{font-family:"Fraunces",ui-serif,Georgia,serif; letter-spacing:-0.02em; font-optical-sizing:auto}
+  .container{max-width:1024px; margin:0 auto; padding:0 24px}
+  @media(min-width:640px){.container{padding:0 40px}}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:40;background:rgba(250,250,250,0.8);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+  .nav{display:flex;height:56px;align-items:center;justify-content:space-between}
+  .brand{font-size:14px;font-weight:600;letter-spacing:-0.01em}
+  .nav-links{display:none;gap:28px}
+  @media(min-width:768px){.nav-links{display:flex}}
+  .nav-links a{font-size:11px;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted);transition:color .2s}
+  .nav-links a:hover{color:var(--fg)}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;font-size:14px;font-weight:500;border-radius:2px;transition:opacity .2s,background .2s,color .2s;cursor:pointer;border:none;font-family:inherit}
+  .btn-solid{background:var(--fg);color:var(--bg)}
+  .btn-solid:hover{opacity:.9}
+  .btn-outline{border:1px solid var(--fg);color:var(--fg);background:transparent}
+  .btn-outline:hover{background:var(--fg);color:var(--bg)}
+  .btn-sm{padding:6px 12px;font-size:12px}
+  .header-cta{display:none}
+  @media(min-width:768px){.header-cta{display:inline-flex}}
+
+  /* Sections */
+  section{padding:80px 0}
+  @media(min-width:640px){section{padding:112px 0}}
+  .kicker{font-size:11px;text-transform:uppercase;letter-spacing:0.24em;color:var(--muted)}
+  .kicker-tight{letter-spacing:0.14em}
+  .section-head{display:grid;gap:24px;border-bottom:1px solid var(--border);padding-bottom:40px}
+  @media(min-width:768px){.section-head{grid-template-columns:repeat(12,1fr)}}
+  .section-head .kicker{grid-column:span 3}
+  .section-head h2{margin:0;grid-column:span 9;font-size:30px;line-height:1.1}
+  @media(min-width:640px){.section-head h2{font-size:36px}}
+  @media(min-width:768px){.section-head h2{font-size:44px}}
+
+  /* Hero */
+  .hero{padding:96px 0 112px;border-bottom:1px solid var(--border)}
+  @media(min-width:768px){.hero{padding:144px 0}}
+  .hero h1{margin:24px 0 0;font-size:48px;line-height:.95}
+  @media(min-width:640px){.hero h1{font-size:64px}}
+  @media(min-width:768px){.hero h1{font-size:80px}}
+  @media(min-width:1024px){.hero h1{font-size:96px}}
+  .hero h1 em{font-style:italic;color:var(--muted)}
+  .hero p{max-width:576px;margin-top:32px;font-size:16px;color:var(--muted);line-height:1.7}
+  @media(min-width:640px){.hero p{font-size:18px}}
+  .hero-ctas{margin-top:40px;display:flex;flex-wrap:wrap;gap:12px}
+  .stats{margin-top:64px;padding-top:40px;border-top:1px solid var(--border);display:grid;grid-template-columns:repeat(2,1fr);gap:32px}
+  @media(min-width:640px){.stats{grid-template-columns:repeat(4,1fr)}}
+  .stat dt{font-family:"Fraunces",serif;letter-spacing:-0.02em;font-size:28px}
+  @media(min-width:640px){.stat dt{font-size:36px}}
+  .stat dd{margin:8px 0 0;font-size:11px;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted)}
+
+  /* Hero photo layout */
+  .hero-grid{display:grid;gap:32px;align-items:start}
+  @media(min-width:768px){.hero-grid{grid-template-columns:1fr 320px;gap:48px}}
+  .hero-photo{display:flex;align-items:flex-start;justify-content:center;margin-top:0}
+  @media(min-width:768px){.hero-photo{margin-top:-10px}}
+  .hero-photo img{width:220px;height:300px;object-fit:cover;border-radius:8px;box-shadow:0 20px 40px rgba(0,0,0,.08);border:1px solid rgba(0,0,0,.04)}
+  @media(min-width:1024px){.hero-photo img{width:300px;height:420px;border-radius:12px}}
+
+  /* About */
+  .about-grid{display:grid;gap:40px;padding-top:40px}
+  @media(min-width:768px){.about-grid{grid-template-columns:repeat(12,1fr)}}
+  .about-meta{grid-column:span 3}
+  .about-body{grid-column:span 9;font-size:16px;line-height:1.7}
+  @media(min-width:768px){.about-body{font-size:18px}}
+  .about-body p+p{margin-top:20px;color:var(--muted)}
+
+  /* Competencies */
+  .grid-cards{display:grid;gap:1px;background:var(--border);border:1px solid var(--border);overflow:hidden;margin-top:0}
+  @media(min-width:768px){.grid-cards{grid-template-columns:repeat(3,1fr)}}
+  .card{background:var(--card);padding:32px}
+  .card h3{margin:0 0 24px;font-size:13px;text-transform:uppercase;letter-spacing:0.14em;font-weight:600}
+  .bullets{list-style:none;padding:0;margin:0;display:grid;gap:12px;font-size:14px;color:var(--muted)}
+  .bullets{list-style:none;padding:0;margin:0;font-size:14px;color:var(--muted)}
+  .bullets li{position:relative;padding-left:36px;margin:10px 0;line-height:1.6}
+  .bullets li::before{content:"";position:absolute;left:0;top:calc(0.5em + 2px);width:20px;height:1px;background:rgba(0,0,0,.4)}
+
+  /* Experience */
+  .timeline{ position:relative; }
+  .tl-item{
+    display:grid;
+    grid-template-columns:150px 1fr;
+    gap:24px;
+    padding:28px 0;
+    border-top:1px solid var(--line);
+  }
+  .timeline .tl-item:first-child{ border-top:1px solid var(--line); }
+  @media (max-width:640px){
+    .tl-item{ grid-template-columns:1fr; gap:8px; }
+  }
+  .tl-date{
+    font-family:var(--font-mono);
+    font-size:12px;
+    color:var(--ink-faint);
+    line-height:1.6;
+    padding-top:2px;
+  }
+  .tl-role{
+    font-family:var(--font-display);
+    font-size:20px;
+    font-weight:500;
+    margin:0 0 4px;
+  }
+  .tl-org{
+    font-size:14px;
+    color:var(--ink-soft);
+    margin:0 0 14px;
+  }
+  .tl-org .dot{ margin:0 8px; color:var(--ink-faint); }
+  .tl-bullets{
+    margin:0; padding-left:18px;
+    color:var(--ink);
+    font-size:15px;
+  }
+  .tl-bullets li{ margin-bottom:6px; }
+  .tl-bullets li::marker{ color:var(--ink-faint); }
+
+  /* Gallery */
+  .gallery{display:grid;gap:1px;background:var(--border);border:1px solid var(--border);overflow:hidden;margin-top:40px}
+  @media(min-width:640px){.gallery{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:768px){.gallery{grid-template-columns:repeat(3,1fr)}}
+  .g-tile{position:relative;aspect-ratio:4/3;background:var(--card);overflow:hidden;border:none;padding:0;cursor:zoom-in;font-family:inherit}
+  .g-tile img{width:100%;height:100%;object-fit:cover;filter:grayscale(1);transition:transform .5s,filter .5s}
+  .g-tile:hover img{transform:scale(1.03);filter:grayscale(0)}
+  .g-cap{position:absolute;inset:auto 0 0 0;padding:16px;font-size:11px;text-transform:uppercase;letter-spacing:0.14em;color:#fff;text-align:left;background:linear-gradient(to top,rgba(0,0,0,.7),transparent);opacity:0;transition:opacity .3s;pointer-events:none}
+  .g-tile:hover .g-cap{opacity:1}
+
+  /* Lightbox */
+  .lb{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.95);display:none;align-items:center;justify-content:center;padding:16px}
+  .lb.open{display:flex}
+  .lb-figure{max-width:1152px;max-height:100%;display:flex;flex-direction:column;gap:16px;align-items:center}
+  .lb img{max-height:78vh;max-width:100%;width:auto;object-fit:contain}
+  .lb-cap{width:100%;display:flex;justify-content:space-between;gap:24px;font-size:11px;text-transform:uppercase;letter-spacing:0.14em;color:rgba(255,255,255,.8)}
+  .lb-btn{position:absolute;display:flex;align-items:center;justify-content:center;background:transparent;color:#fff;border:1px solid rgba(255,255,255,.3);border-radius:2px;cursor:pointer;font-family:inherit;transition:background .2s,color .2s}
+  .lb-btn:hover{background:#fff;color:#000}
+  .lb-close{top:16px;right:16px;width:40px;height:40px;font-size:16px}
+  .lb-prev,.lb-next{top:50%;transform:translateY(-50%);width:48px;height:48px;font-size:20px}
+  .lb-prev{left:16px}
+  .lb-next{right:16px}
+  @media(min-width:640px){.lb-prev{left:32px}.lb-next{right:32px}}
+
+  /* Achievements */
+  .ach{list-style:none;padding:0;margin:16px 0 0}
+  .ach li{display:grid;gap:16px;border-bottom:1px solid var(--border);padding:32px 0}
+  @media(min-width:768px){.ach li{grid-template-columns:repeat(12,1fr);align-items:baseline}}
+  .ach-year{font-family:"Fraunces",serif;letter-spacing:-0.02em;font-size:24px;grid-column:span 2}
+  @media(min-width:768px){.ach-year{font-size:28px}}
+  .ach-title{grid-column:span 6;font-size:17px}
+  .ach-org{grid-column:span 4;font-size:13px;color:var(--muted)}
+
+  /* Education */
+  .edu{display:grid;gap:40px;padding-top:40px}
+  @media(min-width:768px){.edu{grid-template-columns:repeat(2,1fr)}}
+  .edu-item{border-top:1px solid var(--fg);padding-top:24px}
+  .edu-item h3{margin:12px 0 0;font-family:"Fraunces",serif;letter-spacing:-0.02em;font-size:22px}
+  .edu-item .degree{margin:4px 0 0;font-size:13px;color:var(--muted)}
+  .edu-item ul{margin-top:16px}
+
+  /* Contact */
+  .contact{border-top:1px solid var(--border);padding:80px 0 128px}
+  .contact h2{margin:24px 0 0;font-family:"Fraunces",serif;letter-spacing:-0.02em;font-size:34px;line-height:1.15}
+  @media(min-width:640px){.contact h2{font-size:44px}}
+  @media(min-width:768px){.contact h2{font-size:52px}}
+  .contact h2 em{font-style:italic;color:var(--muted)}
+  .contact-lead{max-width:576px;margin-top:24px;font-size:16px;color:var(--muted)}
+  @media(min-width:640px){.contact-lead{font-size:18px}}
+  .contact-cards{display:grid;gap:1px;background:var(--border);border:1px solid var(--border);overflow:hidden;margin-top:48px}
+  @media(min-width:640px){.contact-cards{grid-template-columns:repeat(3,1fr)}}
+  .contact-card{background:var(--card);padding:32px;display:block;transition:background .2s,color .2s}
+  .contact-card:hover{background:var(--fg);color:var(--bg)}
+  .contact-card .lbl{font-size:11px;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted)}
+  .contact-card:hover .lbl{color:rgba(250,250,250,.7)}
+  .contact-card .val{margin:12px 0 24px;font-family:"Fraunces",serif;letter-spacing:-0.02em;font-size:20px}
+  .contact-card .arr{font-size:11px;text-transform:uppercase;letter-spacing:0.14em}
+
+  /* Footer */
+  footer{border-top:1px solid var(--border)}
+  .foot{display:flex;flex-direction:column;gap:16px;align-items:flex-start;padding:40px 0;font-size:11px;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted)}
+  @media(min-width:640px){.foot{flex-direction:row;align-items:center;justify-content:space-between}}
+  .foot a:hover{color:var(--fg)}
+</style>
+</head>
+<body id="top">
+
+<header>
+  <div class="container nav">
+    <a href="#top" class="brand">Ahmad Fajri</a>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#competencies">Competencies</a>
+      <a href="#experience">Experience</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="resume.pdf" download class="btn btn-outline btn-sm header-cta">Download CV</a>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <p class="kicker">Portfolio </p>
+        <h1 class="display">Building programs<br />that actually <em>run on time.</em></h1>
+        <p>I&rsquo;m Ahmad Fajri, a Physics student at IPB University and program coordinator. I plan, organize, and lead community programs end-to-end, from concept and budget to on-ground execution.</p>
+        <div class="hero-ctas">
+          <a href="resume.pdf" download class="btn btn-solid">Download CV <span aria-hidden>↓</span></a>
+          <a href="#contact" class="btn btn-outline">Get in touch <span aria-hidden>→</span></a>
+        </div>
+        <dl class="stats">
+          <div class="stat"><dt class="display">100+</dt><dd>Participants led</dd></div>
+          <div class="stat"><dt class="display">6+</dt><dd>Programs & events</dd></div>
+          <div class="stat"><dt class="display">2+</dt><dd>Years organizing</dd></div>
+          <div class="stat"><dt class="display">IPB</dt><dd>Physics, class of '24</dd></div>
+        </dl>
+      </div>
+      <div class="hero-photo" aria-hidden="true">
+        <img src="img/gallery/IMG_20260107_114143 (1).jpg
+        " alt="Ahmad Fajri" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section>
+    <div id="about" class="section-head">
+      <p class="kicker">01 — About</p>
+      <h2 class="display">A calm hand behind busy events.</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-meta">
+        <p class="kicker kicker-tight">Currently</p>
+        <p style="margin:8px 0 0;font-size:14px">Bogor, Indonesia</p>
+
+      </div>
+      <div class="about-body">
+        <p>I&rsquo;m a Physics undergraduate at IPB University with a working interest in coding, teaching, and social activities. Alongside coursework, I&rsquo;ve spent the last two years leading and supporting community programs — coordinating volunteers, vendors, budgets, and timelines.</p>
+        <p>My analytical background makes me comfortable with structured planning and problem-solving, and I care about programs that actually create impact for the people they&rsquo;re designed for.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Competencies -->
+  <section>
+    <div id="competencies" class="section-head">
+      <p class="kicker">02 — Competencies</p>
+      <h2 class="display">What I bring to a project.</h2>
+    </div>
+    <div class="grid-cards" style="margin-top:40px">
+      <div class="card">
+        <h3>Project & Event Management</h3>
+        <ul class="bullets">
+          <li>End-to-end event planning & execution</li>
+          <li>Budgeting and resource allocation (RAB)</li>
+          <li>Vendor & partner coordination</li>
+          <li>Program & concept design</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Leadership & Collaboration</h3>
+        <ul class="bullets">
+          <li>Project leadership for 60+ participants</li>
+          <li>Cross-team coordination</li>
+          <li>Mentoring & facilitation</li>
+          <li>Community engagement</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Tools & Craft</h3>
+        <ul class="bullets">
+          <li>Microsoft Office</li>
+          <li>Google Workspace</li>
+          <li>Programming (Python, basic)</li>
+          <li>Video editing (Capcut, Adobe Premiere)</li>
+          <li>Basic graphic design(Canva)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section>
+    <div id="experience" class="section-head">
+      <p class="kicker">03 — Experience</p>
+      <h2 class="display">Selected organizational & event work.</h2>
+    </div>
+
+    <div class="timeline reveal">
+      <div class="tl-item">
+        <div class="tl-date">FEB 2026 —<br>PRESENT</div>
+        <div>
+          <p class="tl-role">Program Coordinator</p>
+          <p class="tl-org">Kita Bahagia <span class="dot">·</span> Jakarta, Indonesia</p>
+          <ul class="tl-bullets">
+            <li>Served as Project Leader for a community program with 100 participants, overseeing planning through execution</li>
+            <li>Designed program structure and event concepts aligned with community objectives</li>
+            <li>Prepared budget plans (RAB) and managed resource allocation for operations</li>
+            <li>Coordinated with third‑party vendors and partners for smooth execution</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">APR 2026 —<br>PRESENT</div>
+        <div>
+          <p class="tl-role">Social Media Officer</p>
+          <p class="tl-org">Gerakan Pendidikan Berdampak <span class="dot">·</span> South Tangerang, Indonesia</p>
+          <ul class="tl-bullets">
+            <li>Developed and executed social content strategy to increase community engagement</li>
+            <li>Optimized content scheduling to improve reach and audience interaction</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">MAR 2026 —<br>JUN 2026</div>
+        <div>
+          <p class="tl-role">Staff</p>
+          <p class="tl-org">POSF 2026 <span class="dot">·</span> Bogor, Indonesia</p>
+          <ul class="tl-bullets">
+            <li>Supported organization of a sports &amp; arts festival for IPB physics students</li>
+            <li>Assisted with on‑ground logistics and coordination during competition days</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">DEC 2025 —<br>JAN 2026</div>
+        <div>
+          <p class="tl-role">Volunteer Teacher</p>
+          <p class="tl-org">Gerakan Mengajar Desa <span class="dot">·</span> Bogor, Indonesia</p>
+          <ul class="tl-bullets">
+            <li>Supported elementary education and foundational learning development in a village community</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">OCT 2025 —<br>NOV 2025</div>
+        <div>
+          <p class="tl-role">Mentoring Staff</p>
+          <p class="tl-org">Physics Gathering <span class="dot">·</span> Bogor, Indonesia</p>
+          <ul class="tl-bullets">
+            <li>Facilitated bonding activities between Physics Class of 61 and Class of 62</li>
+            <li>Introduced incoming students to the department through mentoring sessions</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">AUG 2022 —<br>AUG 2023</div>
+        <div>
+          <p class="tl-role">Staff</p>
+          <p class="tl-org">Rohani Islam <span class="dot">·</span> Medan, Indonesia</p>
+          <ul class="tl-bullets">
+            <li>Supported religious program activities within the school community organization</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <!-- Gallery -->
+  <section>
+    <div id="gallery" class="section-head">
+      <p class="kicker">04 — Gallery</p>
+      <h2 class="display">Documentation from the field.</h2>
+    </div>
+    <div class="gallery" id="galleryGrid"></div>
+  </section>
+
+  <!-- Achievements -->
+  <section>
+    <div id="achievements" class="section-head">
+      <p class="kicker">05 — Achievements</p>
+      <h2 class="display">Recognition & selected wins.</h2>
+    </div>
+    <ul class="ach">
+      <li><span class="ach-year">2025</span><h3 class="ach-title" style="margin:0;font-weight:400">Finalist — Paper Competition</h3><p class="ach-org" style="margin:0">PRESENT X TAZKIA JUARA</p></li>
+      <li><span class="ach-year">2023</span><h3 class="ach-title" style="margin:0;font-weight:400">Winner — Mobile Legends Bang Bang Competition</h3><p class="ach-org" style="margin:0">Festival Pelajar Nusantara by RRI Medan</p></li>
+      <li><span class="ach-year">2025</span><h3 class="ach-title" style="margin:0;font-weight:400">Social & Educational Volunteer Programs</h3><p class="ach-org" style="margin:0">Orphanage teaching, educational trips, environmental conservation</p></li>
+    </ul>
+  </section>
+
+  <!-- Education -->
+  <section>
+    <div id="education" class="section-head">
+      <p class="kicker">06 — Education</p>
+      <h2 class="display">Academic foundation.</h2>
+    </div>
+    <div class="edu">
+      <div class="edu-item">
+        <p class="kicker kicker-tight">Aug 2024 — Aug 2028 (Expected)</p>
+        <h3>IPB University</h3>
+        <p class="degree">Undergraduate, Physics</p>
+        <ul class="bullets">
+          <li>Participated in two event committees</li>
+          <li>Finalist in a Paper Competition</li>
+        </ul>
+      </div>
+      <div class="edu-item">
+        <p class="kicker kicker-tight">Jul 2021 — Jul 2024</p>
+        <h3>SMAS Kartika I-2 Medan</h3>
+        <p class="degree">Senior High School — 91.30 / 100.00</p>
+        <ul class="bullets">
+          <li>Staff of Rohani Islam (2022–2023)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <p class="kicker">07 — Contact</p>
+    <h2>Have a program that needs<br /><em>a steady coordinator?</em></h2>
+    <p class="contact-lead">I&rsquo;m open to Project Officer, Event Coordinator, and community program roles. The fastest way to reach me is email or WhatsApp.</p>
+    <div class="contact-cards">
+      <a class="contact-card" href="mailto:ahmadfajri2211@gmail.com">
+        <p class="lbl">Email</p><p class="val">ahmadfajri2211@gmail.com</p><p class="arr">Reach out →</p>
+      </a>
+      <a class="contact-card" href="https://wa.me/6282362330813">
+        <p class="lbl">WhatsApp</p><p class="val">+6282362330813</p><p class="arr">Reach out →</p>
+      </a>
+      <a class="contact-card" href="https://www.linkedin.com/in/ahmad-fajri-43b877323" target="_blank" rel="noreferrer">
+        <p class="lbl">LinkedIn</p><p class="val">ahmad-fajri</p><p class="arr">Reach out →</p>
+      </a>
+    </div>
+    <div style="margin-top:40px">
+      <a href="resume.pdf" download class="btn btn-solid">Download CV (PDF) <span aria-hidden>↓</span></a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container foot">
+    <p>© 2026 Ahmad Fajri</p>
+    <p>Bogor · Indonesia</p>
+    <a href="#top">Back to top ↑</a>
+  </div>
+</footer>
+
+<!-- Lightbox -->
+<div class="lb" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="lb-btn lb-close" id="lbClose" aria-label="Close">✕</button>
+  <button class="lb-btn lb-prev" id="lbPrev" aria-label="Previous image">←</button>
+  <button class="lb-btn lb-next" id="lbNext" aria-label="Next image">→</button>
+  <figure class="lb-figure" id="lbFigure">
+    <img id="lbImg" alt="" />
+    <figcaption class="lb-cap"><span id="lbCap"></span><span id="lbCount"></span></figcaption>
+  </figure>
+</div>
+
+<script>
+  const gallery = [
+    {
+     src: "./img/gallery/DSC02453.jpg",
+    caption: "outdoor session, full team & participants"
+  },
+
+   {
+     src: "./img/gallery/DSC04231.jpg",
+    caption: "coordinate the program with participants"
+  },
+
+   {
+     src: "./img/gallery/DSC04303.jpeg",
+    caption: "full program cohort, closing session"
+  },
+
+   {
+     src: "./img/gallery/DSCN0195.jpg",
+    caption: "program team and participants"
+  },
+
+  {
+     src: "./img/gallery/DSCN0046.jpg",
+    caption: "monitor the progress of the activities"
+  },
+    {
+     src: "./img/gallery/IMG_0452 (1).jpg",
+    caption: "carry out a teaching program at an elementary school"
+  },
+    
+  ];
+
+  const grid = document.getElementById("galleryGrid");
+  gallery.forEach((g, i) => {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.className = "g-tile";
+    b.setAttribute("aria-label", "Open image: " + g.caption);
+    b.innerHTML = '<img src="' + g.src + '" alt="' + g.caption + '" loading="lazy" /><span class="g-cap">' + g.caption + '</span>';
+    b.addEventListener("click", () => openLB(i));
+    grid.appendChild(b);
+  });
+
+  const lb = document.getElementById("lightbox");
+  const lbImg = document.getElementById("lbImg");
+  const lbCap = document.getElementById("lbCap");
+  const lbCount = document.getElementById("lbCount");
+  const lbFigure = document.getElementById("lbFigure");
+  let current = null;
+
+  function render() {
+    const g = gallery[current];
+    lbImg.src = g.src;
+    lbImg.alt = g.caption;
+    lbCap.textContent = g.caption;
+    lbCount.textContent = String(current + 1).padStart(2, "0") + " / " + String(gallery.length).padStart(2, "0");
+  }
+  function openLB(i) {
+    current = i;
+    render();
+    lb.classList.add("open");
+    document.body.style.overflow = "hidden";
+  }
+  function closeLB() {
+    lb.classList.remove("open");
+    document.body.style.overflow = "";
+    current = null;
+  }
+  function prev() { if (current === null) return; current = (current - 1 + gallery.length) % gallery.length; render(); }
+  function next() { if (current === null) return; current = (current + 1) % gallery.length; render(); }
+
+  document.getElementById("lbClose").addEventListener("click", closeLB);
+  document.getElementById("lbPrev").addEventListener("click", (e) => { e.stopPropagation(); prev(); });
+  document.getElementById("lbNext").addEventListener("click", (e) => { e.stopPropagation(); next(); });
+  lb.addEventListener("click", (e) => { if (e.target === lb) closeLB(); });
+  lbFigure.addEventListener("click", (e) => e.stopPropagation());
+  window.addEventListener("keydown", (e) => {
+    if (!lb.classList.contains("open")) return;
+    if (e.key === "Escape") closeLB();
+    else if (e.key === "ArrowLeft") prev();
+    else if (e.key === "ArrowRight") next();
+  });
+</script>
+
+</body>
+</html>
