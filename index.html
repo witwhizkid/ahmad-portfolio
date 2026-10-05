@@ -137,7 +137,12 @@
   @media(min-width:768px){.samples{grid-template-columns:repeat(3,1fr);gap:24px}}
   .sample{margin:0}
   .sample-media{aspect-ratio:4/5;background:var(--card);border:1px dashed #c8c8c8;display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;font-size:12px;color:var(--muted);overflow:hidden}
-  .sample-media img{width:100%;height:100%;object-fit:cover}
+  .sample-media img,.sample-media video{width:100%;height:100%;object-fit:cover;display:block}
+  .sample-media.top img{object-position:top}
+  button.sample-media,.sample-media.filled{border:1px solid var(--border);padding:0;background:var(--card)}
+  button.sample-media{width:100%;cursor:zoom-in;font-family:inherit;transition:border-color .2s}
+  button.sample-media:hover{border-color:var(--fg)}
+  .sample-media.filled{background:#000}
   .sample figcaption{margin-top:12px;font-size:13px;line-height:1.5}
   .sample .fmt{display:block;font-size:11px;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted)}
   .samples-note{margin-top:24px;font-size:14px;color:var(--muted)}
@@ -369,7 +374,7 @@
         <dl class="case-meta">
           <div><dt>Role</dt><dd>Social Media Officer</dd></div>
           <div><dt>When</dt><dd>Apr 2026 — now</dd></div>
-          <div><dt>Platform</dt><dd><span class="ph">Instagram / TikTok</span></dd></div>
+          <div><dt>Platform</dt><dd>Instagram</dd></div>
         </dl>
         <div class="case-block">
           <h4>The brief</h4>
@@ -394,35 +399,50 @@
   <section id="content">
     <div class="section-head">
       <p class="kicker">03 — Content</p>
-      <h2 class="display">Things I&rsquo;ve made for the feed.</h2>
+      <h2 class="display">Content I&rsquo;ve made and managed.</h2>
     </div>
     <div class="samples">
       <figure class="sample">
-        <div class="sample-media"><span>Screenshot konten #1</span></div>
-        <figcaption><span class="fmt"><span class="ph">Reels / Carousel / Feed</span></span><span class="ph">Judul atau topik konten · views / likes</span></figcaption>
+        <div class="sample-media filled">
+          <video controls muted playsinline preload="none" poster="img/content/recap-reel-poster.webp" aria-label="Volunteer program recap reel">
+            <source src="img/content/recap-reel.mp4" type="video/mp4" />
+            <source src="img/content/recap-reel.webm" type="video/webm" />
+          </video>
+        </div>
+        <figcaption><span class="fmt">Reels · Event recap</span>Volunteer program recap, &ldquo;smiles that speak volumes&rdquo;</figcaption>
       </figure>
       <figure class="sample">
-        <div class="sample-media"><span>Screenshot konten #2</span></div>
-        <figcaption><span class="fmt"><span class="ph">Reels / Carousel / Feed</span></span><span class="ph">Judul atau topik konten · views / likes</span></figcaption>
+        <button type="button" class="sample-media" data-content="0" aria-label="Open image: Feed · Flyer">
+          <img src="img/content/volunteer-call-thumb.webp" alt="Volunteer recruitment flyer for Batch 3, Jejak di Balik Buku" loading="lazy" />
+        </button>
+        <figcaption><span class="fmt">Feed · Flyer</span>Volunteer recruitment flyer for Batch 3, &ldquo;Jejak di Balik Buku&rdquo;</figcaption>
       </figure>
       <figure class="sample">
-        <div class="sample-media"><span>Screenshot konten #3</span></div>
-        <figcaption><span class="fmt"><span class="ph">Reels / Carousel / Feed</span></span><span class="ph">Judul atau topik konten · views / likes</span></figcaption>
+        <button type="button" class="sample-media" data-content="1" aria-label="Open image: Carousel · Program report">
+          <img src="img/content/batch2-report-thumb.webp" alt="Batch 2 report, Story Makers: Setiap Anak Punya Cerita" loading="lazy" />
+        </button>
+        <figcaption><span class="fmt">Carousel · Program report</span>Batch 2 report, &ldquo;Story Makers: Setiap Anak Punya Cerita&rdquo;</figcaption>
       </figure>
       <figure class="sample">
-        <div class="sample-media"><span>Screenshot konten #4</span></div>
-        <figcaption><span class="fmt"><span class="ph">Reels / Carousel / Feed</span></span><span class="ph">Judul atau topik konten · views / likes</span></figcaption>
+        <button type="button" class="sample-media" data-content="2" aria-label="Open image: Feed · Soft news">
+          <img src="img/content/soft-news-thumb.webp" alt="Quote post inviting people to support childrens growth" loading="lazy" />
+        </button>
+        <figcaption><span class="fmt">Feed · Soft news</span>Quote post inviting people to support children&rsquo;s growth</figcaption>
       </figure>
       <figure class="sample">
-        <div class="sample-media"><span>Screenshot konten #5</span></div>
-        <figcaption><span class="fmt"><span class="ph">Reels / Carousel / Feed</span></span><span class="ph">Judul atau topik konten · views / likes</span></figcaption>
+        <button type="button" class="sample-media top" data-content="3" aria-label="Open image: Instagram feed">
+          <img src="img/content/feed-grid-thumb.webp" alt="Reels on the account reaching up to 1.8K views each" loading="lazy" />
+        </button>
+        <figcaption><span class="fmt">Instagram feed</span>Reels on the account reaching up to 1.8K views each</figcaption>
       </figure>
       <figure class="sample">
-        <div class="sample-media"><span>Screenshot konten #6</span></div>
-        <figcaption><span class="fmt"><span class="ph">Reels / Carousel / Feed</span></span><span class="ph">Judul atau topik konten · views / likes</span></figcaption>
+        <button type="button" class="sample-media top" data-content="4" aria-label="Open image: Account overview">
+          <img src="img/content/profile-thumb.webp" alt="683 followers · 84.4K views in the last 30 days" loading="lazy" />
+        </button>
+        <figcaption><span class="fmt">Account overview</span>683 followers · 84.4K views in the last 30 days</figcaption>
       </figure>
     </div>
-    <p class="samples-note">See more on <span class="ph">@akun_instagram</span></p>
+    <p class="samples-note">Created and managed for <span class="ph">@akun_instagram_GPB</span> as Social Media Officer at Gerakan Pendidikan Berdampak.</p>
   </section>
 
   <!-- Competencies -->
@@ -659,6 +679,14 @@
     { src: "img/gallery/img0452", caption: "carry out a teaching program at an elementary school" },
   ];
 
+  const contentItems = [
+    { src: "img/content/volunteer-call.webp", caption: "Volunteer recruitment flyer for Batch 3, Jejak di Balik Buku" },
+    { src: "img/content/batch2-report.webp", caption: "Batch 2 report, Story Makers: Setiap Anak Punya Cerita" },
+    { src: "img/content/soft-news.webp", caption: "Quote post inviting people to support childrens growth" },
+    { src: "img/content/feed-grid.webp", caption: "Reels on the account reaching up to 1.8K views each" },
+    { src: "img/content/profile.webp", caption: "683 followers · 84.4K views in the last 30 days" }
+  ];
+
   const header = document.querySelector("header");
   const menuToggle = document.getElementById("menuToggle");
   function setMenu(open) {
@@ -676,7 +704,7 @@
     b.className = "g-tile";
     b.setAttribute("aria-label", "Open image: " + g.caption);
     b.innerHTML = '<img src="' + g.src + '-thumb.webp" alt="' + g.caption + '" loading="lazy" /><span class="g-cap">' + g.caption + '</span>';
-    b.addEventListener("click", () => openLB(i));
+    b.addEventListener("click", () => openLB(gallery, i));
     grid.appendChild(b);
   });
 
@@ -685,16 +713,22 @@
   const lbCap = document.getElementById("lbCap");
   const lbCount = document.getElementById("lbCount");
   const lbFigure = document.getElementById("lbFigure");
+  let list = gallery;
   let current = null;
 
+  document.querySelectorAll("[data-content]").forEach((b) =>
+    b.addEventListener("click", () => openLB(contentItems, Number(b.dataset.content)))
+  );
+
   function render() {
-    const g = gallery[current];
-    lbImg.src = g.src + ".webp";
+    const g = list[current];
+    lbImg.src = list === gallery ? g.src + ".webp" : g.src;
     lbImg.alt = g.caption;
     lbCap.textContent = g.caption;
-    lbCount.textContent = String(current + 1).padStart(2, "0") + " / " + String(gallery.length).padStart(2, "0");
+    lbCount.textContent = String(current + 1).padStart(2, "0") + " / " + String(list.length).padStart(2, "0");
   }
-  function openLB(i) {
+  function openLB(items, i) {
+    list = items;
     current = i;
     render();
     lb.classList.add("open");
@@ -705,8 +739,8 @@
     document.body.style.overflow = "";
     current = null;
   }
-  function prev() { if (current === null) return; current = (current - 1 + gallery.length) % gallery.length; render(); }
-  function next() { if (current === null) return; current = (current + 1) % gallery.length; render(); }
+  function prev() { if (current === null) return; current = (current - 1 + list.length) % list.length; render(); }
+  function next() { if (current === null) return; current = (current + 1) % list.length; render(); }
 
   document.getElementById("lbClose").addEventListener("click", closeLB);
   document.getElementById("lbPrev").addEventListener("click", (e) => { e.stopPropagation(); prev(); });
