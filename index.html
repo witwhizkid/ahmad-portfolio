@@ -17,6 +17,7 @@
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
   body{
     margin:0; background:var(--bg); color:var(--fg);
     font-family:"Inter",ui-sans-serif,system-ui,sans-serif;
@@ -45,6 +46,20 @@
   .btn-sm{padding:6px 12px;font-size:12px}
   .header-cta{display:none}
   @media(min-width:768px){.header-cta{display:inline-flex}}
+
+  /* Mobile menu */
+  .menu-toggle{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;margin-right:-8px;background:transparent;border:none;color:var(--fg);cursor:pointer}
+  .menu-toggle svg{width:20px;height:20px}
+  .menu-toggle .i-close{display:none}
+  .menu-open .menu-toggle .i-open{display:none}
+  .menu-open .menu-toggle .i-close{display:block}
+  @media(min-width:768px){.menu-toggle{display:none}}
+  .mobile-menu{display:none;border-top:1px solid var(--border);padding-top:8px;padding-bottom:24px}
+  .menu-open .mobile-menu{display:block}
+  @media(min-width:768px){.menu-open .mobile-menu{display:none}}
+  .mobile-menu a:not(.btn){display:block;padding:12px 0;font-size:13px;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted);border-bottom:1px solid var(--border)}
+  .mobile-menu a:not(.btn):hover{color:var(--fg)}
+  .mobile-menu .btn{margin-top:20px}
 
   /* Sections */
   section{padding:80px 0}
@@ -96,50 +111,50 @@
   @media(min-width:768px){.grid-cards{grid-template-columns:repeat(3,1fr)}}
   .card{background:var(--card);padding:32px}
   .card h3{margin:0 0 24px;font-size:13px;text-transform:uppercase;letter-spacing:0.14em;font-weight:600}
-  .bullets{list-style:none;padding:0;margin:0;display:grid;gap:12px;font-size:14px;color:var(--muted)}
   .bullets{list-style:none;padding:0;margin:0;font-size:14px;color:var(--muted)}
   .bullets li{position:relative;padding-left:36px;margin:10px 0;line-height:1.6}
   .bullets li::before{content:"";position:absolute;left:0;top:calc(0.5em + 2px);width:20px;height:1px;background:rgba(0,0,0,.4)}
 
   /* Experience */
-  .timeline{ position:relative; }
+  .timeline{ position:relative; margin-top:16px; }
   .tl-item{
     display:grid;
     grid-template-columns:150px 1fr;
     gap:24px;
-    padding:28px 0;
-    border-top:1px solid var(--line);
+    padding:32px 0;
+    border-bottom:1px solid var(--border);
   }
-  .timeline .tl-item:first-child{ border-top:1px solid var(--line); }
   @media (max-width:640px){
     .tl-item{ grid-template-columns:1fr; gap:8px; }
   }
   .tl-date{
-    font-family:var(--font-mono);
-    font-size:12px;
-    color:var(--ink-faint);
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:0.14em;
+    color:var(--muted);
     line-height:1.6;
-    padding-top:2px;
+    padding-top:6px;
   }
   .tl-role{
-    font-family:var(--font-display);
-    font-size:20px;
+    font-family:"Fraunces",ui-serif,Georgia,serif;
+    letter-spacing:-0.02em;
+    font-size:22px;
     font-weight:500;
     margin:0 0 4px;
   }
   .tl-org{
     font-size:14px;
-    color:var(--ink-soft);
+    color:var(--muted);
     margin:0 0 14px;
   }
-  .tl-org .dot{ margin:0 8px; color:var(--ink-faint); }
+  .tl-org .dot{ margin:0 8px; }
   .tl-bullets{
     margin:0; padding-left:18px;
-    color:var(--ink);
+    color:var(--fg);
     font-size:15px;
   }
   .tl-bullets li{ margin-bottom:6px; }
-  .tl-bullets li::marker{ color:var(--ink-faint); }
+  .tl-bullets li::marker{ color:var(--muted); }
 
   /* Gallery */
   .gallery{display:grid;gap:1px;background:var(--border);border:1px solid var(--border);overflow:hidden;margin-top:40px}
@@ -221,7 +236,21 @@
       <a href="#contact">Contact</a>
     </nav>
     <a href="resume.pdf" download class="btn btn-outline btn-sm header-cta">Download CV</a>
+    <button type="button" class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <svg class="i-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+      <svg class="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
   </div>
+  <nav class="container mobile-menu" id="mobileMenu" aria-label="Mobile">
+    <a href="#about">About</a>
+    <a href="#competencies">Competencies</a>
+    <a href="#experience">Experience</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+    <a href="resume.pdf" download class="btn btn-solid">Download CV <span aria-hidden="true">↓</span></a>
+  </nav>
 </header>
 
 <main class="container">
@@ -234,8 +263,8 @@
         <h1 class="display">Building programs<br />that actually <em>run on time.</em></h1>
         <p>I&rsquo;m Ahmad Fajri, a Physics student at IPB University and program coordinator. I plan, organize, and lead community programs end-to-end, from concept and budget to on-ground execution.</p>
         <div class="hero-ctas">
-          <a href="resume.pdf" download class="btn btn-solid">Download CV <span aria-hidden>↓</span></a>
-          <a href="#contact" class="btn btn-outline">Get in touch <span aria-hidden>→</span></a>
+          <a href="resume.pdf" download class="btn btn-solid">Download CV <span aria-hidden="true">↓</span></a>
+          <a href="#contact" class="btn btn-outline">Get in touch <span aria-hidden="true">→</span></a>
         </div>
         <dl class="stats">
           <div class="stat"><dt class="display">100+</dt><dd>Participants led</dd></div>
@@ -244,16 +273,15 @@
           <div class="stat"><dt class="display">IPB</dt><dd>Physics, class of '24</dd></div>
         </dl>
       </div>
-      <div class="hero-photo" aria-hidden="true">
-        <img src="img/gallery/IMG_20260107_114143 (1).jpg
-        " alt="Ahmad Fajri" loading="lazy" />
+      <div class="hero-photo">
+        <img src="img/profile.webp" alt="Portrait of Ahmad Fajri" width="566" height="931" fetchpriority="high" />
       </div>
     </div>
   </section>
 
   <!-- About -->
-  <section>
-    <div id="about" class="section-head">
+  <section id="about">
+    <div class="section-head">
       <p class="kicker">01 — About</p>
       <h2 class="display">A calm hand behind busy events.</h2>
     </div>
@@ -271,8 +299,8 @@
   </section>
 
   <!-- Competencies -->
-  <section>
-    <div id="competencies" class="section-head">
+  <section id="competencies">
+    <div class="section-head">
       <p class="kicker">02 — Competencies</p>
       <h2 class="display">What I bring to a project.</h2>
     </div>
@@ -302,20 +330,20 @@
           <li>Google Workspace</li>
           <li>Programming (Python, basic)</li>
           <li>Video editing (Capcut, Adobe Premiere)</li>
-          <li>Basic graphic design(Canva)</li>
+          <li>Basic graphic design (Canva)</li>
         </ul>
       </div>
     </div>
   </section>
 
   <!-- Experience -->
-  <section>
-    <div id="experience" class="section-head">
+  <section id="experience">
+    <div class="section-head">
       <p class="kicker">03 — Experience</p>
       <h2 class="display">Selected organizational & event work.</h2>
     </div>
 
-    <div class="timeline reveal">
+    <div class="timeline">
       <div class="tl-item">
         <div class="tl-date">FEB 2026 —<br>PRESENT</div>
         <div>
@@ -388,12 +416,11 @@
         </div>
       </div>
     </div>
-  </div>
   </section>
 
   <!-- Gallery -->
-  <section>
-    <div id="gallery" class="section-head">
+  <section id="gallery">
+    <div class="section-head">
       <p class="kicker">04 — Gallery</p>
       <h2 class="display">Documentation from the field.</h2>
     </div>
@@ -401,8 +428,8 @@
   </section>
 
   <!-- Achievements -->
-  <section>
-    <div id="achievements" class="section-head">
+  <section id="achievements">
+    <div class="section-head">
       <p class="kicker">05 — Achievements</p>
       <h2 class="display">Recognition & selected wins.</h2>
     </div>
@@ -414,8 +441,8 @@
   </section>
 
   <!-- Education -->
-  <section>
-    <div id="education" class="section-head">
+  <section id="education">
+    <div class="section-head">
       <p class="kicker">06 — Education</p>
       <h2 class="display">Academic foundation.</h2>
     </div>
@@ -457,7 +484,7 @@
       </a>
     </div>
     <div style="margin-top:40px">
-      <a href="resume.pdf" download class="btn btn-solid">Download CV (PDF) <span aria-hidden>↓</span></a>
+      <a href="resume.pdf" download class="btn btn-solid">Download CV (PDF) <span aria-hidden="true">↓</span></a>
     </div>
   </section>
 
@@ -484,36 +511,23 @@
 
 <script>
   const gallery = [
-    {
-     src: "./img/gallery/DSC02453.jpg",
-    caption: "outdoor session, full team & participants"
-  },
-
-   {
-     src: "./img/gallery/DSC04231.jpg",
-    caption: "coordinate the program with participants"
-  },
-
-   {
-     src: "./img/gallery/DSC04303.jpeg",
-    caption: "full program cohort, closing session"
-  },
-
-   {
-     src: "./img/gallery/DSCN0195.jpg",
-    caption: "program team and participants"
-  },
-
-  {
-     src: "./img/gallery/DSCN0046.jpg",
-    caption: "monitor the progress of the activities"
-  },
-    {
-     src: "./img/gallery/IMG_0452 (1).jpg",
-    caption: "carry out a teaching program at an elementary school"
-  },
-    
+    { src: "img/gallery/dsc02453", caption: "outdoor session, full team & participants" },
+    { src: "img/gallery/dsc04231", caption: "coordinate the program with participants" },
+    { src: "img/gallery/dsc04303", caption: "full program cohort, closing session" },
+    { src: "img/gallery/dscn0195", caption: "program team and participants" },
+    { src: "img/gallery/dscn0046", caption: "monitor the progress of the activities" },
+    { src: "img/gallery/img0452", caption: "carry out a teaching program at an elementary school" },
   ];
+
+  const header = document.querySelector("header");
+  const menuToggle = document.getElementById("menuToggle");
+  function setMenu(open) {
+    header.classList.toggle("menu-open", open);
+    menuToggle.setAttribute("aria-expanded", String(open));
+    menuToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+  }
+  menuToggle.addEventListener("click", () => setMenu(!header.classList.contains("menu-open")));
+  document.querySelectorAll("#mobileMenu a").forEach((a) => a.addEventListener("click", () => setMenu(false)));
 
   const grid = document.getElementById("galleryGrid");
   gallery.forEach((g, i) => {
@@ -521,7 +535,7 @@
     b.type = "button";
     b.className = "g-tile";
     b.setAttribute("aria-label", "Open image: " + g.caption);
-    b.innerHTML = '<img src="' + g.src + '" alt="' + g.caption + '" loading="lazy" /><span class="g-cap">' + g.caption + '</span>';
+    b.innerHTML = '<img src="' + g.src + '-thumb.webp" alt="' + g.caption + '" loading="lazy" /><span class="g-cap">' + g.caption + '</span>';
     b.addEventListener("click", () => openLB(i));
     grid.appendChild(b);
   });
@@ -535,7 +549,7 @@
 
   function render() {
     const g = gallery[current];
-    lbImg.src = g.src;
+    lbImg.src = g.src + ".webp";
     lbImg.alt = g.caption;
     lbCap.textContent = g.caption;
     lbCount.textContent = String(current + 1).padStart(2, "0") + " / " + String(gallery.length).padStart(2, "0");
@@ -560,7 +574,10 @@
   lb.addEventListener("click", (e) => { if (e.target === lb) closeLB(); });
   lbFigure.addEventListener("click", (e) => e.stopPropagation());
   window.addEventListener("keydown", (e) => {
-    if (!lb.classList.contains("open")) return;
+    if (!lb.classList.contains("open")) {
+      if (e.key === "Escape") setMenu(false);
+      return;
+    }
     if (e.key === "Escape") closeLB();
     else if (e.key === "ArrowLeft") prev();
     else if (e.key === "ArrowRight") next();
