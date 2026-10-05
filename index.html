@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Ahmad Fajri's Portfolio</title>
-<meta name="description" content="Portfolio of Ahmad Fajri — Physics student at IPB University and program coordinator with experience leading community programs, festivals, and social initiatives." />
-<meta property="og:title" content="Ahmad Fajri — Project Officer & Program Coordinator" />
-<meta property="og:description" content="Physics student at IPB University and program coordinator with a track record leading community programs and social initiatives." />
+<title>Ahmad Fajri — Social Media &amp; Event</title>
+<meta name="description" content="Portfolio of Ahmad Fajri — IPB University Physics student who coordinates community events and creates social media content. Open to Social Media and Event internships." />
+<meta property="og:title" content="Ahmad Fajri — Social Media &amp; Event Internship Candidate" />
+<meta property="og:description" content="Events on the ground, stories online. IPB Physics student with event coordination and social media experience." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -67,9 +67,8 @@
   .kicker{font-size:11px;text-transform:uppercase;letter-spacing:0.24em;color:var(--muted)}
   .kicker-tight{letter-spacing:0.14em}
   .section-head{display:grid;gap:24px;border-bottom:1px solid var(--border);padding-bottom:40px}
-  @media(min-width:768px){.section-head{grid-template-columns:repeat(12,1fr)}}
-  .section-head .kicker{grid-column:span 3}
-  .section-head h2{margin:0;grid-column:span 9;font-size:30px;line-height:1.1}
+  @media(min-width:768px){.section-head{grid-template-columns:repeat(12,1fr)}.section-head .kicker{grid-column:span 3}.section-head h2{grid-column:span 9}}
+  .section-head h2{margin:0;font-size:30px;line-height:1.1}
   @media(min-width:640px){.section-head h2{font-size:36px}}
   @media(min-width:768px){.section-head h2{font-size:44px}}
 
@@ -101,8 +100,8 @@
   /* About */
   .about-grid{display:grid;gap:40px;padding-top:40px}
   @media(min-width:768px){.about-grid{grid-template-columns:repeat(12,1fr)}}
-  .about-meta{grid-column:span 3}
-  .about-body{grid-column:span 9;font-size:16px;line-height:1.7}
+  @media(min-width:768px){.about-meta{grid-column:span 3}.about-body{grid-column:span 9}}
+  .about-body{font-size:16px;line-height:1.7}
   @media(min-width:768px){.about-body{font-size:18px}}
   .about-body p+p{margin-top:20px;color:var(--muted)}
 
@@ -114,6 +113,34 @@
   .bullets{list-style:none;padding:0;margin:0;font-size:14px;color:var(--muted)}
   .bullets li{position:relative;padding-left:36px;margin:10px 0;line-height:1.6}
   .bullets li::before{content:"";position:absolute;left:0;top:calc(0.5em + 2px);width:20px;height:1px;background:rgba(0,0,0,.4)}
+
+  /* Placeholder text: fill in before merging to main */
+  .ph{background:#fff3b0;color:#5c4a00;padding:0 4px;border-radius:2px;font-style:normal}
+
+  /* Selected work */
+  .cases{display:grid;gap:1px;background:var(--border);border:1px solid var(--border);margin-top:40px}
+  @media(min-width:768px){.cases{grid-template-columns:repeat(2,1fr)}}
+  .case{background:var(--card);padding:32px;display:flex;flex-direction:column;gap:24px}
+  .case h3{margin:12px 0 0;font-family:"Fraunces",ui-serif,Georgia,serif;letter-spacing:-0.02em;font-size:26px;font-weight:500;line-height:1.2}
+  .case-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:0;padding:20px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+  .case-meta dt{font-size:11px;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted)}
+  .case-meta dd{margin:6px 0 0;font-size:14px}
+  .case-block h4{margin:0 0 8px;font-size:11px;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted);font-weight:500}
+  .case-block p{margin:0;font-size:15px;line-height:1.7}
+  .case-block .bullets{color:var(--fg)}
+  .case-block .bullets li{margin:6px 0}
+  .case-result{margin-top:auto;padding:20px;background:var(--bg);border:1px solid var(--border)}
+  .case-result p{font-family:"Fraunces",ui-serif,Georgia,serif;font-size:18px;letter-spacing:-0.01em;line-height:1.5}
+
+  /* Content samples */
+  .samples{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:40px}
+  @media(min-width:768px){.samples{grid-template-columns:repeat(3,1fr);gap:24px}}
+  .sample{margin:0}
+  .sample-media{aspect-ratio:4/5;background:var(--card);border:1px dashed #c8c8c8;display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;font-size:12px;color:var(--muted);overflow:hidden}
+  .sample-media img{width:100%;height:100%;object-fit:cover}
+  .sample figcaption{margin-top:12px;font-size:13px;line-height:1.5}
+  .sample .fmt{display:block;font-size:11px;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted)}
+  .samples-note{margin-top:24px;font-size:14px;color:var(--muted)}
 
   /* Experience */
   .timeline{ position:relative; margin-top:16px; }
@@ -184,10 +211,10 @@
   .ach{list-style:none;padding:0;margin:16px 0 0}
   .ach li{display:grid;gap:16px;border-bottom:1px solid var(--border);padding:32px 0}
   @media(min-width:768px){.ach li{grid-template-columns:repeat(12,1fr);align-items:baseline}}
-  .ach-year{font-family:"Fraunces",serif;letter-spacing:-0.02em;font-size:24px;grid-column:span 2}
-  @media(min-width:768px){.ach-year{font-size:28px}}
-  .ach-title{grid-column:span 6;font-size:17px}
-  .ach-org{grid-column:span 4;font-size:13px;color:var(--muted)}
+  .ach-year{font-family:"Fraunces",serif;letter-spacing:-0.02em;font-size:24px;}
+  @media(min-width:768px){.ach-year{font-size:28px;grid-column:span 2}.ach-title{grid-column:span 6}.ach-org{grid-column:span 4}}
+  .ach-title{font-size:17px}
+  .ach-org{font-size:13px;color:var(--muted)}
 
   /* Education */
   .edu{display:grid;gap:40px;padding-top:40px}
@@ -228,11 +255,10 @@
     <a href="#top" class="brand">Ahmad Fajri</a>
     <nav class="nav-links">
       <a href="#about">About</a>
-      <a href="#competencies">Competencies</a>
+      <a href="#work">Work</a>
+      <a href="#content">Content</a>
       <a href="#experience">Experience</a>
       <a href="#gallery">Gallery</a>
-      <a href="#achievements">Achievements</a>
-      <a href="#education">Education</a>
       <a href="#contact">Contact</a>
     </nav>
     <a href="resume.pdf" download class="btn btn-outline btn-sm header-cta">Download CV</a>
@@ -243,11 +269,10 @@
   </div>
   <nav class="container mobile-menu" id="mobileMenu" aria-label="Mobile">
     <a href="#about">About</a>
-    <a href="#competencies">Competencies</a>
+    <a href="#work">Work</a>
+    <a href="#content">Content</a>
     <a href="#experience">Experience</a>
     <a href="#gallery">Gallery</a>
-    <a href="#achievements">Achievements</a>
-    <a href="#education">Education</a>
     <a href="#contact">Contact</a>
     <a href="resume.pdf" download class="btn btn-solid">Download CV <span aria-hidden="true">↓</span></a>
   </nav>
@@ -259,17 +284,17 @@
   <section class="hero">
     <div class="hero-grid">
       <div>
-        <p class="kicker">Portfolio</p>
-        <h1 class="display">Building programs<br />that actually <em>run on time.</em></h1>
-        <p>I&rsquo;m Ahmad Fajri, a Physics student at IPB University and program coordinator. I plan, organize, and lead community programs end-to-end, from concept and budget to on-ground execution.</p>
+        <p class="kicker">Social Media &amp; Event</p>
+        <h1 class="display">Events on the ground,<br />stories <em>online.</em></h1>
+        <p>I&rsquo;m Ahmad Fajri, a Physics student at IPB University. I coordinate community events from concept to on-ground execution, and I create the social media content that brings people to them.</p>
         <div class="hero-ctas">
-          <a href="resume.pdf" download class="btn btn-solid">Download CV <span aria-hidden="true">↓</span></a>
-          <a href="#contact" class="btn btn-outline">Get in touch <span aria-hidden="true">→</span></a>
+          <a href="#work" class="btn btn-solid">See my work <span aria-hidden="true">→</span></a>
+          <a href="resume.pdf" download class="btn btn-outline">Download CV <span aria-hidden="true">↓</span></a>
         </div>
         <dl class="stats">
           <div class="stat"><dt class="display">100+</dt><dd>Participants led</dd></div>
           <div class="stat"><dt class="display">6+</dt><dd>Programs & events</dd></div>
-          <div class="stat"><dt class="display">2+</dt><dd>Years organizing</dd></div>
+          <div class="stat"><dt class="display"><span class="ph">XX%</span></dt><dd>Engagement growth</dd></div>
           <div class="stat"><dt class="display">IPB</dt><dd>Physics, class of '28</dd></div>
         </dl>
       </div>
@@ -283,7 +308,7 @@
   <section id="about">
     <div class="section-head">
       <p class="kicker">01 — About</p>
-      <h2 class="display">A calm hand behind busy events.</h2>
+      <h2 class="display">I run the event, then tell its story.</h2>
     </div>
     <div class="about-grid">
       <div class="about-meta">
@@ -292,45 +317,149 @@
 
       </div>
       <div class="about-body">
-        <p>I&rsquo;m a Physics undergraduate at IPB University with a working interest in coding, teaching, and social activities. Alongside coursework, I&rsquo;ve spent the last two years leading and supporting community programs — coordinating volunteers, vendors, budgets, and timelines.</p>
-        <p>My analytical background makes me comfortable with structured planning and problem-solving, and I care about programs that actually create impact for the people they&rsquo;re designed for.</p>
+        <p>I&rsquo;m a Physics undergraduate at IPB University. Alongside coursework, I lead community events as an Event Coordinator at Kita Bahagia and run social media as a Social Media Officer at Gerakan Pendidikan Berdampak.</p>
+        <p>The two jobs feed each other: a well-run event gives me stories worth posting, and good content brings the right people to the next event. My analytical background keeps both grounded in planning and numbers, not guesswork.</p>
       </div>
     </div>
+  </section>
+
+  <!-- Selected work -->
+  <section id="work">
+    <div class="section-head">
+      <p class="kicker">02 — Selected Work</p>
+      <h2 class="display">Two projects, two sides of the job.</h2>
+    </div>
+    <div class="cases">
+      <article class="case">
+        <div>
+          <p class="kicker kicker-tight">Case study · Event</p>
+          <h3><span class="ph">Nama event</span> — Kita Bahagia</h3>
+        </div>
+        <dl class="case-meta">
+          <div><dt>Role</dt><dd>Event Coordinator</dd></div>
+          <div><dt>When</dt><dd><span class="ph">Bulan 2026</span></dd></div>
+          <div><dt>Scale</dt><dd>100+ participants</dd></div>
+        </dl>
+        <div class="case-block">
+          <h4>The brief</h4>
+          <p><span class="ph">Tujuan event, untuk siapa, dan lokasinya di mana.</span></p>
+        </div>
+        <div class="case-block">
+          <h4>What I did</h4>
+          <ul class="bullets">
+            <li>Led the project from concept through execution as Project Leader</li>
+            <li>Designed the program structure and event concept</li>
+            <li>Prepared the budget plan (RAB): <span class="ph">kisaran budget</span></li>
+            <li>Coordinated <span class="ph">X</span> vendors and partners, and a team of <span class="ph">X</span> people</li>
+          </ul>
+        </div>
+        <div class="case-block">
+          <h4>A problem I solved</h4>
+          <p><span class="ph">Satu masalah di lapangan dan cara lu ngatasinnya.</span></p>
+        </div>
+        <div class="case-result">
+          <p><span class="ph">Hasil: misalnya acara jalan sesuai rundown, feedback peserta, budget gak over.</span></p>
+        </div>
+      </article>
+      <article class="case">
+        <div>
+          <p class="kicker kicker-tight">Case study · Social media</p>
+          <h3>Growing engagement for Gerakan Pendidikan Berdampak</h3>
+        </div>
+        <dl class="case-meta">
+          <div><dt>Role</dt><dd>Social Media Officer</dd></div>
+          <div><dt>When</dt><dd>Apr 2026 — now</dd></div>
+          <div><dt>Platform</dt><dd><span class="ph">Instagram / TikTok</span></dd></div>
+        </dl>
+        <div class="case-block">
+          <h4>The brief</h4>
+          <p><span class="ph">Kondisi akun waktu lu masuk dan apa yang mau dicapai.</span></p>
+        </div>
+        <div class="case-block">
+          <h4>What I did</h4>
+          <ul class="bullets">
+            <li>Developed and executed the content strategy</li>
+            <li>Built a posting schedule of <span class="ph">X</span> posts per week</li>
+            <li><span class="ph">Format atau pilar konten yang lu pakai</span></li>
+          </ul>
+        </div>
+        <div class="case-result">
+          <p>Followers <span class="ph">X → Y</span> · Reach <span class="ph">+XX%</span> · Engagement rate <span class="ph">X% → Y%</span></p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Content samples -->
+  <section id="content">
+    <div class="section-head">
+      <p class="kicker">03 — Content</p>
+      <h2 class="display">Things I&rsquo;ve made for the feed.</h2>
+    </div>
+    <div class="samples">
+      <figure class="sample">
+        <div class="sample-media"><span>Screenshot konten #1</span></div>
+        <figcaption><span class="fmt"><span class="ph">Reels / Carousel / Feed</span></span><span class="ph">Judul atau topik konten · views / likes</span></figcaption>
+      </figure>
+      <figure class="sample">
+        <div class="sample-media"><span>Screenshot konten #2</span></div>
+        <figcaption><span class="fmt"><span class="ph">Reels / Carousel / Feed</span></span><span class="ph">Judul atau topik konten · views / likes</span></figcaption>
+      </figure>
+      <figure class="sample">
+        <div class="sample-media"><span>Screenshot konten #3</span></div>
+        <figcaption><span class="fmt"><span class="ph">Reels / Carousel / Feed</span></span><span class="ph">Judul atau topik konten · views / likes</span></figcaption>
+      </figure>
+      <figure class="sample">
+        <div class="sample-media"><span>Screenshot konten #4</span></div>
+        <figcaption><span class="fmt"><span class="ph">Reels / Carousel / Feed</span></span><span class="ph">Judul atau topik konten · views / likes</span></figcaption>
+      </figure>
+      <figure class="sample">
+        <div class="sample-media"><span>Screenshot konten #5</span></div>
+        <figcaption><span class="fmt"><span class="ph">Reels / Carousel / Feed</span></span><span class="ph">Judul atau topik konten · views / likes</span></figcaption>
+      </figure>
+      <figure class="sample">
+        <div class="sample-media"><span>Screenshot konten #6</span></div>
+        <figcaption><span class="fmt"><span class="ph">Reels / Carousel / Feed</span></span><span class="ph">Judul atau topik konten · views / likes</span></figcaption>
+      </figure>
+    </div>
+    <p class="samples-note">See more on <span class="ph">@akun_instagram</span></p>
   </section>
 
   <!-- Competencies -->
   <section id="competencies">
     <div class="section-head">
-      <p class="kicker">02 — Competencies</p>
-      <h2 class="display">What I bring to a project.</h2>
+      <p class="kicker">04 — Competencies</p>
+      <h2 class="display">What I bring to a team.</h2>
     </div>
     <div class="grid-cards" style="margin-top:40px">
       <div class="card">
-        <h3>Project & Event Management</h3>
+        <h3>Event Management</h3>
         <ul class="bullets">
-          <li>End-to-end event planning & execution</li>
+          <li>End-to-end event planning &amp; execution</li>
+          <li>Event concept &amp; program design</li>
           <li>Budgeting and resource allocation (RAB)</li>
-          <li>Vendor & partner coordination</li>
-          <li>Program & concept design</li>
+          <li>Vendor &amp; partner coordination</li>
+          <li>On-ground logistics for 100+ participants</li>
         </ul>
       </div>
       <div class="card">
-        <h3>Leadership & Collaboration</h3>
+        <h3>Social Media &amp; Content</h3>
         <ul class="bullets">
-          <li>Project leadership for 100+ participants</li>
-          <li>Cross-team coordination</li>
-          <li>Mentoring & facilitation</li>
+          <li>Content strategy &amp; planning</li>
+          <li>Content calendar &amp; scheduling</li>
+          <li>Short-form video editing</li>
+          <li>Event documentation &amp; recaps</li>
           <li>Community engagement</li>
         </ul>
       </div>
       <div class="card">
-        <h3>Tools & Craft</h3>
+        <h3>Tools</h3>
         <ul class="bullets">
-          <li>Microsoft Office</li>
+          <li>Canva</li>
+          <li>CapCut &amp; Adobe Premiere</li>
           <li>Google Workspace</li>
-          <li>Programming (Python, basic)</li>
-          <li>Video editing (Capcut, Adobe Premiere)</li>
-          <li>Basic graphic design (Canva)</li>
+          <li>Microsoft Office</li>
+          <li>Python (basic)</li>
         </ul>
       </div>
     </div>
@@ -339,7 +468,7 @@
   <!-- Experience -->
   <section id="experience">
     <div class="section-head">
-      <p class="kicker">03 — Experience</p>
+      <p class="kicker">05 — Experience</p>
       <h2 class="display">Selected organizational & event work.</h2>
     </div>
 
@@ -433,7 +562,7 @@
   <!-- Gallery -->
   <section id="gallery">
     <div class="section-head">
-      <p class="kicker">04 — Gallery</p>
+      <p class="kicker">06 — Gallery</p>
       <h2 class="display">Documentation from the field.</h2>
     </div>
     <div class="gallery" id="galleryGrid"></div>
@@ -442,7 +571,7 @@
   <!-- Achievements -->
   <section id="achievements">
     <div class="section-head">
-      <p class="kicker">05 — Achievements</p>
+      <p class="kicker">07 — Achievements</p>
       <h2 class="display">Recognition & selected wins.</h2>
     </div>
     <ul class="ach">
@@ -454,7 +583,7 @@
   <!-- Education -->
   <section id="education">
     <div class="section-head">
-      <p class="kicker">06 — Education</p>
+      <p class="kicker">08 — Education</p>
       <h2 class="display">Academic foundation.</h2>
     </div>
     <div class="edu">
@@ -480,9 +609,9 @@
 
   <!-- Contact -->
   <section id="contact" class="contact">
-    <p class="kicker">07 — Contact</p>
-    <h2>Have a program that needs<br /><em>a steady coordinator?</em></h2>
-    <p class="contact-lead">I&rsquo;m open to Project Officer, Event Coordinator, and community program roles. The fastest way to reach me is email or WhatsApp.</p>
+    <p class="kicker">09 — Contact</p>
+    <h2>Looking for an intern who can<br /><em>run the event and post about it?</em></h2>
+    <p class="contact-lead">I&rsquo;m open to Social Media and Event internships, available from <span class="ph">bulan</span> for <span class="ph">X bulan</span>, onsite in <span class="ph">Bogor / Jakarta</span> or remote. The fastest way to reach me is email or WhatsApp.</p>
     <div class="contact-cards">
       <a class="contact-card" href="mailto:ahmadfajri2211@gmail.com">
         <p class="lbl">Email</p><p class="val">ahmadfajri2211@gmail.com</p><p class="arr">Reach out →</p>
