@@ -3,254 +3,175 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Ahmad Fajri — Social Media &amp; Event</title>
-<meta name="description" content="Portfolio of Ahmad Fajri — IPB University Physics student who coordinates community events and creates social media content. Open to Social Media and Event internships." />
-<meta property="og:title" content="Ahmad Fajri — Social Media &amp; Event Internship Candidate" />
-<meta property="og:description" content="Events on the ground, stories online. IPB Physics student with event coordination and social media experience." />
+<title>Ahmad Fajri</title>
+<meta name="description" content="Ahmad Fajri coordinates community events and runs Instagram for Gerakan Pendidikan Berdampak. Physics student at IPB University, looking for a Social Media or Event internship." />
+<meta property="og:title" content="Ahmad Fajri, Social Media and Event" />
+<meta property="og:description" content="Event Coordinator at Kita Bahagia (100+ participants) and Social Media Officer at GPB (84.4K Instagram views in 30 days). Looking for a Social Media or Event internship." />
+<meta property="og:image" content="https://ahmadfajriportfolio.vercel.app/img/og.jpg" />
+<meta property="og:url" content="https://ahmadfajriportfolio.vercel.app/" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
 <style>
+  /* Layout: one 1040px column. The hero splits text and photo; every other section stacks. */
   :root{
-    --bg:#fafafa; --fg:#0f0f0f; --muted:#6b6b6b; --border:#e5e5e5;
-    --card:#ffffff;
+    --bg:#f6f7f4; --surface:#ffffff; --ink:#151b16; --muted:#5a645c; --line:#dde2da;
+    --leaf:#2e6a3f; --leaf-soft:#e7efe5;
+    --display:"Schibsted Grotesk",ui-sans-serif,system-ui,sans-serif;
+    --body:"Source Sans 3",ui-sans-serif,system-ui,sans-serif;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
-  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-  body{
-    margin:0; background:var(--bg); color:var(--fg);
-    font-family:"Inter",ui-sans-serif,system-ui,sans-serif;
-    -webkit-font-smoothing:antialiased; font-feature-settings:"ss01","cv11";
-    line-height:1.5;
-  }
-  a{color:inherit;text-decoration:none}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
   img{display:block;max-width:100%}
-  .display{font-family:"Fraunces",ui-serif,Georgia,serif; letter-spacing:-0.02em; font-optical-sizing:auto}
-  .container{max-width:1024px; margin:0 auto; padding:0 24px}
-  @media(min-width:640px){.container{padding:0 40px}}
+  h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0}
+  p{margin:0}
+  :focus-visible{outline:2px solid var(--leaf);outline-offset:3px}
+  .container{max-width:1040px;margin:0 auto;padding-inline:20px}
+  @media(min-width:640px){.container{padding-inline:40px}}
+  [id]{scroll-margin-top:72px}
 
   /* Header */
-  header{position:sticky;top:0;z-index:40;background:rgba(250,250,250,0.8);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
-  .nav{display:flex;height:56px;align-items:center;justify-content:space-between}
-  .brand{font-size:14px;font-weight:600;letter-spacing:-0.01em}
-  .nav-links{display:none;gap:28px}
-  @media(min-width:768px){.nav-links{display:flex}}
-  .nav-links a{font-size:11px;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted);transition:color .2s}
-  .nav-links a:hover{color:var(--fg)}
-  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;font-size:14px;font-weight:500;border-radius:2px;transition:opacity .2s,background .2s,color .2s;cursor:pointer;border:none;font-family:inherit}
-  .btn-solid{background:var(--fg);color:var(--bg)}
-  .btn-solid:hover{opacity:.9}
-  .btn-outline{border:1px solid var(--fg);color:var(--fg);background:transparent}
-  .btn-outline:hover{background:var(--fg);color:var(--bg)}
-  .btn-sm{padding:6px 12px;font-size:12px}
+  header{position:sticky;top:0;z-index:40;background:rgba(246,247,244,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;height:60px;align-items:center;justify-content:space-between;gap:24px}
+  .brand{font-family:var(--display);font-weight:700;font-size:17px;text-decoration:none}
+  .nav-links{display:none;gap:28px;font-size:15px}
+  .nav-links a{text-decoration:none;color:var(--muted)}
+  .nav-links a:hover{color:var(--ink)}
+  @media(min-width:800px){.nav-links{display:flex}}
+  .btn{display:inline-flex;align-items:center;padding:11px 18px;font:600 15px/1.2 var(--body);border-radius:4px;text-decoration:none;border:1px solid var(--ink);cursor:pointer}
+  .btn-solid{background:var(--ink);color:var(--bg)}
+  .btn-solid:hover{background:var(--leaf);border-color:var(--leaf)}
+  .btn-line{background:transparent;color:var(--ink)}
+  .btn-line:hover{border-color:var(--leaf);color:var(--leaf)}
+  .btn-sm{padding:7px 12px;font-size:14px}
   .header-cta{display:none}
-  @media(min-width:768px){.header-cta{display:inline-flex}}
-
-  /* Mobile menu */
-  .menu-toggle{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;margin-right:-8px;background:transparent;border:none;color:var(--fg);cursor:pointer}
-  .menu-toggle svg{width:20px;height:20px}
-  .menu-toggle .i-close{display:none}
-  .menu-open .menu-toggle .i-open{display:none}
+  @media(min-width:800px){.header-cta{display:inline-flex}}
+  .menu-toggle{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;margin-right:-8px;background:transparent;border:none;color:var(--ink);cursor:pointer}
+  .menu-toggle svg{width:22px;height:22px}
+  .menu-toggle .i-close,.menu-open .menu-toggle .i-open{display:none}
   .menu-open .menu-toggle .i-close{display:block}
-  @media(min-width:768px){.menu-toggle{display:none}}
-  .mobile-menu{display:none;border-top:1px solid var(--border);padding-top:8px;padding-bottom:24px}
+  @media(min-width:800px){.menu-toggle{display:none}}
+  .mobile-menu{display:none;padding-block:4px 20px;border-top:1px solid var(--line)}
   .menu-open .mobile-menu{display:block}
-  @media(min-width:768px){.menu-open .mobile-menu{display:none}}
-  .mobile-menu a:not(.btn){display:block;padding:12px 0;font-size:13px;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted);border-bottom:1px solid var(--border)}
-  .mobile-menu a:not(.btn):hover{color:var(--fg)}
-  .mobile-menu .btn{margin-top:20px}
+  @media(min-width:800px){.menu-open .mobile-menu{display:none}}
+  .mobile-menu a:not(.btn){display:block;padding:12px 0;font-size:17px;text-decoration:none;border-bottom:1px solid var(--line)}
+  .mobile-menu .btn{margin-top:16px}
 
   /* Sections */
-  section{padding:80px 0}
-  @media(min-width:640px){section{padding:112px 0}}
-  .kicker{font-size:11px;text-transform:uppercase;letter-spacing:0.24em;color:var(--muted)}
-  .kicker-tight{letter-spacing:0.14em}
-  .section-head{display:grid;gap:24px;border-bottom:1px solid var(--border);padding-bottom:40px}
-  @media(min-width:768px){.section-head{grid-template-columns:repeat(12,1fr)}.section-head .kicker{grid-column:span 3}.section-head h2{grid-column:span 9}}
-  .section-head h2{margin:0;font-size:30px;line-height:1.1}
-  @media(min-width:640px){.section-head h2{font-size:36px}}
-  @media(min-width:768px){.section-head h2{font-size:44px}}
+  section{padding-block:56px;border-top:1px solid var(--line)}
+  @media(min-width:640px){section{padding-block:80px}}
+  .sec-title{font-size:28px;font-weight:700;letter-spacing:-0.02em;line-height:1.15}
+  @media(min-width:640px){.sec-title{font-size:34px}}
+  .sec-lead{margin-top:10px;max-width:62ch;color:var(--muted)}
+  .sec-body{margin-top:32px}
 
   /* Hero */
-  .hero{padding:96px 0 112px;border-bottom:1px solid var(--border)}
-  @media(min-width:768px){.hero{padding:144px 0}}
-  .hero h1{margin:24px 0 0;font-size:48px;line-height:.95}
-  @media(min-width:640px){.hero h1{font-size:64px}}
-  @media(min-width:768px){.hero h1{font-size:80px}}
-  @media(min-width:1024px){.hero h1{font-size:96px}}
-  .hero h1 em{font-style:italic;color:var(--muted)}
-  .hero p{max-width:576px;margin-top:32px;font-size:16px;color:var(--muted);line-height:1.7}
-  @media(min-width:640px){.hero p{font-size:18px}}
-  .hero-ctas{margin-top:40px;display:flex;flex-wrap:wrap;gap:12px}
-  .stats{margin-top:64px;padding-top:40px;border-top:1px solid var(--border);display:grid;grid-template-columns:repeat(2,1fr);gap:32px}
-  @media(min-width:640px){.stats{grid-template-columns:repeat(4,1fr)}}
-  .stat dt{font-family:"Fraunces",serif;letter-spacing:-0.02em;font-size:28px}
-  @media(min-width:640px){.stat dt{font-size:36px}}
-  .stat dd{margin:8px 0 0;font-size:11px;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted)}
+  .hero{border-top:none;padding-block:40px 56px}
+  @media(min-width:640px){.hero{padding-block:72px 80px}}
+  .hero-grid{display:grid;gap:28px}
+  @media(min-width:800px){.hero-grid{grid-template-columns:1fr 280px;gap:56px;align-items:center}}
+  @media(max-width:799px){.hero-photo{order:-1}}
+  .hero-photo img{width:132px;height:168px;object-fit:cover;border-radius:6px}
+  @media(min-width:800px){.hero-photo img{width:280px;height:356px}}
+  .hero-roles{font-weight:600;color:var(--leaf)}
+  .hero h1{margin-top:8px;font-size:44px;font-weight:700;letter-spacing:-0.035em;line-height:1}
+  @media(min-width:640px){.hero h1{font-size:68px}}
+  .hero-lead{margin-top:20px;max-width:34ch;font-size:21px;line-height:1.45}
+  @media(min-width:640px){.hero-lead{font-size:24px}}
+  .hero-sub{margin-top:14px;max-width:52ch;color:var(--muted)}
+  .hero-ctas{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px}
+  .stats{margin:44px 0 0;padding-top:28px;border-top:1px solid var(--line);display:grid;gap:24px}
+  @media(min-width:640px){.stats{grid-template-columns:repeat(3,1fr);gap:32px}}
+  .stat dt{font-family:var(--display);font-size:40px;font-weight:700;letter-spacing:-0.03em;line-height:1;color:var(--leaf)}
+  .stat dd{margin:8px 0 0;color:var(--muted);max-width:26ch}
 
-  /* Hero photo layout */
-  .hero-grid{display:grid;gap:32px;align-items:start}
-  @media(min-width:768px){.hero-grid{grid-template-columns:1fr 320px;gap:48px}}
-  .hero-photo{display:flex;align-items:flex-start;justify-content:center;margin-top:0}
-  @media(min-width:768px){.hero-photo{margin-top:-10px}}
-  .hero-photo img{width:220px;height:300px;object-fit:cover;border-radius:8px;box-shadow:0 20px 40px rgba(0,0,0,.08);border:1px solid rgba(0,0,0,.04)}
-  @media(min-width:1024px){.hero-photo img{width:300px;height:420px;border-radius:12px}}
-
-  /* About */
-  .about-grid{display:grid;gap:40px;padding-top:40px}
-  @media(min-width:768px){.about-grid{grid-template-columns:repeat(12,1fr)}}
-  @media(min-width:768px){.about-meta{grid-column:span 3}.about-body{grid-column:span 9}}
-  .about-body{font-size:16px;line-height:1.7}
-  @media(min-width:768px){.about-body{font-size:18px}}
-  .about-body p+p{margin-top:20px;color:var(--muted)}
-
-  /* Competencies */
-  .grid-cards{display:grid;gap:1px;background:var(--border);border:1px solid var(--border);overflow:hidden;margin-top:0}
-  @media(min-width:768px){.grid-cards{grid-template-columns:repeat(3,1fr)}}
-  .card{background:var(--card);padding:32px}
-  .card h3{margin:0 0 24px;font-size:13px;text-transform:uppercase;letter-spacing:0.14em;font-weight:600}
-  .bullets{list-style:none;padding:0;margin:0;font-size:14px;color:var(--muted)}
-  .bullets li{position:relative;padding-left:36px;margin:10px 0;line-height:1.6}
-  .bullets li::before{content:"";position:absolute;left:0;top:calc(0.5em + 2px);width:20px;height:1px;background:rgba(0,0,0,.4)}
-
-  /* Placeholder text: fill in before merging to main */
-  .ph{background:#fff3b0;color:#5c4a00;padding:0 4px;border-radius:2px;font-style:normal}
-
-  /* Selected work */
-  .cases{display:grid;gap:1px;background:var(--border);border:1px solid var(--border);margin-top:40px}
-  @media(min-width:768px){.cases{grid-template-columns:repeat(2,1fr)}}
-  .case{background:var(--card);padding:32px;display:flex;flex-direction:column;gap:24px}
-  .case h3{margin:12px 0 0;font-family:"Fraunces",ui-serif,Georgia,serif;letter-spacing:-0.02em;font-size:26px;font-weight:500;line-height:1.2}
-  .case-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:0;padding:20px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-  .case-meta dt{font-size:11px;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted)}
-  .case-meta dd{margin:6px 0 0;font-size:14px}
-  .case-block h4{margin:0 0 8px;font-size:11px;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted);font-weight:500}
-  .case-block p{margin:0;font-size:15px;line-height:1.7}
-  .case-block .bullets{color:var(--fg)}
-  .case-block .bullets li{margin:6px 0}
-  .case-result{margin-top:auto;padding:20px;background:var(--bg);border:1px solid var(--border)}
-  .case-result p{font-family:"Fraunces",ui-serif,Georgia,serif;font-size:18px;letter-spacing:-0.01em;line-height:1.5}
+  /* Work */
+  .cases{display:grid;gap:40px}
+  @media(min-width:800px){.cases{grid-template-columns:1fr 1fr;gap:56px}}
+  .case{border-top:2px solid var(--ink);padding-top:20px;display:grid;gap:14px;align-content:start}
+  .case-tag{font-size:15px;font-weight:600;color:var(--leaf)}
+  .case h3{font-size:24px;font-weight:600;letter-spacing:-0.015em;line-height:1.2}
+  .case-meta{color:var(--muted);font-size:15px}
+  .case-result{padding:14px 16px;background:var(--leaf-soft);border-radius:4px;font-weight:600}
+  ul.list{margin:0;padding-left:20px}
+  ul.list li{margin:4px 0}
+  ul.list li::marker{color:var(--muted)}
 
   /* Content samples */
-  .samples{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:40px}
-  @media(min-width:768px){.samples{grid-template-columns:repeat(3,1fr);gap:24px}}
-  .sample{margin:0}
-  .sample-media{aspect-ratio:4/5;background:var(--card);border:1px dashed #c8c8c8;display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;font-size:12px;color:var(--muted);overflow:hidden}
-  .sample-media img,.sample-media video{width:100%;height:100%;object-fit:cover;display:block}
+  .samples{display:grid;grid-template-columns:repeat(2,1fr);gap:20px 16px}
+  @media(min-width:800px){.samples{grid-template-columns:repeat(3,1fr);gap:32px 24px}}
+  .sample{margin:0;min-width:0}
+  .sample-media{position:relative;display:block;width:100%;aspect-ratio:4/5;padding:0;border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--surface);cursor:zoom-in}
+  .sample-media img,.sample-media video{width:100%;height:100%;object-fit:cover}
   .sample-media.top img{object-position:top}
-  button.sample-media,.sample-media.filled{border:1px solid var(--border);padding:0;background:var(--card)}
-  button.sample-media{width:100%;cursor:zoom-in;font-family:inherit;transition:border-color .2s}
-  button.sample-media:hover{border-color:var(--fg)}
-  .sample-media.filled{background:#000}
-  .sample figcaption{margin-top:12px;font-size:13px;line-height:1.5}
-  .sample .fmt{display:block;font-size:11px;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted)}
-  .samples-note{margin-top:24px;font-size:14px;color:var(--muted)}
+  .sample-media:hover{border-color:var(--leaf)}
+  .reel{background:#000;cursor:default}
+  .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.18);border:none;cursor:pointer;color:#fff}
+  .play span{display:flex;align-items:center;gap:8px;padding:10px 16px;background:rgba(21,27,22,.85);border-radius:999px;font:600 15px var(--body)}
+  .play svg{width:14px;height:14px}
+  .reel.playing .play{display:none}
+  .sample figcaption{margin-top:10px;font-size:15px;line-height:1.45}
+  .fmt{display:block;color:var(--muted);font-size:14px}
 
   /* Experience */
-  .timeline{ position:relative; margin-top:16px; }
-  .tl-item{
-    display:grid;
-    grid-template-columns:150px 1fr;
-    gap:24px;
-    padding:32px 0;
-    border-bottom:1px solid var(--border);
-  }
-  @media (max-width:640px){
-    .tl-item{ grid-template-columns:1fr; gap:8px; }
-  }
-  .tl-date{
-    font-size:11px;
-    text-transform:uppercase;
-    letter-spacing:0.14em;
-    color:var(--muted);
-    line-height:1.6;
-    padding-top:6px;
-  }
-  .tl-role{
-    font-family:"Fraunces",ui-serif,Georgia,serif;
-    letter-spacing:-0.02em;
-    font-size:22px;
-    font-weight:500;
-    margin:0 0 4px;
-  }
-  .tl-org{
-    font-size:14px;
-    color:var(--muted);
-    margin:0 0 14px;
-  }
-  .tl-org .dot{ margin:0 8px; }
-  .tl-bullets{
-    margin:0; padding-left:18px;
-    color:var(--fg);
-    font-size:15px;
-  }
-  .tl-bullets li{ margin-bottom:6px; }
-  .tl-bullets li::marker{ color:var(--muted); }
+  .jobs{display:grid}
+  .job{display:grid;gap:4px 32px;padding-block:22px;border-bottom:1px solid var(--line)}
+  .job:first-child{padding-top:0}
+  .job:last-child,.row:last-child{border-bottom:none}
+  @media(min-width:640px){.job{grid-template-columns:150px 1fr}}
+  .job-when{color:var(--muted);font-size:15px;font-variant-numeric:tabular-nums;padding-top:3px}
+  .job h3{font-size:19px;font-weight:600;letter-spacing:-0.01em}
+  .job-org{color:var(--muted);font-size:15px}
+  .job p.desc{margin-top:6px}
 
-  /* Gallery */
-  .gallery{display:grid;gap:1px;background:var(--border);border:1px solid var(--border);overflow:hidden;margin-top:40px}
-  @media(min-width:640px){.gallery{grid-template-columns:repeat(2,1fr)}}
-  @media(min-width:768px){.gallery{grid-template-columns:repeat(3,1fr)}}
-  .g-tile{position:relative;aspect-ratio:4/3;background:var(--card);overflow:hidden;border:none;padding:0;cursor:zoom-in;font-family:inherit}
-  .g-tile img{width:100%;height:100%;object-fit:cover;filter:grayscale(1);transition:transform .5s,filter .5s}
-  .g-tile:hover img{transform:scale(1.03);filter:grayscale(0)}
-  .g-cap{position:absolute;inset:auto 0 0 0;padding:16px;font-size:11px;text-transform:uppercase;letter-spacing:0.14em;color:#fff;text-align:left;background:linear-gradient(to top,rgba(0,0,0,.7),transparent);opacity:0;transition:opacity .3s;pointer-events:none}
-  .g-tile:hover .g-cap{opacity:1}
+  /* Skills, education, contact rows */
+  .rows{margin-inline:0;margin-bottom:0;display:grid}
+  .row{display:grid;gap:2px 32px;padding-block:14px;border-bottom:1px solid var(--line)}
+  .row:first-child{padding-top:0}
+  @media(min-width:640px){.row{grid-template-columns:150px 1fr auto}}
+  .row dt,.row .k{font-weight:600}
+  .row dd{margin:0}
+  .row .when{color:var(--muted);font-size:15px;font-variant-numeric:tabular-nums}
+  .row .sub{color:var(--muted);font-size:15px}
 
-  /* Lightbox */
-  .lb{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.95);display:none;align-items:center;justify-content:center;padding:16px}
-  .lb.open{display:flex}
-  .lb-figure{max-width:1152px;max-height:100%;display:flex;flex-direction:column;gap:16px;align-items:center}
-  .lb img{max-height:78vh;max-width:100%;width:auto;object-fit:contain}
-  .lb-cap{width:100%;display:flex;justify-content:space-between;gap:24px;font-size:11px;text-transform:uppercase;letter-spacing:0.14em;color:rgba(255,255,255,.8)}
-  .lb-btn{position:absolute;display:flex;align-items:center;justify-content:center;background:transparent;color:#fff;border:1px solid rgba(255,255,255,.3);border-radius:2px;cursor:pointer;font-family:inherit;transition:background .2s,color .2s}
-  .lb-btn:hover{background:#fff;color:#000}
-  .lb-close{top:16px;right:16px;width:40px;height:40px;font-size:16px}
-  .lb-prev,.lb-next{top:50%;transform:translateY(-50%);width:48px;height:48px;font-size:20px}
-  .lb-prev{left:16px}
-  .lb-next{right:16px}
-  @media(min-width:640px){.lb-prev{left:32px}.lb-next{right:32px}}
-
-  /* Achievements */
-  .ach{list-style:none;padding:0;margin:16px 0 0}
-  .ach li{display:grid;gap:16px;border-bottom:1px solid var(--border);padding:32px 0}
-  @media(min-width:768px){.ach li{grid-template-columns:repeat(12,1fr);align-items:baseline}}
-  .ach-year{font-family:"Fraunces",serif;letter-spacing:-0.02em;font-size:24px;}
-  @media(min-width:768px){.ach-year{font-size:28px;grid-column:span 2}.ach-title{grid-column:span 6}.ach-org{grid-column:span 4}}
-  .ach-title{font-size:17px}
-  .ach-org{font-size:13px;color:var(--muted)}
-
-  /* Education */
-  .edu{display:grid;gap:40px;padding-top:40px}
-  @media(min-width:768px){.edu{grid-template-columns:repeat(2,1fr)}}
-  .edu-item{border-top:1px solid var(--fg);padding-top:24px}
-  .edu-item h3{margin:12px 0 0;font-family:"Fraunces",serif;letter-spacing:-0.02em;font-size:22px}
-  .edu-item .degree{margin:4px 0 0;font-size:13px;color:var(--muted)}
-  .edu-item ul{margin-top:16px}
+  /* Photos */
+  .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:20px 12px}
+  @media(min-width:800px){.gallery{grid-template-columns:repeat(3,1fr);gap:28px 20px}}
+  .g-item{margin:0;min-width:0}
+  .g-tile{display:block;width:100%;aspect-ratio:4/3;padding:0;border:none;border-radius:4px;overflow:hidden;background:var(--line);cursor:zoom-in}
+  .g-tile img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+  .g-tile:hover img{transform:scale(1.03)}
+  .g-item figcaption{margin-top:8px;font-size:15px;color:var(--muted);line-height:1.4}
 
   /* Contact */
-  .contact{border-top:1px solid var(--border);padding:80px 0 128px}
-  .contact h2{margin:24px 0 0;font-family:"Fraunces",serif;letter-spacing:-0.02em;font-size:34px;line-height:1.15}
-  @media(min-width:640px){.contact h2{font-size:44px}}
-  @media(min-width:768px){.contact h2{font-size:52px}}
-  .contact h2 em{font-style:italic;color:var(--muted)}
-  .contact-lead{max-width:576px;margin-top:24px;font-size:16px;color:var(--muted)}
-  @media(min-width:640px){.contact-lead{font-size:18px}}
-  .contact-cards{display:grid;gap:1px;background:var(--border);border:1px solid var(--border);overflow:hidden;margin-top:48px}
-  @media(min-width:640px){.contact-cards{grid-template-columns:repeat(3,1fr)}}
-  .contact-card{background:var(--card);padding:32px;display:block;transition:background .2s,color .2s}
-  .contact-card:hover{background:var(--fg);color:var(--bg)}
-  .contact-card .lbl{font-size:11px;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted)}
-  .contact-card:hover .lbl{color:rgba(250,250,250,.7)}
-  .contact-card .val{margin:12px 0 24px;font-family:"Fraunces",serif;letter-spacing:-0.02em;font-size:20px}
-  .contact-card .arr{font-size:11px;text-transform:uppercase;letter-spacing:0.14em}
+  .contact-rows a{color:var(--leaf);text-decoration:underline;text-underline-offset:3px;word-break:break-word}
+  .contact .btn{margin-top:28px}
+
+  /* Lightbox */
+  .lb{position:fixed;inset:0;z-index:50;background:rgba(10,14,11,.95);display:none;align-items:center;justify-content:center;padding:16px}
+  .lb.open{display:flex}
+  .lb-figure{max-width:1100px;max-height:100%;display:flex;flex-direction:column;gap:14px;align-items:center;margin:0}
+  .lb img{max-height:78vh;max-width:100%;width:auto;object-fit:contain}
+  .lb-cap{width:100%;display:flex;justify-content:space-between;gap:24px;font-size:15px;color:rgba(255,255,255,.85)}
+  .lb-btn{position:absolute;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.3);border-radius:4px;cursor:pointer}
+  .lb-btn:hover{background:#fff;color:var(--ink)}
+  .lb-btn svg{width:18px;height:18px}
+  .lb-close{top:16px;right:16px;width:40px;height:40px}
+  .lb-prev,.lb-next{top:50%;transform:translateY(-50%);width:44px;height:44px}
+  .lb-prev{left:12px}
+  .lb-next{right:12px}
 
   /* Footer */
-  footer{border-top:1px solid var(--border)}
-  .foot{display:flex;flex-direction:column;gap:16px;align-items:flex-start;padding:40px 0;font-size:11px;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted)}
-  @media(min-width:640px){.foot{flex-direction:row;align-items:center;justify-content:space-between}}
-  .foot a:hover{color:var(--fg)}
+  footer{border-top:1px solid var(--line)}
+  .foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-block:28px;font-size:15px;color:var(--muted)}
+  .foot a{text-decoration:none}
+  .foot a:hover{color:var(--ink)}
 </style>
 </head>
 <body id="top">
@@ -258,404 +179,232 @@
 <header>
   <div class="container nav">
     <a href="#top" class="brand">Ahmad Fajri</a>
-    <nav class="nav-links">
-      <a href="#about">About</a>
+    <nav class="nav-links" aria-label="Sections">
       <a href="#work">Work</a>
       <a href="#content">Content</a>
       <a href="#experience">Experience</a>
-      <a href="#gallery">Gallery</a>
+      <a href="#photos">Photos</a>
       <a href="#contact">Contact</a>
     </nav>
-    <a href="resume.pdf" download="CV_Ahmad_Fajri.pdf" class="btn btn-outline btn-sm header-cta">Download CV</a>
+    <a href="resume.pdf" download="CV_Ahmad_Fajri.pdf" class="btn btn-line btn-sm header-cta">Download CV</a>
     <button type="button" class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
-      <svg class="i-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
-      <svg class="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      <svg class="i-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+      <svg class="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
     </button>
   </div>
-  <nav class="container mobile-menu" id="mobileMenu" aria-label="Mobile">
-    <a href="#about">About</a>
+  <nav class="container mobile-menu" id="mobileMenu" aria-label="Sections">
     <a href="#work">Work</a>
     <a href="#content">Content</a>
     <a href="#experience">Experience</a>
-    <a href="#gallery">Gallery</a>
+    <a href="#photos">Photos</a>
     <a href="#contact">Contact</a>
-    <a href="resume.pdf" download="CV_Ahmad_Fajri.pdf" class="btn btn-solid">Download CV <span aria-hidden="true">↓</span></a>
+    <a href="resume.pdf" download="CV_Ahmad_Fajri.pdf" class="btn btn-solid">Download CV</a>
   </nav>
 </header>
 
 <main class="container">
 
-  <!-- Hero -->
   <section class="hero">
     <div class="hero-grid">
       <div>
-        <p class="kicker">Social Media &amp; Event</p>
-        <h1 class="display">Events on the ground,<br />stories <em>online.</em></h1>
-        <p>I&rsquo;m Ahmad Fajri, a Physics student at IPB University. I coordinate community events from concept to on-ground execution, and I create the social media content that brings people to them.</p>
+        <p class="hero-roles">Event Coordinator · Social Media Officer</p>
+        <h1>Ahmad Fajri</h1>
+        <p class="hero-lead">I coordinate community events and run Instagram for a volunteer education movement.</p>
+        <p class="hero-sub">Physics student at IPB University in Bogor. I&rsquo;m looking for a Social Media or Event internship and can start now.</p>
         <div class="hero-ctas">
-          <a href="#work" class="btn btn-solid">See my work <span aria-hidden="true">→</span></a>
-          <a href="resume.pdf" download="CV_Ahmad_Fajri.pdf" class="btn btn-outline">Download CV <span aria-hidden="true">↓</span></a>
+          <a href="#work" class="btn btn-solid">See my work</a>
+          <a href="resume.pdf" download="CV_Ahmad_Fajri.pdf" class="btn btn-line">Download CV</a>
         </div>
-        <dl class="stats">
-          <div class="stat"><dt class="display">100+</dt><dd>Participants led</dd></div>
-          <div class="stat"><dt class="display">6+</dt><dd>Programs & events</dd></div>
-          <div class="stat"><dt class="display">84.4K</dt><dd>IG views / 30 days</dd></div>
-          <div class="stat"><dt class="display">IPB</dt><dd>Physics, class of '28</dd></div>
-        </dl>
       </div>
       <div class="hero-photo">
-        <img src="img/profile.webp" alt="Portrait of Ahmad Fajri" width="566" height="931" fetchpriority="high" />
+        <img src="img/profile.webp" alt="Ahmad Fajri" width="566" height="931" fetchpriority="high" />
       </div>
     </div>
+    <dl class="stats">
+      <div class="stat"><dt>100+</dt><dd>participants in the Kita Bahagia program I lead</dd></div>
+      <div class="stat"><dt>84.4K</dt><dd>Instagram views in 30 days on the GPB account I run</dd></div>
+      <div class="stat"><dt>1.8K</dt><dd>views on a single GPB reel</dd></div>
+    </dl>
   </section>
 
-  <!-- About -->
-  <section id="about">
-    <div class="section-head">
-      <p class="kicker">01 — About</p>
-      <h2 class="display">I run the event, then tell its story.</h2>
-    </div>
-    <div class="about-grid">
-      <div class="about-meta">
-        <p class="kicker kicker-tight">Currently</p>
-        <p style="margin:8px 0 0;font-size:14px">Bogor, Indonesia</p>
-
-      </div>
-      <div class="about-body">
-        <p>I&rsquo;m a Physics undergraduate at IPB University. Alongside coursework, I lead community events as an Event Coordinator at Kita Bahagia and run social media as a Social Media Officer at Gerakan Pendidikan Berdampak.</p>
-        <p>The two jobs feed each other: a well-run event gives me stories worth posting, and good content brings the right people to the next event. My analytical background keeps both grounded in planning and numbers, not guesswork.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Selected work -->
   <section id="work">
-    <div class="section-head">
-      <p class="kicker">02 — Selected Work</p>
-      <h2 class="display">Two projects, two sides of the job.</h2>
-    </div>
-    <div class="cases">
+    <h2 class="sec-title">Work</h2>
+    <div class="sec-body cases">
       <article class="case">
-        <div>
-          <p class="kicker kicker-tight">Case study · Event</p>
-          <h3>Leading a community program at Kita Bahagia</h3>
-        </div>
-        <dl class="case-meta">
-          <div><dt>Role</dt><dd>Event Coordinator</dd></div>
-          <div><dt>When</dt><dd>Feb 2026 — now</dd></div>
-          <div><dt>Scale</dt><dd>100+ participants</dd></div>
-        </dl>
-        <div class="case-block">
-          <h4>What I did</h4>
-          <ul class="bullets">
-            <li>Led the project from concept through execution as Project Leader</li>
-            <li>Designed the program structure and event concept</li>
-            <li>Prepared the budget plan (RAB) and allocated resources for operations</li>
-            <li>Coordinated third-party vendors and partners for smooth execution</li>
-          </ul>
-        </div>
-        <div class="case-result">
-          <p>100+ participants, taken from first concept to on-ground execution.</p>
-        </div>
+        <p class="case-tag">Event</p>
+        <h3>Leading a community program at Kita Bahagia</h3>
+        <p class="case-meta">Event Coordinator · Jakarta · Feb 2026 to now</p>
+        <ul class="list">
+          <li>Lead the program for 100+ participants as Project Leader</li>
+          <li>Designed the program structure and the event concept</li>
+          <li>Wrote the budget plan (RAB) and allocated resources</li>
+          <li>Coordinate third-party vendors and partners</li>
+        </ul>
       </article>
       <article class="case">
-        <div>
-          <p class="kicker kicker-tight">Case study · Social media</p>
-          <h3>Running Instagram for Gerakan Pendidikan Berdampak</h3>
-        </div>
-        <dl class="case-meta">
-          <div><dt>Role</dt><dd>Social Media Officer</dd></div>
-          <div><dt>When</dt><dd>Apr 2026 — now</dd></div>
-          <div><dt>Platform</dt><dd>Instagram</dd></div>
-        </dl>
-        <div class="case-block">
-          <h4>The brief</h4>
-          <p>GPB is a volunteer movement for children&rsquo;s literacy and character education. The account has two jobs: recruit volunteers for every new batch, and show the impact of each program.</p>
-        </div>
-        <div class="case-block">
-          <h4>What I did</h4>
-          <ul class="bullets">
-            <li>Developed and executed the content strategy</li>
-            <li>Planned and scheduled posts to keep the feed active and improve reach</li>
-            <li>Mixed formats: volunteer-call flyers, program-report carousels, recap reels, soft-news posts, and national-day greetings</li>
-          </ul>
-        </div>
-        <div class="case-result">
-          <p>84.4K views in the last 30 days · 683 followers · Reels reaching up to 1.8K views each</p>
-        </div>
+        <p class="case-tag">Social media</p>
+        <h3>Running Instagram for Gerakan Pendidikan Berdampak</h3>
+        <p class="case-meta">Social Media Officer · South Tangerang · Apr 2026 to now</p>
+        <p>GPB runs literacy and character programs for children with volunteers. The account recruits volunteers for each batch and reports on each program.</p>
+        <ul class="list">
+          <li>Plan the content and the posting schedule</li>
+          <li>Run the feed: volunteer-call flyers, program-report carousels, recap reels and quote posts</li>
+        </ul>
+        <p class="case-result">84.4K views in 30 days · 683 followers · reels up to 1.8K views each</p>
       </article>
     </div>
   </section>
 
-  <!-- Content samples -->
   <section id="content">
-    <div class="section-head">
-      <p class="kicker">03 — Content</p>
-      <h2 class="display">Content I&rsquo;ve made and managed.</h2>
-    </div>
-    <div class="samples">
+    <h2 class="sec-title">Content</h2>
+    <p class="sec-lead">Posts and reels from <a href="https://www.instagram.com/gerakanpendidikanberdampak/" target="_blank" rel="noreferrer">@gerakanpendidikanberdampak</a>, the account I run at GPB.</p>
+    <div class="sec-body samples">
       <figure class="sample">
-        <div class="sample-media filled">
-          <video controls muted playsinline preload="none" poster="img/content/recap-reel-poster.webp" aria-label="Volunteer program recap reel">
+        <div class="sample-media reel" id="reel">
+          <video preload="none" playsinline poster="img/content/recap-reel-poster.webp" aria-label="Recap reel from a GPB volunteer program">
             <source src="img/content/recap-reel.mp4" type="video/mp4" />
             <source src="img/content/recap-reel.webm" type="video/webm" />
           </video>
+          <button type="button" class="play" id="reelPlay" aria-label="Play recap reel"><span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4l13 8-13 8z"/></svg>Play reel</span></button>
         </div>
-        <figcaption><span class="fmt">Reels · Event recap</span>Volunteer program recap, &ldquo;smiles that speak volumes&rdquo;</figcaption>
+        <figcaption><span class="fmt">Reel</span>Recap of a volunteer program day</figcaption>
       </figure>
       <figure class="sample">
-        <button type="button" class="sample-media" data-content="0" aria-label="Open image: Feed · Flyer">
-          <img src="img/content/volunteer-call-thumb.webp" alt="Volunteer recruitment flyer for Batch 3, Jejak di Balik Buku" loading="lazy" />
+        <button type="button" class="sample-media" data-content="0" aria-label="Open volunteer-call flyer">
+          <img src="img/content/volunteer-call-thumb.webp" alt="Volunteer-call flyer for GPB Batch 3, Jejak di Balik Buku" loading="lazy" />
         </button>
-        <figcaption><span class="fmt">Feed · Flyer</span>Volunteer recruitment flyer for Batch 3, &ldquo;Jejak di Balik Buku&rdquo;</figcaption>
+        <figcaption><span class="fmt">Flyer</span>Volunteer call for Batch 3, &ldquo;Jejak di Balik Buku&rdquo;</figcaption>
       </figure>
       <figure class="sample">
-        <button type="button" class="sample-media" data-content="1" aria-label="Open image: Carousel · Program report">
-          <img src="img/content/batch2-report-thumb.webp" alt="Batch 2 report, Story Makers: Setiap Anak Punya Cerita" loading="lazy" />
+        <button type="button" class="sample-media" data-content="1" aria-label="Open Batch 2 report carousel">
+          <img src="img/content/batch2-report-thumb.webp" alt="Batch 2 program report, Story Makers" loading="lazy" />
         </button>
-        <figcaption><span class="fmt">Carousel · Program report</span>Batch 2 report, &ldquo;Story Makers: Setiap Anak Punya Cerita&rdquo;</figcaption>
+        <figcaption><span class="fmt">Carousel</span>Batch 2 report, &ldquo;Story Makers: Setiap Anak Punya Cerita&rdquo;</figcaption>
       </figure>
       <figure class="sample">
-        <button type="button" class="sample-media" data-content="2" aria-label="Open image: Feed · Soft news">
-          <img src="img/content/soft-news-thumb.webp" alt="Quote post inviting people to support childrens growth" loading="lazy" />
+        <button type="button" class="sample-media" data-content="2" aria-label="Open quote post">
+          <img src="img/content/soft-news-thumb.webp" alt="Quote post about supporting children" loading="lazy" />
         </button>
-        <figcaption><span class="fmt">Feed · Soft news</span>Quote post inviting people to support children&rsquo;s growth</figcaption>
+        <figcaption><span class="fmt">Quote post</span>Invitation to support children&rsquo;s growth</figcaption>
       </figure>
       <figure class="sample">
-        <button type="button" class="sample-media top" data-content="3" aria-label="Open image: Instagram feed">
-          <img src="img/content/feed-grid-thumb.webp" alt="Reels on the account reaching up to 1.8K views each" loading="lazy" />
+        <button type="button" class="sample-media top" data-content="3" aria-label="Open feed screenshot">
+          <img src="img/content/feed-grid-thumb.webp" alt="GPB Instagram feed with reel view counts" loading="lazy" />
         </button>
-        <figcaption><span class="fmt">Instagram feed</span>Reels on the account reaching up to 1.8K views each</figcaption>
+        <figcaption><span class="fmt">Feed</span>Reels reaching up to 1.8K views each</figcaption>
       </figure>
       <figure class="sample">
-        <button type="button" class="sample-media top" data-content="4" aria-label="Open image: Account overview">
-          <img src="img/content/profile-thumb.webp" alt="683 followers · 84.4K views in the last 30 days" loading="lazy" />
+        <button type="button" class="sample-media top" data-content="4" aria-label="Open account overview screenshot">
+          <img src="img/content/profile-thumb.webp" alt="GPB Instagram profile with 683 followers" loading="lazy" />
         </button>
-        <figcaption><span class="fmt">Account overview</span>683 followers · 84.4K views in the last 30 days</figcaption>
+        <figcaption><span class="fmt">Account</span>683 followers, 84.4K views in 30 days</figcaption>
       </figure>
-    </div>
-    <p class="samples-note">Created and managed for <a href="https://www.instagram.com/gerakanpendidikanberdampak/" target="_blank" rel="noreferrer" style="text-decoration:underline;text-underline-offset:3px">@gerakanpendidikanberdampak</a> as Social Media Officer at Gerakan Pendidikan Berdampak.</p>
-  </section>
-
-  <!-- Competencies -->
-  <section id="competencies">
-    <div class="section-head">
-      <p class="kicker">04 — Competencies</p>
-      <h2 class="display">What I bring to a team.</h2>
-    </div>
-    <div class="grid-cards" style="margin-top:40px">
-      <div class="card">
-        <h3>Event Management</h3>
-        <ul class="bullets">
-          <li>End-to-end event planning &amp; execution</li>
-          <li>Event concept &amp; program design</li>
-          <li>Budgeting and resource allocation (RAB)</li>
-          <li>Vendor &amp; partner coordination</li>
-          <li>On-ground logistics for 100+ participants</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Social Media &amp; Content</h3>
-        <ul class="bullets">
-          <li>Content strategy &amp; planning</li>
-          <li>Content calendar &amp; scheduling</li>
-          <li>Short-form video editing</li>
-          <li>Event documentation &amp; recaps</li>
-          <li>Community engagement</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Tools</h3>
-        <ul class="bullets">
-          <li>Canva</li>
-          <li>CapCut &amp; Adobe Premiere</li>
-          <li>Google Workspace</li>
-          <li>Microsoft Office</li>
-          <li>Python (basic)</li>
-        </ul>
-      </div>
     </div>
   </section>
 
-  <!-- Experience -->
   <section id="experience">
-    <div class="section-head">
-      <p class="kicker">05 — Experience</p>
-      <h2 class="display">Selected organizational & event work.</h2>
-    </div>
-
-    <div class="timeline">
-      <div class="tl-item">
-        <div class="tl-date">APR 2026 —<br>PRESENT</div>
+    <h2 class="sec-title">Experience</h2>
+    <div class="sec-body jobs">
+      <div class="job">
+        <p class="job-when">Apr 2026 – now</p>
         <div>
-          <p class="tl-role">Social Media Officer</p>
-          <p class="tl-org">Gerakan Pendidikan Berdampak <span class="dot">·</span> South Tangerang, Indonesia</p>
-          <ul class="tl-bullets">
-            <li>Develop and execute the Instagram content strategy for a volunteer education movement</li>
-            <li>Plan and schedule posts across formats: volunteer-call flyers, program-report carousels, recap reels, and soft-news posts</li>
-            <li>Account reached 84.4K views in 30 days with 683 followers</li>
-          </ul>
+          <h3>Social Media Officer</h3>
+          <p class="job-org">Gerakan Pendidikan Berdampak, South Tangerang</p>
+          <p class="desc">Run the Instagram account: content plan, posting schedule, flyers, carousels and reels. 84.4K views in 30 days.</p>
         </div>
       </div>
-
-      <div class="tl-item">
-        <div class="tl-date">FEB 2026 —<br>PRESENT</div>
+      <div class="job">
+        <p class="job-when">Feb 2026 – now</p>
         <div>
-          <p class="tl-role">Event Coordinator</p>
-          <p class="tl-org">Kita Bahagia <span class="dot">·</span> Jakarta, Indonesia</p>
-          <ul class="tl-bullets">
-            <li>Served as Project Leader for a community program with 100+ participants, overseeing planning through execution</li>
-            <li>Designed program structure and event concepts aligned with community objectives</li>
-            <li>Prepared budget plans (RAB) and managed resource allocation for operations</li>
-            <li>Coordinated with third‑party vendors and partners for smooth execution</li>
-          </ul>
+          <h3>Event Coordinator</h3>
+          <p class="job-org">Kita Bahagia, Jakarta</p>
+          <p class="desc">Lead a community program for 100+ participants: concept, budget (RAB), vendors and partners.</p>
         </div>
       </div>
-
-      <div class="tl-item">
-        <div class="tl-date">MAR 2026 —<br>JUN 2026</div>
+      <div class="job">
+        <p class="job-when">Mar – Jun 2026</p>
         <div>
-          <p class="tl-role">Event Staff</p>
-          <p class="tl-org">POSF 2026 <span class="dot">·</span> Bogor, Indonesia</p>
-          <ul class="tl-bullets">
-            <li>Supported organization of a sports &amp; arts festival for IPB physics students</li>
-            <li>Assisted with on‑ground logistics and coordination during competition days</li>
-          </ul>
+          <h3>Event Staff</h3>
+          <p class="job-org">POSF 2026, IPB Physics sports and arts festival, Bogor</p>
+          <p class="desc">Handled logistics and coordination on competition days.</p>
         </div>
       </div>
-
-      <div class="tl-item">
-        <div class="tl-date">DEC 2025 —<br>JAN 2026</div>
+      <div class="job">
+        <p class="job-when">Dec 2025 – Jan 2026</p>
         <div>
-          <p class="tl-role">Volunteer Teacher</p>
-          <p class="tl-org">Gerakan Mengajar Desa <span class="dot">·</span> Bogor, Indonesia</p>
-          <ul class="tl-bullets">
-            <li>Supported elementary education and foundational learning development in a village community</li>
-          </ul>
+          <h3>Volunteer Teacher</h3>
+          <p class="job-org">Gerakan Mengajar Desa, Bogor</p>
+          <p class="desc">Taught elementary students in a village community.</p>
         </div>
       </div>
-
-      <div class="tl-item">
-        <div class="tl-date">OCT 2025 —<br>NOV 2025</div>
+      <div class="job">
+        <p class="job-when">Oct – Nov 2025</p>
         <div>
-          <p class="tl-role">Mentoring Staff</p>
-          <p class="tl-org">Physics Gathering <span class="dot">·</span> Bogor, Indonesia</p>
-          <ul class="tl-bullets">
-            <li>Facilitated bonding activities between Physics Class of 61 and Class of 62</li>
-            <li>Introduced incoming students to the department through mentoring sessions</li>
-          </ul>
+          <h3>Mentoring Staff</h3>
+          <p class="job-org">Physics Gathering, Bogor</p>
+          <p class="desc">Ran bonding activities between Physics Class of 61 and 62 and mentored incoming students.</p>
         </div>
       </div>
-
-      <div class="tl-item">
-        <div class="tl-date">2025</div>
+      <div class="job">
+        <p class="job-when">2025</p>
         <div>
-          <p class="tl-role">Volunteer</p>
-          <p class="tl-org">Social &amp; educational programs <span class="dot">·</span> Indonesia</p>
-          <ul class="tl-bullets">
-            <li>Took part in orphanage teaching, educational trips, and environmental conservation projects</li>
-            <li>Contributed to logistics, teaching assistance, and community engagement</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-date">AUG 2022 —<br>AUG 2023</div>
-        <div>
-          <p class="tl-role">Staff</p>
-          <p class="tl-org">Rohani Islam <span class="dot">·</span> Medan, Indonesia</p>
-          <ul class="tl-bullets">
-            <li>Supported religious program activities within the school community organization</li>
-          </ul>
+          <h3>Volunteer</h3>
+          <p class="job-org">Social and educational programs</p>
+          <p class="desc">Orphanage teaching, educational trips and environmental conservation.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Gallery -->
-  <section id="gallery">
-    <div class="section-head">
-      <p class="kicker">06 — Gallery</p>
-      <h2 class="display">Documentation from the field.</h2>
-    </div>
-    <div class="gallery" id="galleryGrid"></div>
+  <section id="skills">
+    <h2 class="sec-title">Skills</h2>
+    <dl class="sec-body rows">
+      <div class="row"><dt>Events</dt><dd>Event concept and program design, budgeting (RAB), vendor and partner coordination, on-ground logistics</dd></div>
+      <div class="row"><dt>Social media</dt><dd>Content planning, posting schedule, short-form video editing, graphic design, event documentation</dd></div>
+      <div class="row"><dt>Tools</dt><dd>Canva, CapCut, Adobe Premiere, Google Workspace, Microsoft Office, Python (basic)</dd></div>
+    </dl>
   </section>
 
-  <!-- Achievements -->
-  <section id="achievements">
-    <div class="section-head">
-      <p class="kicker">07 — Achievements</p>
-      <h2 class="display">Recognition & selected wins.</h2>
-    </div>
-    <ul class="ach">
-      <li><span class="ach-year">2025</span><h3 class="ach-title" style="margin:0;font-weight:400">Finalist — Paper Competition</h3><p class="ach-org" style="margin:0">PRESENT X TAZKIA JUARA</p></li>
-      <li><span class="ach-year">2023</span><h3 class="ach-title" style="margin:0;font-weight:400">Winner — Mobile Legends Bang Bang Competition</h3><p class="ach-org" style="margin:0">Festival Pelajar Nusantara by RRI Medan</p></li>
-    </ul>
+  <section id="photos">
+    <h2 class="sec-title">Photos</h2>
+    <p class="sec-lead">From the community programs and volunteer work I&rsquo;ve taken part in.</p>
+    <div class="sec-body gallery" id="galleryGrid"></div>
   </section>
 
-  <!-- Education -->
   <section id="education">
-    <div class="section-head">
-      <p class="kicker">08 — Education</p>
-      <h2 class="display">Academic foundation.</h2>
-    </div>
-    <div class="edu">
-      <div class="edu-item">
-        <p class="kicker kicker-tight">Aug 2024 — Aug 2028 (Expected)</p>
-        <h3>IPB University</h3>
-        <p class="degree">Undergraduate, Physics</p>
-        <ul class="bullets">
-          <li>Participated in two event committees</li>
-          <li>Finalist in a Paper Competition</li>
-        </ul>
-      </div>
-      <div class="edu-item">
-        <p class="kicker kicker-tight">Jul 2021 — Jul 2024</p>
-        <h3>SMAS Kartika I-2 Medan</h3>
-        <p class="degree">Senior High School — 91.30 / 100.00</p>
-        <ul class="bullets">
-          <li>Staff of Rohani Islam (2022–2023)</li>
-        </ul>
-      </div>
+    <h2 class="sec-title">Education and awards</h2>
+    <div class="sec-body rows">
+      <div class="row"><p class="k">Education</p><div><p>IPB University (Institut Pertanian Bogor)</p><p class="sub">Undergraduate, Physics</p></div><p class="when">2024 – 2028 (expected)</p></div>
+      <div class="row"><p class="k">Education</p><div><p>SMAS Kartika I-2 Medan</p><p class="sub">Senior high school, final score 91.30/100</p></div><p class="when">2021 – 2024</p></div>
+      <div class="row"><p class="k">Award</p><div><p>Finalist, Paper Competition</p><p class="sub">PRESENT X TAZKIA JUARA</p></div><p class="when">2025</p></div>
+      <div class="row"><p class="k">Award</p><div><p>Winner, Mobile Legends: Bang Bang Competition</p><p class="sub">Festival Pelajar Nusantara by RRI Medan</p></div><p class="when">2023</p></div>
     </div>
   </section>
 
-  <!-- Contact -->
   <section id="contact" class="contact">
-    <p class="kicker">09 — Contact</p>
-    <h2>Looking for an intern who can<br /><em>run the event and post about it?</em></h2>
-    <p class="contact-lead">I&rsquo;m open to Social Media and Event internships, and I can start immediately. The fastest way to reach me is email or WhatsApp.</p>
-    <div class="contact-cards">
-      <a class="contact-card" href="mailto:ahmadfajri2211@gmail.com">
-        <p class="lbl">Email</p><p class="val">ahmadfajri2211@gmail.com</p><p class="arr">Reach out →</p>
-      </a>
-      <a class="contact-card" href="https://wa.me/6282362330813">
-        <p class="lbl">WhatsApp</p><p class="val">+62 823-6233-0813</p><p class="arr">Reach out →</p>
-      </a>
-      <a class="contact-card" href="https://www.linkedin.com/in/ahmad-fajri-43b877323" target="_blank" rel="noreferrer">
-        <p class="lbl">LinkedIn</p><p class="val">ahmad-fajri</p><p class="arr">Reach out →</p>
-      </a>
-    </div>
-    <div style="margin-top:40px">
-      <a href="resume.pdf" download="CV_Ahmad_Fajri.pdf" class="btn btn-solid">Download CV (PDF) <span aria-hidden="true">↓</span></a>
-    </div>
+    <h2 class="sec-title">Contact</h2>
+    <p class="sec-lead">I&rsquo;m looking for a Social Media or Event internship and can start now. Email or WhatsApp reaches me fastest.</p>
+    <dl class="sec-body rows contact-rows">
+      <div class="row"><dt>Email</dt><dd><a href="mailto:ahmadfajri2211@gmail.com">ahmadfajri2211@gmail.com</a></dd></div>
+      <div class="row"><dt>WhatsApp</dt><dd><a href="https://wa.me/6282362330813">+62 823-6233-0813</a></dd></div>
+      <div class="row"><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/ahmad-fajri-43b877323" target="_blank" rel="noreferrer">linkedin.com/in/ahmad-fajri-43b877323</a></dd></div>
+    </dl>
+    <a href="resume.pdf" download="CV_Ahmad_Fajri.pdf" class="btn btn-solid">Download CV (PDF)</a>
   </section>
 
 </main>
 
 <footer>
   <div class="container foot">
-    <p>© 2026 Ahmad Fajri</p>
-    <p>Bogor · Indonesia</p>
-    <a href="#top">Back to top ↑</a>
+    <p>© 2026 Ahmad Fajri, Bogor</p>
+    <a href="#top">Back to top</a>
   </div>
 </footer>
 
-<!-- Lightbox -->
 <div class="lb" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
-  <button class="lb-btn lb-close" id="lbClose" aria-label="Close">✕</button>
-  <button class="lb-btn lb-prev" id="lbPrev" aria-label="Previous image">←</button>
-  <button class="lb-btn lb-next" id="lbNext" aria-label="Next image">→</button>
+  <button class="lb-btn lb-close" id="lbClose" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <button class="lb-btn lb-prev" id="lbPrev" aria-label="Previous image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+  <button class="lb-btn lb-next" id="lbNext" aria-label="Next image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
   <figure class="lb-figure" id="lbFigure">
     <img id="lbImg" alt="" />
     <figcaption class="lb-cap"><span id="lbCap"></span><span id="lbCount"></span></figcaption>
@@ -664,20 +413,20 @@
 
 <script>
   const gallery = [
-    { src: "img/gallery/dsc02453", caption: "outdoor session, full team & participants" },
-    { src: "img/gallery/dsc04231", caption: "coordinate the program with participants" },
-    { src: "img/gallery/dsc04303", caption: "full program cohort, closing session" },
-    { src: "img/gallery/dscn0195", caption: "program team and participants" },
-    { src: "img/gallery/dscn0046", caption: "monitor the progress of the activities" },
-    { src: "img/gallery/img0452", caption: "carry out a teaching program at an elementary school" },
+    { src: "img/gallery/dsc02453", caption: "Outdoor session with the team and participants" },
+    { src: "img/gallery/dsc04231", caption: "Working with participants during the program" },
+    { src: "img/gallery/dsc04303", caption: "Closing session with the full cohort" },
+    { src: "img/gallery/dscn0195", caption: "Program team and participants" },
+    { src: "img/gallery/dscn0046", caption: "Checking on activities in progress" },
+    { src: "img/gallery/img0452", caption: "Teaching at an elementary school" },
   ];
 
   const contentItems = [
-    { src: "img/content/volunteer-call.webp", caption: "Volunteer recruitment flyer for Batch 3, Jejak di Balik Buku" },
+    { src: "img/content/volunteer-call.webp", caption: "Volunteer call for Batch 3, Jejak di Balik Buku" },
     { src: "img/content/batch2-report.webp", caption: "Batch 2 report, Story Makers: Setiap Anak Punya Cerita" },
-    { src: "img/content/soft-news.webp", caption: "Quote post inviting people to support childrens growth" },
-    { src: "img/content/feed-grid.webp", caption: "Reels on the account reaching up to 1.8K views each" },
-    { src: "img/content/profile.webp", caption: "683 followers · 84.4K views in the last 30 days" }
+    { src: "img/content/soft-news.webp", caption: "Quote post: invitation to support children's growth" },
+    { src: "img/content/feed-grid.webp", caption: "GPB feed, reels reaching up to 1.8K views each" },
+    { src: "img/content/profile.webp", caption: "GPB account: 683 followers, 84.4K views in 30 days" },
   ];
 
   const header = document.querySelector("header");
@@ -690,15 +439,33 @@
   menuToggle.addEventListener("click", () => setMenu(!header.classList.contains("menu-open")));
   document.querySelectorAll("#mobileMenu a").forEach((a) => a.addEventListener("click", () => setMenu(false)));
 
+  // The reel shows a poster and a play button until someone starts it, then native controls take over
+  const reel = document.getElementById("reel");
+  const reelVideo = reel.querySelector("video");
+  document.getElementById("reelPlay").addEventListener("click", () => {
+    reel.classList.add("playing");
+    reelVideo.controls = true;
+    reelVideo.play();
+  });
+
   const grid = document.getElementById("galleryGrid");
   gallery.forEach((g, i) => {
+    const fig = document.createElement("figure");
+    fig.className = "g-item";
     const b = document.createElement("button");
     b.type = "button";
     b.className = "g-tile";
-    b.setAttribute("aria-label", "Open image: " + g.caption);
-    b.innerHTML = '<img src="' + g.src + '-thumb.webp" alt="' + g.caption + '" loading="lazy" /><span class="g-cap">' + g.caption + '</span>';
+    b.setAttribute("aria-label", "Open photo: " + g.caption);
+    const img = document.createElement("img");
+    img.src = g.src + "-thumb.webp";
+    img.alt = g.caption;
+    img.loading = "lazy";
+    b.appendChild(img);
     b.addEventListener("click", () => openLB(gallery, i));
-    grid.appendChild(b);
+    const cap = document.createElement("figcaption");
+    cap.textContent = g.caption;
+    fig.append(b, cap);
+    grid.appendChild(fig);
   });
 
   const lb = document.getElementById("lightbox");
@@ -708,6 +475,7 @@
   const lbFigure = document.getElementById("lbFigure");
   let list = gallery;
   let current = null;
+  let opener = null;
 
   document.querySelectorAll("[data-content]").forEach((b) =>
     b.addEventListener("click", () => openLB(contentItems, Number(b.dataset.content)))
@@ -718,19 +486,22 @@
     lbImg.src = list === gallery ? g.src + ".webp" : g.src;
     lbImg.alt = g.caption;
     lbCap.textContent = g.caption;
-    lbCount.textContent = String(current + 1).padStart(2, "0") + " / " + String(list.length).padStart(2, "0");
+    lbCount.textContent = current + 1 + " / " + list.length;
   }
   function openLB(items, i) {
+    opener = document.activeElement;
     list = items;
     current = i;
     render();
     lb.classList.add("open");
     document.body.style.overflow = "hidden";
+    document.getElementById("lbClose").focus();
   }
   function closeLB() {
     lb.classList.remove("open");
     document.body.style.overflow = "";
     current = null;
+    if (opener) opener.focus();
   }
   function prev() { if (current === null) return; current = (current - 1 + list.length) % list.length; render(); }
   function next() { if (current === null) return; current = (current + 1) % list.length; render(); }
