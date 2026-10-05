@@ -52,10 +52,11 @@ ROHIS = dict(
     bullets=["Supported religious program activities within the school community"],
 )
 
-SKILLS_SOCIAL = ("Social media &amp; content", "Content strategy &amp; planning, content calendar &amp; scheduling, short-form video editing, graphic design, event documentation")
+SKILLS_SOCIAL = ("Social media &amp; content", "Content strategy &amp; planning, content calendar &amp; scheduling, short-form video editing, graphic design, trend research, basic paid ads")
+SKILLS_PLATFORMS = ("Platforms", "Instagram Professional Dashboard (Insights), Meta Business Suite, Meta Ads Manager (basic), TikTok Studio, Google Trends")
 SKILLS_EVENT = ("Event management", "Event concept &amp; program design, budgeting (RAB), vendor &amp; partner coordination, on-ground logistics, timeline management")
 ACHIEVEMENTS = ("Achievements", "Finalist, Paper Competition by PRESENT X TAZKIA JUARA (2025); Winner, Mobile Legends: Bang Bang Competition at Festival Pelajar Nusantara by RRI Medan (2023)")
-SKILLS_TOOLS = ("Tools", "Canva, CapCut, Adobe Premiere, Google Workspace, Microsoft Office, Python (basic)")
+SKILLS_TOOLS = ("Tools", "Canva, CapCut, Adobe Premiere, Notion, Google Sheets &amp; Workspace, Microsoft Office, ChatGPT &amp; Claude, Python (basic)")
 SKILLS_SOFT = ("Soft skills", "Teamwork, cross-team communication, problem solving, adaptability")
 
 VARIANTS = {
@@ -69,7 +70,7 @@ VARIANTS = {
             "Looking for a Social Media internship and available to start immediately."
         ),
         exp=[GPB, KITA, POSF, GMD, PG, VOL],
-        skills=[SKILLS_SOCIAL, SKILLS_TOOLS, SKILLS_EVENT, ACHIEVEMENTS],
+        skills=[SKILLS_SOCIAL, SKILLS_PLATFORMS, SKILLS_TOOLS, SKILLS_EVENT, ACHIEVEMENTS],
     ),
     "event": dict(
         file="CV_Ahmad_Fajri_Event",
@@ -81,7 +82,7 @@ VARIANTS = {
             "so I can promote and document events, not just run them. Looking for an Event internship and available to start immediately."
         ),
         exp=[KITA, POSF, PG, GPB, GMD, VOL],
-        skills=[SKILLS_EVENT, SKILLS_SOCIAL, SKILLS_TOOLS, ACHIEVEMENTS],
+        skills=[SKILLS_EVENT, SKILLS_SOCIAL, SKILLS_PLATFORMS, SKILLS_TOOLS, ACHIEVEMENTS],
     ),
     "general": dict(
         file="CV_Ahmad_Fajri",
@@ -92,7 +93,7 @@ VARIANTS = {
             "(84.4K Instagram views in 30 days). Looking for Social Media and Event internships and available to start immediately."
         ),
         exp=[GPB, KITA, POSF, GMD, PG, VOL],
-        skills=[SKILLS_SOCIAL, SKILLS_EVENT, SKILLS_TOOLS, ACHIEVEMENTS],
+        skills=[SKILLS_SOCIAL, SKILLS_PLATFORMS, SKILLS_EVENT, SKILLS_TOOLS, ACHIEVEMENTS],
     ),
 }
 
