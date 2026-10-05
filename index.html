@@ -74,55 +74,29 @@
   .sec-lead{margin-top:10px;max-width:62ch;color:var(--muted)}
   .sec-body{margin-top:32px}
 
-  /* Hero: a full-width GPB green band. Text on the left, framed prints overlapping on the right (above the text on phones) */
-  .hero-band{background-color:var(--forest);color:var(--forest-text);
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cpath d='M0 120L60 40L140 90L160 30M60 40L100 0M140 90L120 160' stroke='%23e9ede9' stroke-opacity='.07' fill='none'/%3E%3C/svg%3E")}
-  .hero{border-top:none;padding-block:32px 40px}
-  @media(min-width:800px){.hero{padding-block:64px 56px}}
-  .hero-grid{display:grid;gap:32px}
-  @media(min-width:800px){.hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center}}
-  .hero-roles{font-weight:600;color:var(--sage)}
-  .hero h1{margin-top:6px;font-size:46px;font-weight:700;letter-spacing:-0.035em;line-height:1;color:var(--forest-text)}
-  @media(min-width:640px){.hero h1{font-size:64px}}
-  .hero-lead{margin-top:18px;max-width:30ch;font-size:21px;line-height:1.4;color:var(--forest-text)}
-  @media(min-width:640px){.hero-lead{font-size:24px}}
-  .hero-lead em{font-style:normal;color:var(--sun)}
-  .status{display:inline-flex;align-items:flex-start;gap:8px;margin-top:20px;padding:6px 14px 6px 10px;border:1px solid rgba(137,175,63,.6);border-radius:14px;font-size:15px;font-weight:600;line-height:1.4;color:var(--forest-text)}
-  .status::before{content:"";flex:none;margin-top:6px;width:8px;height:8px;border-radius:50%;background:var(--lime)}
-  .hero-sub{margin-top:12px;max-width:46ch;color:var(--forest-text);opacity:.85}
-  .hero-ctas{margin-top:24px;display:flex;flex-wrap:wrap;gap:12px}
-  .btn-sun{background:var(--sun);border-color:var(--sun);color:var(--forest)}
-  .btn-sun:hover{background:#fff;border-color:#fff}
-  .btn-ghost{background:transparent;border-color:rgba(233,237,233,.7);color:var(--forest-text)}
-  .btn-ghost:hover{border-color:#fff;color:#fff}
-  .hero :focus-visible{outline-color:var(--sun)}
+  /* Hero: the name set very large in forest green, with a round portrait sitting across the two lines. Centred, light ground */
+  .hero{border-top:none;padding-block:40px 48px;text-align:center}
+  @media(min-width:800px){.hero{padding-block:64px 64px}}
+  .hero-roles{font-weight:600;color:var(--leaf)}
+  .name{position:relative;margin:14px auto 0;width:fit-content;max-width:100%}
+  .hero h1{font-size:clamp(64px,19vw,184px);font-weight:700;letter-spacing:-0.045em;line-height:.86;text-transform:uppercase;color:var(--forest)}
+  .hero h1 span{display:block}
+  .portrait{position:absolute;left:50%;top:50%;width:clamp(84px,22vw,190px);aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;overflow:hidden;border:6px solid var(--bg);background:var(--line)}
+  .portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 16%}
+  .hero-lead{margin:28px auto 0;max-width:40ch;font-size:20px;line-height:1.45}
+  @media(min-width:640px){.hero-lead{font-size:22px}}
+  .status{display:inline-flex;align-items:flex-start;gap:8px;margin-top:18px;padding:6px 14px 6px 10px;background:var(--leaf-soft);border-radius:14px;font-size:15px;font-weight:600;line-height:1.4;color:var(--forest);text-align:left}
+  .status::before{content:"";flex:none;margin-top:6px;width:8px;height:8px;border-radius:50%;background:var(--leaf)}
+  .hero-sub{margin-top:10px;color:var(--muted)}
+  .hero-ctas{margin-top:24px;display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+  .btn-forest{background:var(--forest);border-color:var(--forest);color:var(--bg)}
+  .btn-forest:hover{background:var(--leaf);border-color:var(--leaf)}
 
-  /* Framed prints */
-  .prints{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0}
-  @media(max-width:799px){.prints{order:-1}}
-  .print{margin:0;padding:6px 6px 0;background:#fff;border-radius:3px;box-shadow:0 10px 24px rgba(5,25,12,.28);transition:transform .25s cubic-bezier(.2,.7,.2,1)}
-  .print img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;border-radius:1px}
-  .print figcaption{padding:6px 2px 8px;font-size:13px;font-weight:600;line-height:1.3;color:var(--forest);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .p1{transform:rotate(-2deg)} .p2{transform:rotate(2deg)} .p3{transform:rotate(-1deg)}
-  @media(max-width:520px){.print figcaption{font-size:11px;padding-block:4px 6px}}
-  @media(min-width:800px){
-    .prints{display:block;height:470px}
-    .print{position:absolute}
-    .p1{left:2%;top:10px;width:52%;transform:rotate(-3deg);z-index:2}
-    .p2{right:2%;top:0;width:42%;transform:rotate(3deg);z-index:1}
-    .p3{right:8%;bottom:0;width:40%;transform:rotate(-2deg);z-index:3}
-    .p1 img{aspect-ratio:3/4.1}
-    .p2 img{aspect-ratio:4/5}
-    .p3 img{aspect-ratio:4/4.2}
-    .print:hover{transform:rotate(0) scale(1.02);z-index:4}
-  }
-  @media(prefers-reduced-motion:reduce){.print:hover{transform:none}}
-
-  .stats{margin:40px 0 0;padding-top:24px;border-top:1px solid rgba(233,237,233,.2);display:grid;gap:20px}
+  .stats{margin:48px auto 0;max-width:880px;padding-top:24px;border-top:1px solid var(--line);display:grid;gap:24px;text-align:center}
   @media(min-width:640px){.stats{grid-template-columns:repeat(3,1fr);gap:32px}}
   .stat{display:grid;gap:6px;align-content:start}
-  .stat dt{font-family:var(--display);font-size:38px;font-weight:700;letter-spacing:-0.03em;line-height:1;color:var(--sun)}
-  .stat dd{margin:0;color:var(--forest-text);opacity:.85;max-width:28ch}
+  .stat dt{font-family:var(--display);font-size:36px;font-weight:700;letter-spacing:-0.03em;line-height:1;color:var(--forest)}
+  .stat dd{margin:0 auto;color:var(--muted);max-width:28ch}
 
   /* Work */
   .cases{display:grid;gap:40px}
@@ -235,34 +209,19 @@
   </nav>
 </header>
 
-<div class="hero-band">
-  <section class="hero container">
-    <div class="hero-grid">
-      <div>
-        <p class="hero-roles">Event Coordinator · Social Media Officer</p>
-        <h1>Ahmad Fajri</h1>
-        <p class="hero-lead">I coordinate <em>community events</em> and run <em>Instagram</em> for a volunteer education movement.</p>
-        <p class="status">Open to Social Media &amp; Event internships · can start now</p>
-        <p class="hero-sub">Physics student at IPB University, Bogor.</p>
-        <div class="hero-ctas">
-          <a href="#work" class="btn btn-sun">See my work</a>
-          <a href="resume.pdf" download="CV_Ahmad_Fajri.pdf" class="btn btn-ghost">Download CV</a>
-        </div>
-      </div>
-      <div class="prints">
-        <figure class="print p1">
-          <img src="img/profile.webp" alt="Ahmad Fajri" width="566" height="931" fetchpriority="high" />
-          <figcaption>Ahmad Fajri</figcaption>
-        </figure>
-        <figure class="print p2">
-          <img src="img/content/volunteer-call-thumb.webp" alt="Volunteer-call flyer for GPB Batch 3" width="600" height="750" />
-          <figcaption>GPB volunteer call</figcaption>
-        </figure>
-        <figure class="print p3">
-          <img src="img/content/recap-reel-poster.webp" alt="Still from a GPB volunteer program recap reel" width="600" height="1066" />
-          <figcaption>Program recap reel</figcaption>
-        </figure>
-      </div>
+<div class="container">
+  <section class="hero">
+    <p class="hero-roles">Event Coordinator · Social Media Officer</p>
+    <div class="name">
+      <h1><span>Ahmad</span><span>Fajri</span></h1>
+      <div class="portrait"><img src="img/profile.webp" alt="Portrait of Ahmad Fajri" width="566" height="931" fetchpriority="high" /></div>
+    </div>
+    <p class="hero-lead">I coordinate community events and run Instagram for a volunteer education movement.</p>
+    <p class="status">Open to Social Media &amp; Event internships · can start now</p>
+    <p class="hero-sub">Physics student at IPB University, Bogor.</p>
+    <div class="hero-ctas">
+      <a href="#work" class="btn btn-forest">See my work</a>
+      <a href="resume.pdf" download="CV_Ahmad_Fajri.pdf" class="btn btn-line">Download CV</a>
     </div>
     <dl class="stats">
       <div class="stat"><dt>100+</dt><dd>participants in the Kita Bahagia program I lead</dd></div>
