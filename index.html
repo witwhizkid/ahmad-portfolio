@@ -18,8 +18,10 @@
 <style>
   /* Layout: one 1040px column. The hero splits text and photo; every other section stacks. */
   :root{
-    --bg:#f6f7f4; --surface:#ffffff; --ink:#151b16; --muted:#5a645c; --line:#dde2da;
-    --leaf:#2e6a3f; --leaf-soft:#e7efe5;
+    --bg:#f4f6f1; --surface:#ffffff; --ink:#151b16; --muted:#5a645c; --line:#dde2da;
+    --leaf:#386b3d; --leaf-soft:#e7efe5;
+    /* GPB panel colours, measured from the Instagram posts (design/gpb-dna.json) */
+    --forest:#144724; --forest-text:#e9ede9; --sun:#e0d95f; --lime:#89af3f; --sage:#c3d2b9;
     --display:"Schibsted Grotesk",ui-sans-serif,system-ui,sans-serif;
     --body:"Source Sans 3",ui-sans-serif,system-ui,sans-serif;
   }
@@ -37,7 +39,7 @@
   [id]{scroll-margin-top:72px}
 
   /* Header */
-  header{position:sticky;top:0;z-index:40;background:rgba(246,247,244,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  header{position:sticky;top:0;z-index:40;background:rgba(244,246,241,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
   .nav{display:flex;height:60px;align-items:center;justify-content:space-between;gap:24px}
   .brand{font-family:var(--display);font-weight:700;font-size:17px;text-decoration:none}
   .nav-links{display:none;gap:28px;font-size:15px}
@@ -65,42 +67,62 @@
 
   /* Sections */
   section{padding-block:56px;border-top:1px solid var(--line)}
+  main > section:first-child{border-top:none}
   @media(min-width:640px){section{padding-block:80px}}
   .sec-title{font-size:28px;font-weight:700;letter-spacing:-0.02em;line-height:1.15}
   @media(min-width:640px){.sec-title{font-size:34px}}
   .sec-lead{margin-top:10px;max-width:62ch;color:var(--muted)}
   .sec-body{margin-top:32px}
 
-  /* Hero: text on the left, a three-picture mosaic of the work on the right (above the text on phones) */
-  .hero{border-top:none;padding-block:28px 48px}
-  @media(min-width:800px){.hero{padding-block:64px 72px}}
-  .hero-grid{display:grid;gap:28px}
-  @media(min-width:800px){.hero-grid{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:56px;align-items:center}}
-  .hero-roles{font-weight:600;color:var(--leaf)}
-  .hero h1{margin-top:6px;font-size:46px;font-weight:700;letter-spacing:-0.035em;line-height:1}
+  /* Hero: a full-width GPB green band. Text on the left, framed prints overlapping on the right (above the text on phones) */
+  .hero-band{background-color:var(--forest);color:var(--forest-text);
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cpath d='M0 120L60 40L140 90L160 30M60 40L100 0M140 90L120 160' stroke='%23e9ede9' stroke-opacity='.07' fill='none'/%3E%3C/svg%3E")}
+  .hero{border-top:none;padding-block:32px 40px}
+  @media(min-width:800px){.hero{padding-block:64px 56px}}
+  .hero-grid{display:grid;gap:32px}
+  @media(min-width:800px){.hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center}}
+  .hero-roles{font-weight:600;color:var(--sage)}
+  .hero h1{margin-top:6px;font-size:46px;font-weight:700;letter-spacing:-0.035em;line-height:1;color:var(--forest-text)}
   @media(min-width:640px){.hero h1{font-size:64px}}
-  .hero-lead{margin-top:18px;max-width:30ch;font-size:21px;line-height:1.4}
+  .hero-lead{margin-top:18px;max-width:30ch;font-size:21px;line-height:1.4;color:var(--forest-text)}
   @media(min-width:640px){.hero-lead{font-size:24px}}
-  .status{display:inline-flex;align-items:flex-start;gap:8px;margin-top:20px;padding:6px 14px 6px 10px;background:var(--leaf-soft);border-radius:14px;font-size:15px;font-weight:600;line-height:1.4;color:var(--leaf)}
-  .status::before{content:"";flex:none;margin-top:6px;width:8px;height:8px;border-radius:50%;background:var(--leaf);box-shadow:0 0 0 3px rgba(46,106,63,.18)}
-  .hero-sub{margin-top:12px;max-width:46ch;color:var(--muted)}
+  .hero-lead em{font-style:normal;color:var(--sun)}
+  .status{display:inline-flex;align-items:flex-start;gap:8px;margin-top:20px;padding:6px 14px 6px 10px;border:1px solid rgba(137,175,63,.6);border-radius:14px;font-size:15px;font-weight:600;line-height:1.4;color:var(--forest-text)}
+  .status::before{content:"";flex:none;margin-top:6px;width:8px;height:8px;border-radius:50%;background:var(--lime)}
+  .hero-sub{margin-top:12px;max-width:46ch;color:var(--forest-text);opacity:.85}
   .hero-ctas{margin-top:24px;display:flex;flex-wrap:wrap;gap:12px}
+  .btn-sun{background:var(--sun);border-color:var(--sun);color:var(--forest)}
+  .btn-sun:hover{background:#fff;border-color:#fff}
+  .btn-ghost{background:transparent;border-color:rgba(233,237,233,.7);color:var(--forest-text)}
+  .btn-ghost:hover{border-color:#fff;color:#fff}
+  .hero :focus-visible{outline-color:var(--sun)}
 
-  .mosaic{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:0}
-  @media(max-width:799px){.mosaic{order:-1}}
-  @media(min-width:800px){.mosaic{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);grid-template-rows:1fr 1fr;gap:12px;height:460px}.m-portrait{grid-row:span 2}}
-  .m-item{position:relative;margin:0;border-radius:6px;overflow:hidden;background:var(--line);aspect-ratio:3/4}
-  @media(min-width:800px){.m-item{aspect-ratio:auto}}
-  .m-item img{width:100%;height:100%;object-fit:cover}
-  .m-flyer img{object-position:center 30%}
-  .m-item figcaption{position:absolute;left:8px;bottom:8px;max-width:calc(100% - 16px);padding:3px 8px;background:rgba(246,247,244,.94);border-radius:4px;font-size:13px;font-weight:600;line-height:1.3;color:var(--ink)}
-  @media(max-width:520px){.m-item figcaption{display:none}}
+  /* Framed prints */
+  .prints{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0}
+  @media(max-width:799px){.prints{order:-1}}
+  .print{margin:0;padding:6px 6px 0;background:#fff;border-radius:3px;box-shadow:0 10px 24px rgba(5,25,12,.28);transition:transform .25s cubic-bezier(.2,.7,.2,1)}
+  .print img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;border-radius:1px}
+  .print figcaption{padding:6px 2px 8px;font-size:13px;font-weight:600;line-height:1.3;color:var(--forest);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .p1{transform:rotate(-2deg)} .p2{transform:rotate(2deg)} .p3{transform:rotate(-1deg)}
+  @media(max-width:520px){.print figcaption{font-size:11px;padding-block:4px 6px}}
+  @media(min-width:800px){
+    .prints{display:block;height:470px}
+    .print{position:absolute}
+    .p1{left:2%;top:10px;width:52%;transform:rotate(-3deg);z-index:2}
+    .p2{right:2%;top:0;width:42%;transform:rotate(3deg);z-index:1}
+    .p3{right:8%;bottom:0;width:40%;transform:rotate(-2deg);z-index:3}
+    .p1 img{aspect-ratio:3/4.1}
+    .p2 img{aspect-ratio:4/5}
+    .p3 img{aspect-ratio:4/4.2}
+    .print:hover{transform:rotate(0) scale(1.02);z-index:4}
+  }
+  @media(prefers-reduced-motion:reduce){.print:hover{transform:none}}
 
-  .stats{margin:40px 0 0;padding-top:24px;border-top:1px solid var(--line);display:grid;gap:20px}
+  .stats{margin:40px 0 0;padding-top:24px;border-top:1px solid rgba(233,237,233,.2);display:grid;gap:20px}
   @media(min-width:640px){.stats{grid-template-columns:repeat(3,1fr);gap:32px}}
   .stat{display:grid;gap:6px;align-content:start}
-  .stat dt{font-family:var(--display);font-size:38px;font-weight:700;letter-spacing:-0.03em;line-height:1;color:var(--leaf)}
-  .stat dd{margin:0;color:var(--muted);max-width:28ch}
+  .stat dt{font-family:var(--display);font-size:38px;font-weight:700;letter-spacing:-0.03em;line-height:1;color:var(--sun)}
+  .stat dd{margin:0;color:var(--forest-text);opacity:.85;max-width:28ch}
 
   /* Work */
   .cases{display:grid;gap:40px}
@@ -213,31 +235,31 @@
   </nav>
 </header>
 
-<main class="container">
-
-  <section class="hero">
+<div class="hero-band">
+  <section class="hero container">
     <div class="hero-grid">
       <div>
         <p class="hero-roles">Event Coordinator · Social Media Officer</p>
         <h1>Ahmad Fajri</h1>
-        <p class="hero-lead">I coordinate community events and run Instagram for a volunteer education movement.</p>
+        <p class="hero-lead">I coordinate <em>community events</em> and run <em>Instagram</em> for a volunteer education movement.</p>
         <p class="status">Open to Social Media &amp; Event internships · can start now</p>
         <p class="hero-sub">Physics student at IPB University, Bogor.</p>
         <div class="hero-ctas">
-          <a href="#work" class="btn btn-solid">See my work</a>
-          <a href="resume.pdf" download="CV_Ahmad_Fajri.pdf" class="btn btn-line">Download CV</a>
+          <a href="#work" class="btn btn-sun">See my work</a>
+          <a href="resume.pdf" download="CV_Ahmad_Fajri.pdf" class="btn btn-ghost">Download CV</a>
         </div>
       </div>
-      <div class="mosaic">
-        <figure class="m-item m-portrait">
+      <div class="prints">
+        <figure class="print p1">
           <img src="img/profile.webp" alt="Ahmad Fajri" width="566" height="931" fetchpriority="high" />
+          <figcaption>Ahmad Fajri</figcaption>
         </figure>
-        <figure class="m-item m-flyer">
+        <figure class="print p2">
           <img src="img/content/volunteer-call-thumb.webp" alt="Volunteer-call flyer for GPB Batch 3" width="600" height="750" />
-          <figcaption>GPB flyer</figcaption>
+          <figcaption>GPB volunteer call</figcaption>
         </figure>
-        <figure class="m-item">
-          <img src="img/content/recap-reel-poster.webp" alt="Still from a GPB volunteer program recap reel" width="600" height="1067" />
+        <figure class="print p3">
+          <img src="img/content/recap-reel-poster.webp" alt="Still from a GPB volunteer program recap reel" width="600" height="1066" />
           <figcaption>Program recap reel</figcaption>
         </figure>
       </div>
@@ -248,6 +270,9 @@
       <div class="stat"><dt>1.8K</dt><dd>views on a single GPB reel</dd></div>
     </dl>
   </section>
+</div>
+
+<main class="container">
 
   <section id="work">
     <h2 class="sec-title">Work</h2>

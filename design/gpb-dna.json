@@ -1,0 +1,456 @@
+{
+  "meta": {
+    "name": "GPB Instagram",
+    "description": "Design DNA extracted from Ahmad Fajri's Instagram content for Gerakan Pendidikan Berdampak, used to style the portfolio hero",
+    "source_references": [
+      "img/content/volunteer-call.webp",
+      "img/content/batch2-report.webp",
+      "img/content/soft-news.webp"
+    ],
+    "created_at": "2026-10-05"
+  },
+  "design_system": {
+    "color": {
+      "palette_type": "analogous",
+      "primary": {
+        "hex": "#144724",
+        "role": "Deep forest green panels behind headlines and lists (Batch 2 report background)"
+      },
+      "secondary": {
+        "hex": "#386b3d",
+        "role": "Brand green for titles and logo on light layouts (volunteer-call flyer)"
+      },
+      "accent": {
+        "hex": "#e0d95f",
+        "role": "Yellow for the one word that matters in a headline (\"WHAT WE DID?\") and for CTAs"
+      },
+      "neutral": {
+        "scale": [
+          "#f4f6f1",
+          "#e9ede9",
+          "#dad8d4",
+          "#b5b2ab",
+          "#80827a",
+          "#576766",
+          "#264326",
+          "#144724"
+        ],
+        "usage": "#f4f6f1 is the light page ground; #e9ede9 is body text on green panels; #144724 is the darkest end and the text colour on yellow; #c3d2b9 (measured from the soft-news post) is the role line on green, where lime #89af3f only reaches 4.2:1"
+      },
+      "semantic": {
+        "success": "#89af3f",
+        "warning": "#e0d95f",
+        "error": "#d86f39",
+        "info": "#8195a6"
+      },
+      "surface": {
+        "background": "#144724",
+        "card": "#ffffff",
+        "elevated": "#f4f6f1"
+      },
+      "contrast_strategy": "light text on deep green panels, with a single yellow highlight; dark green text on light grounds elsewhere",
+      "measurement": {
+        "k": 8,
+        "sampling": {
+          "method": "deterministic_stratified",
+          "max_pixels": 160000,
+          "sampled_pixels": 160000
+        }
+      },
+      "measured_palette": [
+        {
+          "hex": "#144724",
+          "coverage": 0.4461,
+          "role": "background"
+        },
+        {
+          "hex": "#576766",
+          "coverage": 0.1519,
+          "role": "unassigned"
+        },
+        {
+          "hex": "#2f424b",
+          "coverage": 0.1166,
+          "role": "unassigned"
+        },
+        {
+          "hex": "#c6b6b3",
+          "coverage": 0.0895,
+          "role": "unassigned"
+        },
+        {
+          "hex": "#8195a6",
+          "coverage": 0.0704,
+          "role": "unassigned"
+        },
+        {
+          "hex": "#e9ede9",
+          "coverage": 0.0628,
+          "role": "text"
+        },
+        {
+          "hex": "#967f72",
+          "coverage": 0.0582,
+          "role": "unassigned"
+        },
+        {
+          "hex": "#e0d95f",
+          "coverage": 0.0044,
+          "role": "accent"
+        }
+      ]
+    },
+    "typography": {
+      "type_scale": {
+        "display": {
+          "size": "64px",
+          "weight": "700",
+          "line_height": "1",
+          "tracking": "-0.035em"
+        },
+        "heading_1": {
+          "size": "34px",
+          "weight": "700",
+          "line_height": "1.15",
+          "tracking": "-0.02em"
+        },
+        "heading_2": {
+          "size": "24px",
+          "weight": "600",
+          "line_height": "1.2",
+          "tracking": "-0.015em"
+        },
+        "heading_3": {
+          "size": "19px",
+          "weight": "600",
+          "line_height": "1.3",
+          "tracking": "-0.01em"
+        },
+        "body": {
+          "size": "17px",
+          "weight": "400",
+          "line_height": "1.6",
+          "tracking": "0"
+        },
+        "body_small": {
+          "size": "15px",
+          "weight": "400",
+          "line_height": "1.5",
+          "tracking": "0"
+        },
+        "caption": {
+          "size": "13px",
+          "weight": "600",
+          "line_height": "1.3",
+          "tracking": "0"
+        },
+        "overline": {
+          "size": "15px",
+          "weight": "600",
+          "line_height": "1.4",
+          "tracking": "0"
+        }
+      },
+      "font_families": {
+        "heading": "Schibsted Grotesk",
+        "body": "Source Sans 3",
+        "mono": "ui-monospace"
+      },
+      "font_style_notes": "GPB headlines use heavy geometric sans in caps with one word switched to yellow; the flyer adds a script face for the event title, and the quote post uses a high-contrast serif. On the web the heavy grotesk carries the headline role and the script and serif stay inside the content images"
+    },
+    "spacing": {
+      "base_unit": "4px",
+      "scale": [
+        "4px",
+        "8px",
+        "12px",
+        "16px",
+        "20px",
+        "28px",
+        "40px",
+        "56px",
+        "72px"
+      ],
+      "content_density": "comfortable",
+      "section_rhythm": "dense content inside each panel, generous margin around it; on the web 56-80px between sections"
+    },
+    "layout": {
+      "grid_system": "two-column split: text block left, photo cluster right",
+      "max_content_width": "1040px",
+      "columns": "2 on desktop, 1 on phones with the photos first",
+      "gutter": "20px phones, 40px desktop",
+      "breakpoints": [
+        "640px",
+        "800px"
+      ],
+      "alignment_tendency": "asymmetric"
+    },
+    "shape": {
+      "border_radius": {
+        "small": "4px",
+        "medium": "6px",
+        "large": "14px",
+        "pill": "999px"
+      },
+      "border_usage": "none on panels; white frames around photos",
+      "divider_style": "thin light lines at low opacity on green"
+    },
+    "elevation": {
+      "shadow_style": "soft diffused",
+      "levels": {
+        "low": "0 1px 2px rgba(10,30,15,.18)",
+        "medium": "0 10px 24px rgba(5,25,12,.28)",
+        "high": "0 18px 40px rgba(5,25,12,.35)"
+      },
+      "depth_cues": "overlapping layers"
+    },
+    "iconography": {
+      "style": "simple outline",
+      "stroke_weight": "1.6px",
+      "size_scale": [
+        "14px",
+        "18px",
+        "22px"
+      ],
+      "preferred_set": "hand-drawn inline SVG"
+    },
+    "motion": {
+      "easing": "cubic-bezier(.2,.7,.2,1)",
+      "duration_scale": {
+        "micro": "150ms",
+        "normal": "250ms",
+        "macro": "400ms"
+      },
+      "entrance_pattern": "none; the page is complete at rest",
+      "exit_pattern": "none",
+      "philosophy": "minimal functional"
+    },
+    "components": {
+      "button_style": "solid yellow button with dark green text for the main action; outline in light text for the second",
+      "input_style": "not used",
+      "card_style": "photos as white-framed prints, slightly rotated, overlapping",
+      "navigation_pattern": "sticky light top bar",
+      "modal_style": "dark full-screen lightbox",
+      "list_style": "short bullet lists on green panels",
+      "component_notes": "the polaroid frame comes from the Batch 2 carousel, where a framed photo overlaps the green panel"
+    }
+  },
+  "design_style": {
+    "aesthetic": {
+      "mood": [
+        "warm",
+        "hopeful",
+        "community",
+        "earnest"
+      ],
+      "visual_metaphor": "a community notice board: printed photos pinned over a green panel",
+      "era_influence": "2020s Indonesian NGO Instagram",
+      "genre": "community nonprofit social",
+      "personality_traits": [
+        "friendly",
+        "organised",
+        "proud of the kids and volunteers"
+      ],
+      "adjectives": [
+        "green",
+        "photographic",
+        "bold",
+        "hand-made"
+      ]
+    },
+    "visual_language": {
+      "complexity": "moderate",
+      "ornamentation": "subtle accents",
+      "whitespace_usage": "tight inside panels, open around them",
+      "visual_weight_distribution": "heavy dark green block with bright photos on top",
+      "focal_strategy": "single hero element",
+      "contrast_level": "high",
+      "texture_usage": "faint line pattern on the green panels"
+    },
+    "composition": {
+      "hierarchy_method": "color weight",
+      "balance_type": "asymmetric",
+      "flow_direction": "left to right, text then photos",
+      "grouping_strategy": "photos clustered and overlapping",
+      "negative_space_role": "frames the text block"
+    },
+    "imagery": {
+      "photo_treatment": "full colour, unfiltered event photos",
+      "illustration_style": "small doodles such as hearts and arrows",
+      "graphic_elements": [
+        "white photo frames",
+        "yellow highlight word",
+        "logo badge"
+      ],
+      "pattern_usage": "faint geometric lines on dark green",
+      "image_shape": "rectangles with a white print border, tilted a few degrees"
+    },
+    "interaction_feel": {
+      "feedback_style": "colour change",
+      "hover_behavior": "frames straighten slightly",
+      "transition_personality": "smooth glide",
+      "loading_style": "none",
+      "microinteraction_density": "low"
+    },
+    "brand_voice_in_ui": {
+      "tone": "warm and direct",
+      "formality": "casual-professional",
+      "cta_style": "direct imperative",
+      "empty_state_approach": "not applicable",
+      "error_tone": "plain"
+    }
+  },
+  "visual_effects": {
+    "overview": {
+      "effect_intensity": "subtle-accent",
+      "performance_tier": "lightweight",
+      "fallback_strategy": "reduce to CSS",
+      "primary_technology": "CSS only"
+    },
+    "background_effects": {
+      "type": "none",
+      "description": "static faint line pattern drawn as an inline SVG background",
+      "technology": "CSS background-image",
+      "params": {
+        "color_palette": [
+          "#e9ede9"
+        ],
+        "speed": "0",
+        "density": "sparse",
+        "opacity": "0.06",
+        "blend_mode": "normal"
+      }
+    },
+    "particle_systems": {
+      "enabled": false,
+      "type": "custom",
+      "description": "none in the references",
+      "technology": "none",
+      "params": {
+        "count": "0",
+        "shape": "none",
+        "size_range": "none",
+        "movement_pattern": "none",
+        "color_behavior": "none",
+        "interaction": "none",
+        "spawn_area": "none"
+      }
+    },
+    "3d_elements": {
+      "enabled": false,
+      "type": "abstract-geometry",
+      "description": "none in the references",
+      "technology": "none",
+      "params": {
+        "renderer": "none",
+        "lighting": "none",
+        "camera": "none",
+        "materials": "none",
+        "geometry": "none",
+        "post_processing": [],
+        "interaction_model": "none"
+      }
+    },
+    "shader_effects": {
+      "enabled": false,
+      "type": "custom-GLSL",
+      "description": "none in the references",
+      "technology": "none",
+      "params": {
+        "uniforms": "none",
+        "vertex_manipulation": "none",
+        "fragment_output": "none",
+        "noise_type": "perlin",
+        "distortion": "none"
+      }
+    },
+    "scroll_effects": {
+      "parallax": {
+        "enabled": false,
+        "layers": "0",
+        "depth_range": "none",
+        "speed_curve": "none"
+      },
+      "scroll_triggered_animations": {
+        "enabled": false,
+        "trigger_points": "none",
+        "animation_type": "fade-up",
+        "scrub_behavior": "none"
+      },
+      "scroll_morphing": {
+        "enabled": false,
+        "description": "none"
+      }
+    },
+    "text_effects": {
+      "type": "none",
+      "description": "one highlighted phrase in yellow, no animation",
+      "technology": "CSS",
+      "params": {
+        "split_strategy": "by-word",
+        "animation_per_unit": "none",
+        "stagger": "0",
+        "effect_style": "colour highlight"
+      }
+    },
+    "cursor_effects": {
+      "enabled": false,
+      "type": "none",
+      "description": "default cursor",
+      "params": {
+        "shape": "default",
+        "size": "default",
+        "blend_mode": "normal",
+        "trail": "none",
+        "interaction_zone": "none"
+      }
+    },
+    "image_effects": {
+      "type": "none",
+      "description": "tilted print frames that straighten on hover",
+      "technology": "CSS transform",
+      "params": {
+        "filter_pipeline": "none",
+        "hover_transform": "rotate to 0deg",
+        "reveal_animation": "none",
+        "distortion_type": "none"
+      }
+    },
+    "glassmorphism_neumorphism": {
+      "enabled": false,
+      "style": "none",
+      "params": {
+        "blur_radius": "0",
+        "transparency": "1",
+        "border_treatment": "none",
+        "shadow_type": "none",
+        "light_source_angle": "none"
+      }
+    },
+    "canvas_drawings": {
+      "enabled": false,
+      "type": "none",
+      "description": "none",
+      "technology": "none",
+      "params": {
+        "draw_method": "none",
+        "animation_loop": "none",
+        "color_scheme": "none",
+        "responsiveness": "none",
+        "interaction": "none"
+      }
+    },
+    "svg_animations": {
+      "enabled": false,
+      "type": "none",
+      "description": "none",
+      "params": {
+        "animation_method": "none",
+        "path_morphing": "none",
+        "stroke_animation": "none",
+        "filter_effects": "none"
+      }
+    },
+    "composite_notes": "The GPB posts are static Instagram graphics. Their identity comes from the deep green panel, the single yellow word, and white-framed photos overlapping the panel, so the web hero keeps effects to CSS: a green band, a faint line texture, and tilted print frames. The orange #d86f39 from the flyer stays in the content images and is not used as a UI colour, to keep one accent."
+  }
+}
