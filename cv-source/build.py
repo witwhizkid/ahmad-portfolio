@@ -12,7 +12,7 @@ GPB = dict(
     org="Gerakan Pendidikan Berdampak", place="South Tangerang", role="Social Media Officer", when="Apr 2026 – Present",
     bullets=[
         "Develop and execute the Instagram content strategy for a volunteer movement focused on children&rsquo;s literacy and character education",
-        "Plan and schedule posts across formats: volunteer-call flyers, program-report carousels, recap reels, and soft-news posts",
+        "Plan the content calendar and write captions for volunteer-call flyers, program-report carousels, recap reels, and soft-news posts",
         "Account reached <b>84.4K views in 30 days</b> with 683 followers; recap reels reach up to 1.8K views each",
     ],
 )
@@ -52,11 +52,12 @@ ROHIS = dict(
     bullets=["Supported religious program activities within the school community"],
 )
 
-SKILLS_SOCIAL = ("Social media &amp; content", "Content strategy &amp; planning, content calendar &amp; scheduling, short-form video editing, graphic design, trend research, basic paid ads")
+SKILLS_SOCIAL = ("Social media &amp; content", "Content strategy &amp; planning, content calendar &amp; scheduling, copywriting (captions), short-form video editing, graphic design, trend research, basic paid ads")
 SKILLS_PLATFORMS = ("Platforms", "Instagram Professional Dashboard (Insights), Meta Business Suite, Meta Ads Manager (basic), TikTok Studio, Google Trends")
 SKILLS_EVENT = ("Event management", "Event concept &amp; program design, budgeting (RAB), vendor &amp; partner coordination, on-ground logistics, timeline management")
 ACHIEVEMENTS = ("Achievements", "Finalist, Paper Competition by PRESENT X TAZKIA JUARA (2025); Winner, Mobile Legends: Bang Bang Competition at Festival Pelajar Nusantara by RRI Medan (2023)")
 SKILLS_TOOLS = ("Tools", "Canva, CapCut, Adobe Premiere, Notion, Google Sheets &amp; Workspace, Microsoft Office, ChatGPT &amp; Claude, Python (basic)")
+LANGUAGES = ("Languages", "Indonesian (native), English (active, spoken and written)")
 SKILLS_SOFT = ("Soft skills", "Teamwork, cross-team communication, problem solving, adaptability")
 
 VARIANTS = {
@@ -67,10 +68,10 @@ VARIANTS = {
             "Physics undergraduate at IPB University and Social Media Officer at Gerakan Pendidikan Berdampak, "
             "where I plan and produce the Instagram content for a volunteer education movement (84.4K views in 30 days). "
             "I also lead community events as Event Coordinator at Kita Bahagia, so I know how to run an event and how to tell its story online. "
-            "Looking for a Social Media internship and available to start immediately."
+            "Looking for a Social Media internship; available immediately, full-time on-site."
         ),
         exp=[GPB, KITA, POSF, GMD, PG, VOL],
-        skills=[SKILLS_SOCIAL, SKILLS_PLATFORMS, SKILLS_TOOLS, SKILLS_EVENT, ACHIEVEMENTS],
+        skills=[SKILLS_SOCIAL, SKILLS_PLATFORMS, SKILLS_TOOLS, SKILLS_EVENT, LANGUAGES, ACHIEVEMENTS],
     ),
     "event": dict(
         file="CV_Ahmad_Fajri_Event",
@@ -79,10 +80,10 @@ VARIANTS = {
             "Physics undergraduate at IPB University and Event Coordinator at Kita Bahagia, leading a community program for 100+ participants "
             "from concept, budget (RAB) and vendor coordination to on-ground execution. "
             "Event staff at POSF 2026 and mentoring staff at Physics Gathering. I also run Instagram for Gerakan Pendidikan Berdampak, "
-            "so I can promote and document events, not just run them. Looking for an Event internship and available to start immediately."
+            "so I can promote and document events, not just run them. Looking for an Event internship; available immediately, full-time on-site."
         ),
         exp=[KITA, POSF, PG, GPB, GMD, VOL],
-        skills=[SKILLS_EVENT, SKILLS_SOCIAL, SKILLS_PLATFORMS, SKILLS_TOOLS, ACHIEVEMENTS],
+        skills=[SKILLS_EVENT, SKILLS_SOCIAL, SKILLS_PLATFORMS, SKILLS_TOOLS, LANGUAGES, ACHIEVEMENTS],
     ),
     "general": dict(
         file="CV_Ahmad_Fajri",
@@ -90,10 +91,10 @@ VARIANTS = {
         summary=(
             "Physics undergraduate at IPB University who coordinates community events and creates the social media content around them. "
             "Event Coordinator at Kita Bahagia (100+ participants) and Social Media Officer at Gerakan Pendidikan Berdampak "
-            "(84.4K Instagram views in 30 days). Looking for Social Media and Event internships and available to start immediately."
+            "(84.4K Instagram views in 30 days). Looking for Social Media and Event internships; available immediately, full-time on-site."
         ),
         exp=[GPB, KITA, POSF, GMD, PG, VOL],
-        skills=[SKILLS_SOCIAL, SKILLS_PLATFORMS, SKILLS_EVENT, SKILLS_TOOLS, ACHIEVEMENTS],
+        skills=[SKILLS_SOCIAL, SKILLS_PLATFORMS, SKILLS_EVENT, SKILLS_TOOLS, LANGUAGES, ACHIEVEMENTS],
     ),
 }
 
