@@ -56,6 +56,7 @@ SKILLS_SOCIAL = ("Social media &amp; content", "Content strategy &amp; planning,
 SKILLS_PLATFORMS = ("Platforms", "Instagram Professional Dashboard (Insights), Meta Business Suite, Meta Ads Manager (basic), TikTok Studio, Google Trends")
 SKILLS_EVENT = ("Event management", "Event concept &amp; program design, budgeting (RAB), vendor &amp; partner coordination, on-ground logistics, timeline management")
 ACHIEVEMENTS = ("Achievements", "Finalist, Paper Competition by PRESENT X TAZKIA JUARA (2025); Winner, Mobile Legends: Bang Bang Competition at Festival Pelajar Nusantara by RRI Medan (2023)")
+CERTS = ("Certificates", "Introduction to Social Media Marketing, Meta via Coursera (Oct 2026)")
 SKILLS_TOOLS = ("Tools", "Canva, CapCut, Adobe Premiere, Notion, Google Sheets &amp; Workspace, Microsoft Office, ChatGPT &amp; Claude, Python (basic)")
 LANGUAGES = ("Languages", "Indonesian (native), English (active, spoken and written)")
 SKILLS_SOFT = ("Soft skills", "Teamwork, cross-team communication, problem solving, adaptability")
@@ -71,7 +72,7 @@ VARIANTS = {
             "Looking for a Social Media internship; available immediately, full-time on-site."
         ),
         exp=[GPB, KITA, POSF, GMD, PG, VOL],
-        skills=[SKILLS_SOCIAL, SKILLS_PLATFORMS, SKILLS_TOOLS, SKILLS_EVENT, LANGUAGES, ACHIEVEMENTS],
+        skills=[SKILLS_SOCIAL, SKILLS_PLATFORMS, SKILLS_TOOLS, SKILLS_EVENT, CERTS, LANGUAGES, ACHIEVEMENTS],
     ),
     "event": dict(
         file="CV_Ahmad_Fajri_Event",
@@ -83,7 +84,7 @@ VARIANTS = {
             "so I can promote and document events, not just run them. Looking for an Event internship; available immediately, full-time on-site."
         ),
         exp=[KITA, POSF, PG, GPB, GMD, VOL],
-        skills=[SKILLS_EVENT, SKILLS_SOCIAL, SKILLS_PLATFORMS, SKILLS_TOOLS, LANGUAGES, ACHIEVEMENTS],
+        skills=[SKILLS_EVENT, SKILLS_SOCIAL, SKILLS_PLATFORMS, SKILLS_TOOLS, CERTS, LANGUAGES, ACHIEVEMENTS],
     ),
     "general": dict(
         file="CV_Ahmad_Fajri",
@@ -94,7 +95,7 @@ VARIANTS = {
             "(84.4K Instagram views in 30 days). Looking for Social Media and Event internships; available immediately, full-time on-site."
         ),
         exp=[GPB, KITA, POSF, GMD, PG, VOL],
-        skills=[SKILLS_SOCIAL, SKILLS_PLATFORMS, SKILLS_EVENT, SKILLS_TOOLS, LANGUAGES, ACHIEVEMENTS],
+        skills=[SKILLS_SOCIAL, SKILLS_PLATFORMS, SKILLS_EVENT, SKILLS_TOOLS, CERTS, LANGUAGES, ACHIEVEMENTS],
     ),
 }
 
