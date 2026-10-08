@@ -35,7 +35,7 @@
   a{color:inherit}
   img{display:block;max-width:100%}
   h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0}
-  p{margin:0}
+  p{margin:0;text-wrap:pretty}
   :focus-visible{outline:2px solid var(--leaf);outline-offset:3px}
   .container{max-width:1040px;margin:0 auto;padding-inline:20px}
   @media(min-width:640px){.container{padding-inline:40px}}
@@ -47,9 +47,13 @@
   .brand{font-family:var(--display);font-weight:700;font-size:17px;text-decoration:none}
   .nav-links{display:none;gap:28px;font-size:15px}
   .nav-links a{text-decoration:none;color:var(--muted)}
-  .nav-links a:hover{color:var(--ink)}
+  .nav-links a{transition:color .2s;padding-block:4px;border-bottom:1.5px solid transparent}
+  .nav-links a:hover,.nav-links a[aria-current="true"]{color:var(--ink)}
+  .nav-links a[aria-current="true"]{border-bottom-color:var(--leaf)}
   @media(min-width:800px){.nav-links{display:flex}}
   .btn{display:inline-flex;align-items:center;padding:11px 18px;font:600 15px/1.2 var(--body);border-radius:4px;text-decoration:none;border:1px solid var(--ink);cursor:pointer}
+  .btn{transition:background-color .2s,border-color .2s,color .2s,transform .1s}
+  .btn:active{transform:translateY(1px)}
   .btn-solid{background:var(--ink);color:var(--bg)}
   .btn-solid:hover{background:var(--leaf);border-color:var(--leaf)}
   .btn-line{background:transparent;color:var(--ink)}
@@ -95,10 +99,12 @@
   .btn-forest{background:var(--forest);border-color:var(--forest);color:var(--bg)}
   .btn-forest:hover{background:var(--leaf);border-color:var(--leaf)}
 
-  .stats{margin:48px auto 0;max-width:880px;padding-top:24px;border-top:1px solid var(--line);display:grid;gap:24px;text-align:center}
-  @media(min-width:640px){.stats{grid-template-columns:repeat(3,1fr);gap:32px}}
+  .stats{margin:40px auto 0;max-width:880px;padding-top:24px;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(3,1fr);gap:12px;text-align:center}
+  @media(min-width:640px){.stats{margin-top:48px;gap:32px}}
   .stat{display:grid;gap:6px;align-content:start}
-  .stat dt{font-family:var(--display);font-size:36px;font-weight:700;letter-spacing:-0.03em;line-height:1;color:var(--forest)}
+  .stat dd{font-size:14px;line-height:1.4}
+  @media(min-width:640px){.stat dd{font-size:17px;line-height:1.6}}
+  .stat dt{font-family:var(--display);font-size:clamp(26px,7vw,36px);font-weight:700;letter-spacing:-0.03em;line-height:1;color:var(--forest)}
   .stat dd{margin:0 auto;color:var(--muted);max-width:28ch}
 
   /* Work */
@@ -137,15 +143,23 @@
   .project-shot:hover{border-color:var(--leaf)}
   .project-body{display:grid;gap:12px;align-content:start}
   .project-body h3{font-size:24px;font-weight:600;letter-spacing:-0.015em;line-height:1.2}
-  .project + .project{margin-top:56px;padding-top:40px;border-top:1px solid var(--line)}
-  .project-video{position:relative;aspect-ratio:16/9;border:1px solid var(--line);border-radius:4px;overflow:hidden;background:#000}
-  .project-video video{width:100%;height:100%;object-fit:contain}
-  .project-video.tall{aspect-ratio:9/16;max-width:320px;width:100%;justify-self:center}
-  @media(min-width:800px){.project-video.tall{max-width:300px}}
-  .photo-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start}
-  .photo-pair .project-shot{aspect-ratio:auto;padding:0;cursor:zoom-in}
-  .photo-pair .project-shot img{height:auto}
-  .text-link{color:var(--leaf);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+  .clips-head{margin-top:64px;padding-top:40px;border-top:1px solid var(--line)}
+  .clips-head h3{font-size:24px;font-weight:600;letter-spacing:-0.015em}
+  .clips-head .sec-lead{margin-top:6px}
+  .clips{margin-top:28px;display:grid;gap:40px}
+  @media(min-width:700px){.clips{grid-template-columns:1fr 1fr;gap:48px 32px}}
+  .clip{display:grid;gap:8px;align-content:start;min-width:0}
+  .clip h4{margin:8px 0 0;font:600 19px/1.25 var(--display);letter-spacing:-0.01em;text-wrap:balance}
+  .clip p:last-child{color:var(--muted);font-size:16px}
+  .clip-media{position:relative;aspect-ratio:16/9;border-radius:4px;overflow:hidden;background:#000}
+  .clip-media video{position:relative;width:100%;height:100%;object-fit:contain}
+  /* Vertical clip: the 9:16 video sits in the 16:9 frame over a blurred copy of its poster */
+  .clip-media.tall::before{content:"";position:absolute;inset:-24px;background:var(--poster) center/cover;filter:blur(22px) brightness(.55)}
+  .clip-media.pair{display:grid;grid-template-columns:1fr 1fr;gap:4px;background:var(--line)}
+  .pair button{padding:0;border:none;background:none;cursor:zoom-in;overflow:hidden}
+  .pair img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+  .pair button:hover img{transform:scale(1.04)}
+  .text-link{transition:color .2s;color:var(--leaf);font-weight:600;text-decoration:underline;text-underline-offset:3px}
 
   /* Experience */
   .jobs{display:grid}
@@ -180,6 +194,8 @@
   /* Contact */
   .contact-rows a{color:var(--leaf);text-decoration:underline;text-underline-offset:3px;word-break:break-word}
   .contact .btn{margin-top:28px}
+  .contact-lead{display:inline-block;margin-top:24px;font:600 clamp(22px,5.4vw,40px)/1.15 var(--display);letter-spacing:-0.02em;color:var(--forest);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px;word-break:break-word;transition:color .2s}
+  .contact-lead:hover{color:var(--leaf)}
 
   /* Lightbox */
   .lb{position:fixed;inset:0;z-index:50;background:rgba(10,14,11,.95);display:none;align-items:center;justify-content:center;padding:16px}
@@ -353,66 +369,58 @@
           <p><a class="text-link" href="https://kitabahagia.id/" target="_blank" rel="noreferrer">Visit kitabahagia.id</a></p>
         </div>
       </article>
-      <article class="project">
-        <div class="project-video reel">
-          <video preload="none" playsinline poster="img/projects/duta-ipb-video-poster.webp" aria-label="Duta IPB profile video about Betawi identity and diversity in Jakarta">
-            <source src="img/projects/duta-ipb-video.mp4" type="video/mp4" />
-          </video>
-          <button type="button" class="play" aria-label="Play Duta IPB profile video"><span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4l13 8-13 8z"/></svg>Play video · 2:30</span></button>
-        </div>
-        <div class="project-body">
-          <p class="case-tag">Video editing</p>
-          <h3>Duta IPB profile video</h3>
-          <p class="case-meta">Editor · CapCut · 2025</p>
-          <p>A friend&rsquo;s profile video for Duta IPB, under the #IPBinDiversity theme: a narrated piece about growing up Betawi and finding harmony in diversity, shot around Monas, Istiqlal and Kota Tua.</p>
-          <p>I handled the whole edit in CapCut: cutting the footage to the voice-over and writing the subtitles.</p>
-        </div>
-      </article>
-      <article class="project">
-        <div class="project-video reel tall">
-          <video preload="none" playsinline poster="img/projects/glukodiab-video-poster.webp" aria-label="Duta IPB product video about Glukodiab Drink">
-            <source src="img/projects/glukodiab-video.mp4" type="video/mp4" />
-          </video>
-          <button type="button" class="play" aria-label="Play Duta IPB product video about Glukodiab Drink"><span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4l13 8-13 8z"/></svg>Play video · 1:52</span></button>
-        </div>
-        <div class="project-body">
-          <p class="case-tag">Video editing</p>
-          <h3>Duta IPB product video</h3>
-          <p class="case-meta">Editor · CapCut · 2025</p>
-          <p>A vertical video for a friend&rsquo;s Duta IPB project, introducing Glukodiab Drink, a sugar-free functional drink meant to support diabetes therapy. Shot around the IPB campus and its labs.</p>
-          <p>I handled the whole edit in CapCut, including the on-screen captions.</p>
-        </div>
-      </article>
-      <article class="project">
-        <div class="project-video reel">
-          <video preload="none" playsinline poster="img/projects/assignment-video-poster.webp" aria-label="Edited conversation video for a class assignment">
-            <source src="img/projects/assignment-video.mp4" type="video/mp4" />
-          </video>
-          <button type="button" class="play" aria-label="Play Edited conversation video for a class assignment"><span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4l13 8-13 8z"/></svg>Play video · 3:23</span></button>
-        </div>
-        <div class="project-body">
-          <p class="case-tag">Video editing</p>
-          <h3>Conversation video for a class assignment</h3>
-          <p class="case-meta">Editor · CapCut</p>
-          <p>A two-person conversation filmed in a meeting room, for a friend&rsquo;s class assignment. I edited it into the final video.</p>
-        </div>
-      </article>
-      <article class="project">
-        <div class="photo-pair">
-          <button type="button" class="project-shot" data-photoedit="0" aria-label="Open edited photo of the IPB logo monument in the rain">
-            <img src="img/projects/photo-edit-1-thumb.webp" alt="IPB logo monument on a wet plaza under tall trees, edited in moody tones" loading="lazy" width="800" height="604" />
-          </button>
-          <button type="button" class="project-shot" data-photoedit="1" aria-label="Open edited photo of the Museum and Gallery of IPB Future">
-            <img src="img/projects/photo-edit-2-thumb.webp" alt="Museum and Gallery of IPB Future under a bright sky, edited with warm colours" loading="lazy" width="800" height="450" />
-          </button>
-        </div>
-        <div class="project-body">
-          <p class="case-tag">Photo editing</p>
-          <h3>Campus photos for a photo competition</h3>
+      <div class="clips-head">
+        <h3>Video and photo editing</h3>
+        <p class="sec-lead">Edits I made for friends&rsquo; projects and a photo competition.</p>
+      </div>
+      <div class="clips">
+        <article class="clip">
+          <div class="clip-media reel">
+            <video preload="none" playsinline poster="img/projects/duta-ipb-video-poster.webp" aria-label="Duta IPB profile video about Betawi identity and diversity in Jakarta">
+              <source src="img/projects/duta-ipb-video.mp4" type="video/mp4" />
+            </video>
+            <button type="button" class="play" aria-label="Play Duta IPB profile video about Betawi identity and diversity in Jakarta"><span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4l13 8-13 8z"/></svg>2:30</span></button>
+          </div>
+          <h4>Duta IPB profile video</h4>
+          <p class="case-meta">Edit and subtitles · CapCut · 2025</p>
+          <p>A narrated piece for a friend&rsquo;s Duta IPB profile, under the #IPBinDiversity theme: growing up Betawi and finding harmony in diversity, shot around Monas, Istiqlal and Kota Tua.</p>
+        </article>
+        <article class="clip">
+          <div class="clip-media reel tall" style="--poster:url(img/projects/glukodiab-video-poster.webp)">
+            <video preload="none" playsinline poster="img/projects/glukodiab-video-poster.webp" aria-label="Duta IPB product video about Glukodiab Drink">
+              <source src="img/projects/glukodiab-video.mp4" type="video/mp4" />
+            </video>
+            <button type="button" class="play" aria-label="Play Duta IPB product video about Glukodiab Drink"><span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4l13 8-13 8z"/></svg>1:52</span></button>
+          </div>
+          <h4>Duta IPB product video</h4>
+          <p class="case-meta">Edit and captions · CapCut · 2025</p>
+          <p>A vertical video for a friend&rsquo;s Duta IPB project introducing Glukodiab Drink, a sugar-free functional drink meant to support diabetes therapy.</p>
+        </article>
+        <article class="clip">
+          <div class="clip-media reel">
+            <video preload="none" playsinline poster="img/projects/assignment-video-poster.webp" aria-label="Edited conversation video for a class assignment">
+              <source src="img/projects/assignment-video.mp4" type="video/mp4" />
+            </video>
+            <button type="button" class="play" aria-label="Play Edited conversation video for a class assignment"><span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4l13 8-13 8z"/></svg>3:23</span></button>
+          </div>
+          <h4>Conversation video for a class assignment</h4>
+          <p class="case-meta">Edit · CapCut</p>
+          <p>A two-person conversation filmed in a meeting room for a friend&rsquo;s class assignment, edited into the final video.</p>
+        </article>
+        <article class="clip">
+          <div class="clip-media pair">
+            <button type="button" data-photoedit="0" aria-label="Open edited photo of the IPB logo monument in the rain">
+              <img src="img/projects/photo-edit-1-thumb.webp" alt="IPB logo monument on a wet plaza under tall trees, edited in moody tones" loading="lazy" width="800" height="604" />
+            </button>
+            <button type="button" data-photoedit="1" aria-label="Open edited photo of the Museum and Gallery of IPB Future">
+              <img src="img/projects/photo-edit-2-thumb.webp" alt="Museum and Gallery of IPB Future under a bright sky, edited with warm colours" loading="lazy" width="800" height="450" />
+            </button>
+          </div>
+          <h4>Campus photos for a photo competition</h4>
           <p class="case-meta">Photo editing · Picsart · 2026</p>
-          <p>Two photos of the IPB campus that I edited and entered in a photo competition: one moody and rain-soaked, one warm and bright.</p>
-        </div>
-      </article>
+          <p>Two photos of the IPB campus I edited and entered in a photo competition: one moody and rain-soaked, one warm and bright.</p>
+        </article>
+      </div>
     </div>
   </section>
 
@@ -501,12 +509,12 @@
   <section id="contact" class="contact">
     <h2 class="sec-title">Contact</h2>
     <p class="sec-lead">I&rsquo;m looking for a Social Media or Event internship and can start now, full-time on-site. Email or WhatsApp reaches me fastest.</p>
+    <a class="contact-lead" href="mailto:ahmadfajri2211@gmail.com">ahmadfajri2211@gmail.com</a>
     <dl class="sec-body rows contact-rows">
-      <div class="row"><dt>Email</dt><dd><a href="mailto:ahmadfajri2211@gmail.com">ahmadfajri2211@gmail.com</a></dd></div>
       <div class="row"><dt>WhatsApp</dt><dd><a href="https://wa.me/6282362330813">+62 823-6233-0813</a></dd></div>
       <div class="row"><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/ahmad-fajri-43b877323" target="_blank" rel="noreferrer">linkedin.com/in/ahmad-fajri-43b877323</a></dd></div>
     </dl>
-    <a href="resume.pdf" download="CV_Ahmad_Fajri.pdf" class="btn btn-solid">Download CV (PDF)</a>
+    <a href="resume.pdf" download="CV_Ahmad_Fajri.pdf" class="btn btn-forest">Download CV (PDF)</a>
   </section>
 
 </main>
@@ -553,6 +561,19 @@
   document.querySelectorAll("[data-photoedit]").forEach((b) =>
     b.addEventListener("click", () => openLB(photoEdits, Number(b.dataset.photoedit)))
   );
+
+  // Mark the nav link for the section in view
+  const navLinks = [...document.querySelectorAll(".nav-links a")];
+  const spy = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (!e.isIntersecting) return;
+      navLinks.forEach((a) => {
+        if (a.getAttribute("href") === "#" + e.target.id) a.setAttribute("aria-current", "true");
+        else a.removeAttribute("aria-current");
+      });
+    });
+  }, { rootMargin: "-45% 0px -50% 0px" });
+  document.querySelectorAll("main section[id]").forEach((sec) => spy.observe(sec));
 
   const header = document.querySelector("header");
   const menuToggle = document.getElementById("menuToggle");
