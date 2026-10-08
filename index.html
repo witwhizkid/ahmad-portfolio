@@ -140,6 +140,11 @@
   .project + .project{margin-top:56px;padding-top:40px;border-top:1px solid var(--line)}
   .project-video{position:relative;aspect-ratio:16/9;border:1px solid var(--line);border-radius:4px;overflow:hidden;background:#000}
   .project-video video{width:100%;height:100%;object-fit:contain}
+  .project-video.tall{aspect-ratio:9/16;max-width:320px;width:100%;justify-self:center}
+  @media(min-width:800px){.project-video.tall{max-width:300px}}
+  .photo-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start}
+  .photo-pair .project-shot{aspect-ratio:auto;padding:0;cursor:zoom-in}
+  .photo-pair .project-shot img{height:auto}
   .text-link{color:var(--leaf);font-weight:600;text-decoration:underline;text-underline-offset:3px}
 
   /* Experience */
@@ -329,7 +334,7 @@
 
   <section id="projects">
     <h2 class="sec-title">Projects</h2>
-    <p class="sec-lead">Web and video work outside the social media accounts I run.</p>
+    <p class="sec-lead">Web, video and photo work outside the social media accounts I run.</p>
     <div class="sec-body">
       <article class="project">
         <a class="project-shot" href="https://kitabahagia.id/" target="_blank" rel="noreferrer" aria-label="Open kitabahagia.id">
@@ -361,6 +366,51 @@
           <p class="case-meta">Editor · CapCut · 2025</p>
           <p>A friend&rsquo;s profile video for Duta IPB, under the #IPBinDiversity theme: a narrated piece about growing up Betawi and finding harmony in diversity, shot around Monas, Istiqlal and Kota Tua.</p>
           <p>I handled the whole edit in CapCut: cutting the footage to the voice-over and writing the subtitles.</p>
+        </div>
+      </article>
+      <article class="project">
+        <div class="project-video reel tall">
+          <video preload="none" playsinline poster="img/projects/glukodiab-video-poster.webp" aria-label="Duta IPB product video about Glukodiab Drink">
+            <source src="img/projects/glukodiab-video.mp4" type="video/mp4" />
+          </video>
+          <button type="button" class="play" aria-label="Play Duta IPB product video about Glukodiab Drink"><span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4l13 8-13 8z"/></svg>Play video · 1:52</span></button>
+        </div>
+        <div class="project-body">
+          <p class="case-tag">Video editing</p>
+          <h3>Duta IPB product video</h3>
+          <p class="case-meta">Editor · CapCut · 2025</p>
+          <p>A vertical video for a friend&rsquo;s Duta IPB project, introducing Glukodiab Drink, a sugar-free functional drink meant to support diabetes therapy. Shot around the IPB campus and its labs.</p>
+          <p>I handled the whole edit in CapCut, including the on-screen captions.</p>
+        </div>
+      </article>
+      <article class="project">
+        <div class="project-video reel">
+          <video preload="none" playsinline poster="img/projects/assignment-video-poster.webp" aria-label="Edited conversation video for a class assignment">
+            <source src="img/projects/assignment-video.mp4" type="video/mp4" />
+          </video>
+          <button type="button" class="play" aria-label="Play Edited conversation video for a class assignment"><span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4l13 8-13 8z"/></svg>Play video · 3:23</span></button>
+        </div>
+        <div class="project-body">
+          <p class="case-tag">Video editing</p>
+          <h3>Conversation video for a class assignment</h3>
+          <p class="case-meta">Editor · CapCut</p>
+          <p>A two-person conversation filmed in a meeting room, for a friend&rsquo;s class assignment. I edited it into the final video.</p>
+        </div>
+      </article>
+      <article class="project">
+        <div class="photo-pair">
+          <button type="button" class="project-shot" data-photoedit="0" aria-label="Open edited photo of the IPB logo monument in the rain">
+            <img src="img/projects/photo-edit-1-thumb.webp" alt="IPB logo monument on a wet plaza under tall trees, edited in moody tones" loading="lazy" width="800" height="604" />
+          </button>
+          <button type="button" class="project-shot" data-photoedit="1" aria-label="Open edited photo of the Museum and Gallery of IPB Future">
+            <img src="img/projects/photo-edit-2-thumb.webp" alt="Museum and Gallery of IPB Future under a bright sky, edited with warm colours" loading="lazy" width="800" height="450" />
+          </button>
+        </div>
+        <div class="project-body">
+          <p class="case-tag">Photo editing</p>
+          <h3>Campus photos for a photo competition</h3>
+          <p class="case-meta">Photo editing · Picsart · 2026</p>
+          <p>Two photos of the IPB campus that I edited and entered in a photo competition: one moody and rain-soaked, one warm and bright.</p>
         </div>
       </article>
     </div>
@@ -494,6 +544,14 @@
     { src: "img/content/feed-grid.webp", caption: "GPB feed, reels reaching up to 1.8K views each" },
     { src: "img/content/profile.webp", caption: "GPB account: 683 followers, 84.4K views in 30 days" },
   ];
+
+  const photoEdits = [
+    { src: "img/projects/photo-edit-1.webp", caption: "IPB logo monument in the rain, edited for a photo competition" },
+    { src: "img/projects/photo-edit-2.webp", caption: "Museum and Gallery of IPB Future, edited for a photo competition" },
+  ];
+  document.querySelectorAll("[data-photoedit]").forEach((b) =>
+    b.addEventListener("click", () => openLB(photoEdits, Number(b.dataset.photoedit)))
+  );
 
   const header = document.querySelector("header");
   const menuToggle = document.getElementById("menuToggle");
