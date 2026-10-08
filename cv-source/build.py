@@ -22,7 +22,7 @@ KITA = dict(
         "Lead a community program for <b>100+ participants</b> as Project Leader, from planning through on-ground execution",
         "Designed the program structure and event concept to fit community objectives",
         "Prepared the budget plan (RAB) and coordinate third-party vendors and partners",
-        "Built the community website <b>kitabahagia.id</b>: my concept and design, coded with AI help",
+        "Built the community website <b>kitabahagia.id</b>: my concept and design, built through vibe coding",
     ],
 )
 POSF = dict(
