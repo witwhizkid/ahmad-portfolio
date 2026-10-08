@@ -129,6 +129,16 @@
   .sample figcaption{margin-top:10px;font-size:15px;line-height:1.45}
   .fmt{display:block;color:var(--muted);font-size:14px}
 
+  /* Projects: wide screenshot beside the write-up */
+  .project{display:grid;gap:20px;align-items:start}
+  @media(min-width:800px){.project{grid-template-columns:1.25fr 1fr;gap:40px}}
+  .project-shot{display:block;aspect-ratio:16/10;border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--line)}
+  .project-shot img{width:100%;height:100%;object-fit:cover;object-position:top}
+  .project-shot:hover{border-color:var(--leaf)}
+  .project-body{display:grid;gap:12px;align-content:start}
+  .project-body h3{font-size:24px;font-weight:600;letter-spacing:-0.015em;line-height:1.2}
+  .text-link{color:var(--leaf);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+
   /* Experience */
   .jobs{display:grid}
   .job{display:grid;gap:4px 32px;padding-block:22px;border-bottom:1px solid var(--line)}
@@ -192,6 +202,7 @@
     <nav class="nav-links" aria-label="Sections">
       <a href="#work">Work</a>
       <a href="#content">Content</a>
+      <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
       <a href="#photos">Photos</a>
       <a href="#contact">Contact</a>
@@ -205,6 +216,7 @@
   <nav class="container mobile-menu" id="mobileMenu" aria-label="Sections">
     <a href="#work">Work</a>
     <a href="#content">Content</a>
+    <a href="#projects">Projects</a>
     <a href="#experience">Experience</a>
     <a href="#photos">Photos</a>
     <a href="#contact">Contact</a>
@@ -221,7 +233,7 @@
     </div>
     <p class="hero-lead">I coordinate community events and run Instagram for a volunteer education movement.</p>
     <p class="status">Open to Social Media &amp; Event internships · can start now, full-time on-site</p>
-    <p class="hero-sub">Physics student at IPB University, Bogor.</p>
+    <p class="hero-sub">Physics student at IPB University, based in Depok.</p>
     <div class="hero-ctas">
       <a href="#work" class="btn btn-forest">See my work</a>
       <a href="resume.pdf" download="CV_Ahmad_Fajri.pdf" class="btn btn-line">Download CV</a>
@@ -249,6 +261,7 @@
           <li>Wrote the budget plan (RAB) and allocated resources</li>
           <li>Coordinate third-party vendors and partners</li>
         </ul>
+        <p><a class="text-link" href="#projects">I also built the program&rsquo;s website</a></p>
       </article>
       <article class="case">
         <p class="case-tag">Social media</p>
@@ -308,6 +321,30 @@
         </button>
         <figcaption><span class="fmt">Account</span>683 followers, 84.4K views in 30 days</figcaption>
       </figure>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2 class="sec-title">Projects</h2>
+    <p class="sec-lead">Work outside the social media accounts I run.</p>
+    <div class="sec-body">
+      <article class="project">
+        <a class="project-shot" href="https://kitabahagia.id/" target="_blank" rel="noreferrer" aria-label="Open kitabahagia.id">
+          <img src="img/projects/kitabahagia-web-thumb.webp" srcset="img/projects/kitabahagia-web-thumb.webp 800w, img/projects/kitabahagia-web.webp 1328w" sizes="(min-width:800px) 560px, 100vw" alt="Home page of kitabahagia.id with a group photo of volunteers and children" loading="lazy" width="800" height="500" />
+        </a>
+        <div class="project-body">
+          <p class="case-tag">Website</p>
+          <h3>Building kitabahagia.id</h3>
+          <p class="case-meta">Solo project · Started Aug 2026</p>
+          <p>The website for Kita Bahagia, the community I coordinate events for. Visitors browse the programs, check the schedule and sign up as volunteers.</p>
+          <ul class="list">
+            <li>The concept and the design ideas are mine</li>
+            <li>Built it step by step, using AI to help write the code</li>
+            <li>Pages for programs, schedule, volunteer stories and partnerships, plus a sign-up form and a page to check registration status</li>
+          </ul>
+          <p><a class="text-link" href="https://kitabahagia.id/" target="_blank" rel="noreferrer">Visit kitabahagia.id</a></p>
+        </div>
+      </article>
     </div>
   </section>
 
@@ -407,7 +444,7 @@
 
 <footer>
   <div class="container foot">
-    <p>© 2026 Ahmad Fajri, Bogor</p>
+    <p>© 2026 Ahmad Fajri, Depok</p>
     <a href="#top">Back to top</a>
   </div>
 </footer>

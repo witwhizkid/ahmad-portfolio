@@ -21,8 +21,8 @@ KITA = dict(
     bullets=[
         "Lead a community program for <b>100+ participants</b> as Project Leader, from planning through on-ground execution",
         "Designed the program structure and event concept to fit community objectives",
-        "Prepared the budget plan (RAB) and managed resource allocation for event operations",
-        "Coordinate third-party vendors and partners to keep the event running smoothly",
+        "Prepared the budget plan (RAB) and coordinate third-party vendors and partners",
+        "Built the community website <b>kitabahagia.id</b>: my concept and design, coded with AI help",
     ],
 )
 POSF = dict(
@@ -136,7 +136,7 @@ def build(v):
     contact = "".join(f'<span><a href="{html.escape(u)}">{t}</a></span>' for t, u in CONTACT)
     skills = "".join(f"<dt>{k}</dt><dd>{d}</dd>" for k, d in v["skills"])
     return f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><title>CV — Ahmad Fajri</title><style>{CSS}</style></head><body>
-<header><h1>Ahmad Fajri</h1><p class="headline">{v['headline']} · Bogor, Indonesia</p><p class="contact">{contact}</p></header>
+<header><h1>Ahmad Fajri</h1><p class="headline">{v['headline']} · Depok, Indonesia</p><p class="contact">{contact}</p></header>
 <p class="summary">{v['summary']}</p>
 <h2>Experience</h2>{''.join(exp_item(e) for e in v['exp'])}
 <h2>Education</h2>
