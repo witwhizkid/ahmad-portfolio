@@ -52,12 +52,14 @@
   .brand{font-family:var(--display);font-weight:700;font-size:17px;text-decoration:none}
   .nav-links{display:none;gap:28px;font-size:15px}
   .nav-links a{text-decoration:none;color:var(--muted)}
-  .nav-links a{transition:color .2s;padding-block:4px;border-bottom:1.5px solid transparent}
+  .nav-links a{position:relative;transition:color .2s;padding-block:4px}
+  .nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1.5px;background:var(--leaf);transform:scaleX(0);transform-origin:right;transition:transform .35s cubic-bezier(.65,0,.15,1)}
+  .nav-links a:hover::after,.nav-links a[aria-current="true"]::after{transform:scaleX(1);transform-origin:left}
+  .on-hero .nav-links a::after{background:var(--lime-text)}
   .nav-links a:hover,.nav-links a[aria-current="true"]{color:var(--ink)}
-  .nav-links a[aria-current="true"]{border-bottom-color:var(--leaf)}
   @media(min-width:800px){.nav-links{display:flex}}
   .btn{display:inline-flex;align-items:center;padding:11px 18px;font:600 15px/1.2 var(--body);border-radius:4px;text-decoration:none;border:1px solid var(--ink);cursor:pointer}
-  .btn{transition:background-color .2s,border-color .2s,color .2s,transform .1s}
+  .btn{transition:background-color .2s,border-color .2s,color .2s,transform .1s,translate .35s cubic-bezier(.34,1.56,.64,1)}
   .btn:active{transform:translateY(1px)}
   .btn-solid{background:var(--ink);color:var(--bg)}
   .btn-solid:hover{background:var(--leaf);border-color:var(--leaf)}
@@ -129,6 +131,53 @@
   .stat dd{margin:0;color:var(--muted);max-width:26ch;font-size:14px;line-height:1.4}
   @media(min-width:640px){.stat dd{font-size:16px;line-height:1.5}}
 
+  /* Playful layer: scroll progress, the ticker, letter play, wipes, tilt, magnet buttons and a cursor that labels what you can do */
+  .progress{position:absolute;left:0;right:0;bottom:-1px;height:3px;background:var(--lime);transform:scaleX(0);transform-origin:0 50%;pointer-events:none}
+  .ticker{position:relative;z-index:2;overflow:hidden;margin-top:-34px;padding-block:34px 18px}
+  .ticker-band{margin-inline:-4vw;padding-block:12px;background:var(--lime-text);color:var(--deep);transform:rotate(-2deg);box-shadow:0 14px 30px -14px rgba(12,38,20,.45)}
+  .ticker-track{display:flex;width:max-content;font:400 clamp(22px,3vw,36px)/1 var(--cond);text-transform:uppercase;letter-spacing:.01em;will-change:transform}
+  .ticker-track span{display:inline-flex;align-items:center;white-space:nowrap}
+  .ticker-track span::after{content:"";width:.3em;height:.3em;margin-inline:.7em;border-radius:50%;background:var(--forest)}
+  .intro{padding-top:28px}
+  @media(min-width:640px){.intro{padding-top:44px}}
+  .name .ch{display:inline-block}
+  .name{cursor:default}
+  .name.settled .line{overflow:visible}
+  .to-top .up{display:inline-block;transition:transform .3s cubic-bezier(.34,1.56,.64,1)}
+  .to-top:hover .up{transform:translateY(-4px)}
+  .job h3{transition:color .2s,transform .35s cubic-bezier(.34,1.56,.64,1)}
+  .job:hover h3{color:var(--leaf);transform:translateX(6px)}
+  .contact-lead .ec{display:inline-block}
+  .cursor{position:fixed;left:0;top:0;z-index:70;width:76px;height:76px;margin:-38px 0 0 -38px;display:grid;place-items:center;pointer-events:none;opacity:0;transition:opacity .25s}
+  .cursor::before{content:"";position:absolute;inset:0;border-radius:50%;background:var(--lime-text);transform:scale(.16);transition:transform .35s cubic-bezier(.34,1.56,.64,1)}
+  .cursor span{position:relative;font:600 13px/1 var(--body);color:var(--deep);opacity:0;transition:opacity .2s}
+  .cursor.on{opacity:1}
+  .cursor.is-link::before{transform:scale(.42)}
+  .cursor.is-label::before{transform:scale(1)}
+  .cursor.is-label span{opacity:1}
+  @media(prefers-reduced-motion:no-preference){
+    .motion .name .ch{animation:pop .95s cubic-bezier(.34,1.56,.64,1) both;animation-delay:calc(.1s + var(--i) * .055s)}
+    .motion .name.settled .ch{animation:none}
+    .motion .name.settled .ch.jump{animation:jump .65s cubic-bezier(.34,1.56,.64,1) both}
+    .motion .g3{transition:translate 1.8s cubic-bezier(.2,.7,.2,1)}
+    .motion .sec-title[data-reveal]{opacity:1;transform:none}
+    .motion .tw{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.1em;margin-bottom:-.1em}
+    .motion .tw > span{display:inline-block;transform:translateY(115%) rotate(7deg);transform-origin:0 100%;transition:transform .85s cubic-bezier(.34,1.35,.64,1) calc(var(--wi) * .07s)}
+    .motion .sec-title.in .tw > span{transform:none}
+    .motion .sample[data-reveal] .sample-media,.motion .clip[data-reveal] .clip-media,.motion .project[data-reveal] .project-shot,.motion .g-item[data-reveal] .g-tile{clip-path:inset(100% 0 0 0 round 4px);transition:clip-path 1s cubic-bezier(.65,0,.15,1) calc(var(--d,0s) + .12s)}
+    .motion .sample.in .sample-media,.motion .clip.in .clip-media,.motion .project.in .project-shot,.motion .g-item.in .g-tile{clip-path:inset(0 0 0 0 round 4px)}
+    .motion .g-item[data-reveal]{transform:translateY(40px) rotate(var(--rot,0deg))}
+    .motion .job[data-reveal]{transform:translateX(-28px)}
+    .motion .g-item.in,.motion .job.in{transform:none}
+    .motion .stat dt.pop{animation:statpop .5s cubic-bezier(.34,1.56,.64,1)}
+    .motion .contact-lead:hover .ec{animation:wave .55s ease-in-out both;animation-delay:calc(var(--i) * 18ms)}
+  }
+  @keyframes pop{from{transform:translateY(110%) rotate(10deg)}to{transform:none}}
+  @keyframes jump{0%{transform:none}35%{transform:translateY(-16%) rotate(-6deg)}70%{transform:translateY(3%) rotate(2deg)}100%{transform:none}}
+  @keyframes statpop{50%{transform:scale(1.12)}}
+  @keyframes wave{50%{transform:translateY(-.2em)}}
+  .stat dt{transform-origin:0 70%}
+
   /* Header turns deep forest while the hero is on screen */
   header{transition:background-color .3s,border-color .3s,color .3s}
   .on-hero header{background:var(--deep);border-color:rgba(238,242,234,.12);color:var(--cream)}
@@ -140,8 +189,6 @@
 
   /* Motion. Only runs when JS is on and the visitor hasn't asked for reduced motion */
   @media(prefers-reduced-motion:no-preference){
-    .motion .name .word{display:inline-block;animation:rise 1s cubic-bezier(.2,.75,.15,1) both}
-    .motion .name .line-2 .word{animation-delay:.12s}
     .motion .g1{animation:drift1 34s ease-in-out infinite alternate}
     .motion .g2{animation:drift2 41s ease-in-out infinite alternate}
     .motion .g3{animation:drift3 29s ease-in-out infinite alternate}
@@ -150,7 +197,6 @@
     .motion [data-reveal]{opacity:0;transform:translateY(18px);transition:opacity .7s ease-out,transform .7s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
     .motion [data-reveal].in{opacity:1;transform:none}
   }
-  @keyframes rise{from{transform:translateY(100%)}to{transform:none}}
   @keyframes drift1{to{transform:translate(14vmax,-8vmax) scale(1.12)}}
   @keyframes drift2{to{transform:translate(-12vmax,10vmax) scale(.9)}}
   @keyframes drift3{to{transform:translate(-16vmax,-6vmax) scale(1.2)}}
@@ -295,6 +341,7 @@
     <a href="#contact">Contact</a>
     <a href="resume.pdf" download="CV_Ahmad_Fajri.pdf" class="btn btn-solid">Download CV</a>
   </nav>
+  <div class="progress" aria-hidden="true"></div>
 </header>
 
 <section class="hero">
@@ -306,13 +353,15 @@
     </div>
     <div class="name-block">
     <h1 class="name" aria-label="Ahmad Fajri">
-      <span class="line"><span class="word">Ahmad</span></span>
-      <span class="line line-2"><span class="word">Fajri</span></span>
+      <span class="line"><span class="word"><span class="ch" style="--i:0">A</span><span class="ch" style="--i:1">h</span><span class="ch" style="--i:2">m</span><span class="ch" style="--i:3">a</span><span class="ch" style="--i:4">d</span></span></span>
+      <span class="line line-2"><span class="word"><span class="ch" style="--i:5">F</span><span class="ch" style="--i:6">a</span><span class="ch" style="--i:7">j</span><span class="ch" style="--i:8">r</span><span class="ch" style="--i:9">i</span></span></span>
     </h1>
     <p class="hero-values">Bringing people together, on the ground and on the feed.</p>
     </div>
   </div>
 </section>
+
+<div class="ticker" aria-hidden="true"><div class="ticker-band"><div class="ticker-track"><span>Event coordination</span><span>Instagram</span><span>Reels</span><span>Captions</span><span>Community programs</span><span>Kita Bahagia</span><span>GPB</span><span>Depok</span></div></div></div>
 
 <div class="container">
   <section class="intro">
@@ -573,7 +622,7 @@
   <section id="contact" class="contact">
     <h2 class="sec-title">Contact</h2>
     <p class="sec-lead">I&rsquo;m looking for a Social Media or Event internship and can start now, full-time on-site. Email or WhatsApp reaches me fastest.</p>
-    <a class="contact-lead" href="mailto:ahmadfajri2211@gmail.com">ahmadfajri2211@gmail.com</a>
+    <a class="contact-lead" href="mailto:ahmadfajri2211@gmail.com" aria-label="Email ahmadfajri2211@gmail.com">ahmadfajri2211@gmail.com</a>
     <dl class="sec-body rows contact-rows">
       <div class="row"><dt>WhatsApp</dt><dd><a href="https://wa.me/6282362330813">+62 823-6233-0813</a></dd></div>
       <div class="row"><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/ahmad-fajri-43b877323" target="_blank" rel="noreferrer">linkedin.com/in/ahmad-fajri-43b877323</a></dd></div>
@@ -586,7 +635,7 @@
 <footer>
   <div class="container foot">
     <p>© 2026 Ahmad Fajri, Depok</p>
-    <a href="#top">Back to top</a>
+    <a href="#top" class="to-top">Back to top <span class="up" aria-hidden="true">&uarr;</span></a>
   </div>
 </footer>
 
@@ -749,6 +798,7 @@
         const t = Math.min((now - t0) / 1400, 1);
         el.textContent = (end * ease(t)).toFixed(dec) + suf;
         if (t < 1) requestAnimationFrame(tick);
+        else el.classList.add("pop");
       };
       requestAnimationFrame(tick);
     }), { rootMargin: "0px 0px -10% 0px" });
@@ -756,6 +806,22 @@
       el.textContent = (0).toFixed(el.dataset.count.includes(".") ? 1 : 0) + (el.dataset.suffix || "");
       countIO.observe(el);
     });
+
+    // Section titles rise in word by word
+    document.querySelectorAll("main .sec-title").forEach((h) => {
+      const words = h.textContent.trim().split(/\s+/);
+      h.setAttribute("aria-label", h.textContent.trim());
+      h.textContent = "";
+      words.forEach((w, i) => {
+        const outer = document.createElement("span"), inner = document.createElement("span");
+        outer.className = "tw"; outer.setAttribute("aria-hidden", "true");
+        inner.textContent = w; inner.style.setProperty("--wi", i);
+        outer.append(inner); h.append(outer);
+        if (i < words.length - 1) h.append(" ");
+      });
+    });
+    // Gallery photos drop in slightly crooked, like prints landing on a table
+    document.querySelectorAll(".g-item").forEach((g, i) => g.style.setProperty("--rot", (i % 2 ? 1 : -1) * (2 + (i * 7) % 4) + "deg"));
 
     // Fade sections in as they scroll into view, staggered within each group
     const revealables = document.querySelectorAll(".intro-top > *, .stat, main .sec-title, main .sec-lead, .case, .sample, .project, .clips-head, .clip, .job, main .row, .g-item, .contact-lead, .contact .btn");
@@ -768,6 +834,118 @@
       if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
     }), { rootMargin: "0px 0px -8% 0px" });
     revealables.forEach((el) => io.observe(el));
+  }
+
+  // ---- Playful layer ----
+  const motionOn = document.documentElement.classList.contains("motion");
+  const finePointer = matchMedia("(pointer: fine)").matches;
+
+  // Scroll progress bar under the header
+  const bar = document.querySelector(".progress");
+  // Ticker between the hero and the intro: drifts on its own and speeds up with scrolling, flipping direction when you scroll back up
+  const track = document.querySelector(".ticker-track");
+  track.innerHTML += track.innerHTML;
+  let tickX = 0, tickV = 0, lastY = scrollY, tickerOn = true, dir = -1;
+  new IntersectionObserver(([e]) => (tickerOn = e.isIntersecting)).observe(document.querySelector(".ticker"));
+
+  function frame() {
+    const max = document.documentElement.scrollHeight - innerHeight;
+    bar.style.transform = `scaleX(${max > 0 ? scrollY / max : 0})`;
+    const dy = scrollY - lastY; lastY = scrollY;
+    if (dy) dir = dy > 0 ? -1 : 1;
+    tickV = tickV * 0.92 + Math.min(Math.abs(dy), 80) * 0.06;
+    if (motionOn && tickerOn) {
+      const half = track.scrollWidth / 2;
+      tickX = (tickX + dir * (0.6 + tickV)) % half;
+      if (tickX > 0) tickX -= half;
+      track.style.transform = `translateX(${tickX}px)`;
+    }
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+
+  // Hero letters: they settle after the intro, then jump when touched; clicking the name sends a wave through it
+  const nameEl = document.querySelector(".name");
+  const chars = [...nameEl.querySelectorAll(".ch")];
+  const jump = (c, delay = 0) => {
+    c.style.animationDelay = delay + "ms";
+    c.classList.remove("jump"); void c.offsetWidth; c.classList.add("jump");
+  };
+  chars.forEach((c) => c.addEventListener("animationend", (e) => { if (e.animationName === "jump") { c.classList.remove("jump"); c.style.animationDelay = ""; } }));
+  setTimeout(() => nameEl.classList.add("settled"), motionOn ? 1700 : 0);
+  if (motionOn) {
+    nameEl.addEventListener("click", () => chars.forEach((c, i) => jump(c, i * 55)));
+    if (finePointer) chars.forEach((c) => c.addEventListener("mouseenter", () => nameEl.classList.contains("settled") && jump(c)));
+  }
+
+  // Contact email letters, for the hover wave
+  const mail = document.querySelector(".contact-lead");
+  [...mail.textContent].forEach((ch, i) => {
+    if (i === 0) mail.textContent = "";
+    const s = document.createElement("span"); s.className = "ec"; s.setAttribute("aria-hidden", "true");
+    s.textContent = ch; s.style.setProperty("--i", i); mail.append(s);
+  });
+
+  if (motionOn && finePointer) {
+    // The lime glow in the hero leans toward the pointer
+    const hero = document.querySelector(".hero"), g3 = document.querySelector(".g3");
+    hero.addEventListener("pointermove", (e) => {
+      const r = hero.getBoundingClientRect();
+      g3.style.translate = `${(e.clientX - r.left - r.width / 2) * 0.35}px ${(e.clientY - r.top - r.height / 2) * 0.35}px`;
+    });
+    hero.addEventListener("pointerleave", () => (g3.style.translate = ""));
+
+    // Cards and media tilt toward the pointer
+    document.querySelectorAll(".case, .clip-media, .sample-media, .project-shot, .g-tile, .pair button").forEach((el) => {
+      el.addEventListener("pointermove", (e) => {
+        const r = el.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+        el.style.transition = "transform .15s ease-out";
+        el.style.transform = `perspective(900px) rotateX(${-y * 6}deg) rotateY(${x * 6}deg) translateY(-4px)`;
+      });
+      el.addEventListener("pointerleave", () => {
+        el.style.transition = "transform .6s cubic-bezier(.34,1.56,.64,1)";
+        el.style.transform = "";
+      });
+    });
+
+    // Buttons lean toward the pointer like a magnet
+    document.querySelectorAll(".btn").forEach((b) => {
+      b.addEventListener("pointermove", (e) => {
+        const r = b.getBoundingClientRect();
+        b.style.translate = `${(e.clientX - r.left - r.width / 2) * 0.25}px ${(e.clientY - r.top - r.height / 2) * 0.35}px`;
+      });
+      b.addEventListener("pointerleave", () => (b.style.translate = ""));
+    });
+
+    // A soft dot follows the pointer; it grows over links and names what a click will do on media
+    const cur = document.createElement("div");
+    cur.className = "cursor"; cur.setAttribute("aria-hidden", "true");
+    cur.innerHTML = "<span></span>";
+    document.body.append(cur);
+    const label = cur.firstChild;
+    let cx = -100, cy = -100, tx = -100, ty = -100, moving = false;
+    const follow = () => {
+      cx += (tx - cx) * 0.2; cy += (ty - cy) * 0.2;
+      cur.style.transform = `translate3d(${cx}px, ${cy}px, 0)`;
+      if (Math.abs(tx - cx) + Math.abs(ty - cy) > 0.3) requestAnimationFrame(follow); else moving = false;
+    };
+    addEventListener("pointermove", (e) => {
+      if (e.pointerType !== "mouse") return;
+      tx = e.clientX; ty = e.clientY;
+      cur.classList.add("on");
+      if (!moving) { moving = true; requestAnimationFrame(follow); }
+      const t = e.target;
+      let text = "";
+      if (t.closest(".play")) text = "Play";
+      else if (t.closest(".sample-media, .g-tile, .pair button")) text = "View";
+      else if (t.closest('a[target="_blank"]')) text = "Open";
+      label.textContent = text;
+      cur.classList.toggle("is-label", !!text);
+      cur.classList.toggle("is-link", !text && !!t.closest("a, button, .name"));
+    });
+    document.addEventListener("pointerleave", () => cur.classList.remove("on"));
+    addEventListener("blur", () => cur.classList.remove("on"));
   }
 </script>
 
