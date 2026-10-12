@@ -61,6 +61,17 @@ SKILLS_TOOLS = ("Tools", "Canva, CapCut, Adobe Premiere, Notion, Google Sheets &
 LANGUAGES = ("Languages", "Indonesian (native), English (active, spoken and written)")
 SKILLS_SOFT = ("Soft skills", "Teamwork, cross-team communication, problem solving, adaptability")
 
+# Community Organizer variant: same facts, framed around engaging a community and running its programs
+GPB_COMM = dict(GPB, bullets=[
+    "Run the Instagram that keeps a volunteer movement for children&rsquo;s literacy and character education engaged: volunteer calls for each batch and reports after each program",
+    "Plan the content calendar and write captions for flyers, program-report carousels, recap reels and soft-news posts",
+    "Account reached <b>84.4K views in 30 days</b> with 683 followers; recap reels reach up to 1.8K views each",
+])
+SKILLS_COMMUNITY = ("Community &amp; programs", "Program design and execution, coordinating a program for 100+ participants, budgeting (RAB), vendor &amp; partner coordination, on-ground logistics, event documentation")
+SKILLS_YOUTH = ("Education &amp; youth", "Volunteer teaching for elementary students, mentoring incoming university students, orphanage teaching and educational trips")
+SKILLS_TOOLS_COMM = ("Tools", "Google Sheets &amp; Google Workspace, Notion, Microsoft Office, Canva, CapCut")
+SKILLS_SOCIAL_SHORT = ("Social media", "Content calendar, captions, volunteer-call and program-report posts, recap reels, Instagram Insights")
+
 VARIANTS = {
     "social": dict(
         file="CV_Ahmad_Fajri_Social_Media",
@@ -85,6 +96,18 @@ VARIANTS = {
         ),
         exp=[KITA, POSF, PG, GPB, GMD, VOL],
         skills=[SKILLS_EVENT, SKILLS_SOCIAL, SKILLS_PLATFORMS, SKILLS_TOOLS, CERTS, LANGUAGES, ACHIEVEMENTS],
+    ),
+    "community": dict(
+        file="CV_Ahmad_Fajri_Community_Organizer",
+        headline="Community Organizer Internship Candidate",
+        summary=(
+            "Physics undergraduate at IPB University who runs community and education programs and keeps the people around them engaged. "
+            "Event Coordinator and Project Leader at Kita Bahagia, leading a community program for 100+ participants, and Social Media Officer "
+            "at Gerakan Pendidikan Berdampak, a volunteer movement for children&rsquo;s literacy (84.4K Instagram views in 30 days). "
+            "Volunteer teacher and student mentor. Available for a 6-month internship, online and offline, based in Depok."
+        ),
+        exp=[KITA, GPB_COMM, GMD, PG, POSF, VOL],
+        skills=[SKILLS_COMMUNITY, SKILLS_YOUTH, SKILLS_TOOLS_COMM, SKILLS_SOCIAL_SHORT, CERTS, LANGUAGES, ACHIEVEMENTS],
     ),
     "general": dict(
         file="CV_Ahmad_Fajri",
