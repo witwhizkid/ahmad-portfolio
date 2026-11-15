@@ -16,6 +16,13 @@ GPB = dict(
         "Account reached <b>84.4K views in 30 days</b> with 683 followers; recap reels reach up to 1.8K views each",
     ],
 )
+HYPR = dict(
+    org="52 Group (Hypr Caffeine &amp; Kazuhiro)", place="Tangerang", role="Social Media &amp; Digital Marketing Intern", when="Oct 2026 – Nov 2026",
+    bullets=[
+        "Ran KOL and local media outreach for two F&amp;B brands (<b>130+ creators and media accounts</b>) and evaluated rate cards by real Reels views to recommend priorities",
+        "Managed a paid Reels collab that reached <b>16K+ views</b> (96% non-followers) and coordinated an 11.11 cross-brand promotion with Operations, Finance and IT",
+    ],
+)
 KITA = dict(
     org="Kita Bahagia", place="Jakarta", role="Event Coordinator", when="Feb 2026 – Present",
     bullets=[
@@ -52,7 +59,7 @@ ROHIS = dict(
     bullets=["Supported religious program activities within the school community"],
 )
 
-SKILLS_SOCIAL = ("Social media &amp; content", "Content strategy &amp; planning, content calendar &amp; scheduling, copywriting (captions), short-form video editing, graphic design, trend research, basic paid ads")
+SKILLS_SOCIAL = ("Social media &amp; content", "Content strategy &amp; planning, KOL &amp; influencer outreach, content calendar &amp; scheduling, copywriting (captions), short-form video editing, graphic design, trend research, basic paid ads")
 SKILLS_PLATFORMS = ("Platforms", "Instagram Professional Dashboard (Insights), Meta Business Suite, Meta Ads Manager (basic), TikTok Studio, Google Trends")
 SKILLS_EVENT = ("Event management", "Event concept &amp; program design, budgeting (RAB), vendor &amp; partner coordination, on-ground logistics, timeline management")
 ACHIEVEMENTS = ("Achievements", "Finalist, Paper Competition by PRESENT X TAZKIA JUARA (2025); Winner, Mobile Legends: Bang Bang Competition at Festival Pelajar Nusantara by RRI Medan (2023)")
@@ -77,12 +84,13 @@ VARIANTS = {
         file="CV_Ahmad_Fajri_Social_Media",
         headline="Social Media Internship Candidate",
         summary=(
-            "Physics undergraduate at IPB University and Social Media Officer at Gerakan Pendidikan Berdampak, "
+            "Physics undergraduate at IPB University with a Social Media &amp; Digital Marketing internship at 52 Group (F&amp;B), "
+            "where I ran KOL outreach and a Reels collab that reached 16K+ views. Social Media Officer at Gerakan Pendidikan Berdampak, "
             "where I plan and produce the Instagram content for a volunteer education movement (84.4K views in 30 days). "
             "I also lead community events as Event Coordinator at Kita Bahagia, so I know how to run an event and how to tell its story online. "
             "Looking for a Social Media internship; available immediately, full-time on-site."
         ),
-        exp=[GPB, KITA, POSF, GMD, PG, VOL],
+        exp=[HYPR, GPB, KITA, POSF, GMD],
         skills=[SKILLS_SOCIAL, SKILLS_PLATFORMS, SKILLS_TOOLS, SKILLS_EVENT, CERTS, LANGUAGES, ACHIEVEMENTS],
     ),
     "event": dict(
@@ -94,7 +102,7 @@ VARIANTS = {
             "Event staff at POSF 2026 and mentoring staff at Physics Gathering. I also run Instagram for Gerakan Pendidikan Berdampak, "
             "so I can promote and document events, not just run them. Looking for an Event internship; available immediately, full-time on-site."
         ),
-        exp=[KITA, POSF, PG, GPB, GMD, VOL],
+        exp=[KITA, POSF, HYPR, PG, GPB],
         skills=[SKILLS_EVENT, SKILLS_SOCIAL, SKILLS_PLATFORMS, SKILLS_TOOLS, CERTS, LANGUAGES, ACHIEVEMENTS],
     ),
     "community": dict(
@@ -106,18 +114,19 @@ VARIANTS = {
             "at Gerakan Pendidikan Berdampak, a volunteer movement for children&rsquo;s literacy (84.4K Instagram views in 30 days). "
             "Volunteer teacher and student mentor. Available for a 6-month internship, online and offline, based in Depok."
         ),
-        exp=[KITA, GPB_COMM, GMD, PG, POSF, VOL],
+        exp=[KITA, GPB_COMM, HYPR, GMD, PG],
         skills=[SKILLS_COMMUNITY, SKILLS_YOUTH, SKILLS_TOOLS_COMM, SKILLS_SOCIAL_SHORT, CERTS, LANGUAGES, ACHIEVEMENTS],
     ),
     "general": dict(
         file="CV_Ahmad_Fajri",
         headline="Social Media &amp; Event",
         summary=(
-            "Physics undergraduate at IPB University who coordinates community events and creates the social media content around them. "
+            "Physics undergraduate at IPB University who coordinates community events and creates the social media content around them, "
+            "with a Social Media &amp; Digital Marketing internship at 52 Group (F&amp;B). "
             "Event Coordinator at Kita Bahagia (100+ participants) and Social Media Officer at Gerakan Pendidikan Berdampak "
             "(84.4K Instagram views in 30 days). Looking for Social Media and Event internships; available immediately, full-time on-site."
         ),
-        exp=[GPB, KITA, POSF, GMD, PG, VOL],
+        exp=[HYPR, GPB, KITA, POSF, GMD],
         skills=[SKILLS_SOCIAL, SKILLS_PLATFORMS, SKILLS_EVENT, SKILLS_TOOLS, CERTS, LANGUAGES, ACHIEVEMENTS],
     ),
 }
