@@ -9,11 +9,11 @@ CONTACT = [
 ]
 
 GPB = dict(
-    org="Gerakan Pendidikan Berdampak", place="South Tangerang", role="Social Media Officer", when="Apr 2026 – Present",
+    org="Gerakan Pendidikan Berdampak", place="South Tangerang", role="Social Media Officer", when="Apr 2026 – Oct 2026",
     bullets=[
-        "Develop and execute the Instagram content strategy for a volunteer movement focused on children&rsquo;s literacy and character education",
-        "Plan the content calendar and write captions for volunteer-call flyers, program-report carousels, recap reels, and soft-news posts",
-        "Account reached <b>84.4K views in 30 days</b> with 683 followers; recap reels reach up to 1.8K views each",
+        "Developed and executed the Instagram content strategy for a volunteer movement focused on children&rsquo;s literacy and character education",
+        "Planned the content calendar and wrote captions for volunteer-call flyers, program-report carousels, recap reels, and soft-news posts",
+        "Account reached <b>84.4K views in 30 days</b> with 683 followers; recap reels reached up to 1.8K views each",
     ],
 )
 HYPR = dict(
@@ -70,9 +70,9 @@ SKILLS_SOFT = ("Soft skills", "Teamwork, cross-team communication, problem solvi
 
 # Community Organizer variant: same facts, framed around engaging a community and running its programs
 GPB_COMM = dict(GPB, bullets=[
-    "Run the Instagram that keeps a volunteer movement for children&rsquo;s literacy and character education engaged: volunteer calls for each batch and reports after each program",
-    "Plan the content calendar and write captions for flyers, program-report carousels, recap reels and soft-news posts",
-    "Account reached <b>84.4K views in 30 days</b> with 683 followers; recap reels reach up to 1.8K views each",
+    "Ran the Instagram that kept a volunteer movement for children&rsquo;s literacy and character education engaged: volunteer calls for each batch and reports after each program",
+    "Planned the content calendar and wrote captions for flyers, program-report carousels, recap reels and soft-news posts",
+    "Account reached <b>84.4K views in 30 days</b> with 683 followers; recap reels reached up to 1.8K views each",
 ])
 SKILLS_COMMUNITY = ("Community &amp; programs", "Program design and execution, coordinating a program for 100+ participants, budgeting (RAB), vendor &amp; partner coordination, on-ground logistics, event documentation")
 SKILLS_YOUTH = ("Education &amp; youth", "Volunteer teaching for elementary students, mentoring incoming university students, orphanage teaching and educational trips")
